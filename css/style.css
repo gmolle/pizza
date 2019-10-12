@@ -709,6 +709,18 @@ nav #nav-links .nav-back #last-nav {
   height: 50%;
 }
 
+#menu .item-info .price-div {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 #menu .item-name {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -740,7 +752,7 @@ nav #nav-links .nav-back #last-nav {
   background: white;
   -webkit-transition: 0.15s all;
   transition: 0.15s all;
-  height: 30%;
+  height: 100%;
   width: 50%;
   margin-bottom: 0.5rem;
   font-size: 1rem;
@@ -941,7 +953,7 @@ nav #nav-links .nav-back #last-nav {
 }
 
 #drink-menu #drink-type #drink-img {
-  background-image: url(../img/2ltr-20oz-mtn-dew-compressed.webp);
+  background-image: url(../img/mtn-dew.png);
 }
 
 #drink-menu #drink1 {
@@ -985,7 +997,7 @@ nav #nav-links .nav-back #last-nav {
   }
   #menu .menu-type .item-info .item-name button {
     font-size: 1rem;
-    width: 75%;
+    width: 50%;
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
@@ -1046,7 +1058,7 @@ nav #nav-links .nav-back #last-nav {
   }
   #menu .menu-type .item-info .item-name button {
     font-size: 0.75rem;
-    width: 75%;
+    width: 50%;
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
@@ -1156,6 +1168,15 @@ nav #nav-links .nav-back #last-nav {
         -ms-flex-pack: justify;
             justify-content: space-between;
     height: 100%;
+  }
+  #menu .menu-type .item-info .item-name .price-div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #menu .menu-type .item-info .item-name .price-div h5 {
+    font-size: 1rem;
   }
   #menu .menu-type .item-info .item-name button {
     font-size: 0.75rem;
@@ -1289,7 +1310,6 @@ nav #nav-links .nav-back #last-nav {
   }
   #menu .menu-type .item-info .item-name button {
     font-size: 0.61rem;
-    height: 25%;
   }
   #menu .menu-type .item-info .item-name h4 {
     font-size: 0.8rem;
@@ -1417,9 +1437,15 @@ nav #nav-links .nav-back #last-nav {
         -ms-flex-align: center;
             align-items: center;
   }
+  #menu .menu-type .item-info .item-name .price-div {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
   #menu .menu-type .item-info .item-name button {
     font-size: 0.75rem;
-    height: 35%;
+    width: 65%;
   }
   #menu .menu-type .item-info .item-name h4 {
     font-size: 1rem;
@@ -1507,7 +1533,7 @@ nav #nav-links .nav-back #last-nav {
   }
 }
 
-@media screen and (max-height: 600px) and (max-width: 800px) {
+@media screen and (max-height: 650px) and (max-width: 800px) {
   #deals-page .deal-img {
     height: 30%;
   }
@@ -1525,10 +1551,10 @@ nav #nav-links .nav-back #last-nav {
     width: 75%;
   }
   #menu .menu-type .item-img {
-    height: 35%;
+    height: 20%;
   }
   #menu .menu-type .item-info {
-    height: 65%;
+    height: 80%;
   }
   #menu .menu-type .item-name h4 {
     font-size: 0.85rem !important;
@@ -1554,6 +1580,18 @@ nav #nav-links .nav-back #last-nav {
   #deals-page .deal-info .deal-btn button {
     font-size: 0.75rem;
     width: 75%;
+  }
+  #menu .menu-type .item-img {
+    height: 0%;
+  }
+  #menu .menu-type .item-info {
+    height: 100%;
+  }
+  #menu .menu-type .item-name h4 {
+    font-size: 1.2rem !important;
+  }
+  #menu .menu-type .item-name p {
+    font-size: 1rem !important;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -624,6 +624,13 @@ nav {
     align-items: center;
     justify-content: center;
     height: 50%;
+
+    .price-div {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
   }
   
   .item-name {
@@ -648,7 +655,7 @@ nav {
     font-weight: 500;
     background: white;
     transition: 0.15s all;
-    height: 30%;
+    height: 100%;
     width: 50%;
     margin-bottom: 0.5rem;
     font-size: 1rem;
@@ -871,7 +878,7 @@ nav {
     "drink1 drink2 drink3 drink4";
 
     #drink-img {
-      background-image: url(../img/2ltr-20oz-mtn-dew-compressed.webp);
+      background-image: url(../img/mtn-dew.png);
     }
   }
 
@@ -916,10 +923,14 @@ nav {
         .item-name {
           text-align: center;
           justify-content: space-between;
+
+          .price-div {
+
+          }
   
           button {
             font-size: 1rem;
-            width: 75%;
+            width: 50%;
             align-self: center;
 
     
@@ -1012,7 +1023,7 @@ nav {
   
           button {
             font-size: 0.75rem;
-            width: 75%;
+            width: 50%;
             align-self: center;
     
           }
@@ -1160,6 +1171,13 @@ nav {
           text-align: center;
           justify-content: space-between;
           height: 100%;
+
+          .price-div {
+            flex-direction: column;
+            h5 {
+              font-size: 1rem;
+            }
+          }
   
           button {
             font-size: 0.75rem;
@@ -1302,6 +1320,10 @@ nav {
       .item-info {
         display: flex;
         align-items: center;
+
+        .price-div {
+
+        }
     
         .item-name {
           
@@ -1313,7 +1335,6 @@ nav {
   
           button {
             font-size: 0.61rem;
-            height: 25%;
           }
 
           h4 {
@@ -1492,10 +1513,14 @@ nav {
           width: 100%;
           justify-content: space-around;
           align-items: center;
+
+          .price-div {
+            flex-direction: row;
+          }
   
           button {
             font-size: 0.75rem;
-            height: 35%;
+            width: 65%;
           }
 
           h4 {
@@ -1640,7 +1665,7 @@ nav {
   }
 }
 
-@media  screen and  (max-height: 600px)  {
+@media  screen and  (max-height: 650px)  {
   @media  screen and  (max-width: 800px)  {
   
 
@@ -1675,11 +1700,11 @@ nav {
 
       .menu-type {
         .item-img {
-          height: 35%;
+          height: 20%;
         }
         
         .item-info {
-          height: 65%;
+          height: 80%;
         }
         
         .item-name {
@@ -1726,5 +1751,28 @@ nav {
         }
       }
     }
+
+    #menu {
+
+      .menu-type {
+        .item-img {
+            height: 0%;
+        }
+        
+        .item-info {
+          height: 100%;
+        }
+        
+        .item-name {
+          h4 {
+            font-size: 1.2rem !important;
+          }
+    
+          p {
+            font-size: 1rem !important; 
+          }
+        }
+      } 
+    }   
   }
 }

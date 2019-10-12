@@ -50,7 +50,7 @@ cartInfo.addEventListener('mouseout', () => {
       if (e.target.classList.contains('store-item-icon')) {
 
         const item = {};
-        let name = e.target.previousElementSibling.previousElementSibling.textContent;
+        let name = e.target.parentElement.parentElement.children[0].textContent;
         item.name = name;
 
 
