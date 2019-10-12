@@ -260,7 +260,7 @@ nav #nav-links .nav-back #last-nav {
   padding: 0;
   width: 75%;
   min-height: 50vh;
-  background-image: url(../img/pizza-header.webp);
+  background-image: url(../img/header.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -401,7 +401,7 @@ nav #nav-links .nav-back #last-nav {
 }
 
 #deals-preview .deal-img {
-  background-image: url(../img/pizza-header.webp);
+  background-image: url(../img/header.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -493,7 +493,7 @@ nav #nav-links .nav-back #last-nav {
 }
 
 #deals-page .deal-img {
-  background-image: url(../img/pizza-header.webp);
+  background-image: url(../img/header.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -602,42 +602,42 @@ nav #nav-links .nav-back #last-nav {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: menu1;
-  background-image: url(../img/pizza-header.webp);
+  background-image: url(../img/header.png);
 }
 
 #menus-preview #menu2 {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: menu2;
-  background-image: url(../img/pizza-header.webp);
+  background-image: url(../img/header.png);
 }
 
 #menus-preview #menu3 {
   -ms-grid-row: 1;
   -ms-grid-column: 3;
   grid-area: menu3;
-  background-image: url(../img/pizza-header.webp);
+  background-image: url(../img/header.png);
 }
 
 #menus-preview #menu4 {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: menu4;
-  background-image: url(../img/pizza-header.webp);
+  background-image: url(../img/header.png);
 }
 
 #menus-preview #menu5 {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: menu5;
-  background-image: url(../img/pizza-header.webp);
+  background-image: url(../img/header.png);
 }
 
 #menus-preview #menu6 {
   -ms-grid-row: 2;
   -ms-grid-column: 3;
   grid-area: menu6;
-  background-image: url(../img/pizza-header.webp);
+  background-image: url(../img/header.png);
 }
 
 #menus-preview h3 {
@@ -773,7 +773,7 @@ nav #nav-links .nav-back #last-nav {
 }
 
 #pizza-menu #pizza-type #pizza-img {
-  background-image: url(../img/pizza_Cheese.webp);
+  background-image: url(../img/cheese-pizza.png);
 }
 
 #pizza-menu #pizza-type #pizza1 {
@@ -809,7 +809,7 @@ nav #nav-links .nav-back #last-nav {
 }
 
 #wings-menu #wing-type #wing-img {
-  background-image: url(../img/buffalo-wings-slate-compressed.webp);
+  background-image: url(../img/buffalo-wings.png);
 }
 
 #wings-menu #wing1 {
@@ -845,7 +845,7 @@ nav #nav-links .nav-back #last-nav {
 }
 
 #sandwich-menu #sandwich-type #sandwich-img {
-  background-image: url(../img/sandwich-meatball-provalon-compressed.webp);
+  background-image: url(../img/meatball-sub.png);
 }
 
 #sandwich-menu #sandwich1 {
@@ -881,7 +881,7 @@ nav #nav-links .nav-back #last-nav {
 }
 
 #sides-menu #side-type #side-img {
-  background-image: url(../img/garlic-knots-slate-compressed.webp);
+  background-image: url(../img/garlic-knots.png);
 }
 
 #sides-menu #side1 {
@@ -917,7 +917,7 @@ nav #nav-links .nav-back #last-nav {
 }
 
 #dessert-menu #dessert-type #dessert-img {
-  background-image: url(../img/brownie-slate-compressed.webp);
+  background-image: url(../img/brownie.png);
 }
 
 #dessert-menu #dessert1 {
@@ -1368,7 +1368,7 @@ nav #nav-links .nav-back #last-nav {
         grid-template-areas: "deal1" "deal2" "deal3";
   }
   #deals-preview .deal-img {
-    background-image: url(../img/pizza-header.webp);
+    background-image: url(../img/header.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
