@@ -193,7 +193,7 @@ nav {
 
 .cart {
   position: absolute;
-  min-height:100vh;
+  min-height:25vh;
   top: 0;
   right: 0;
   transition: all 0.3s ease-in-out;
@@ -213,6 +213,16 @@ nav {
     &:hover {
       color: red;
       cursor: pointer;
+    }
+  }
+
+  .cart-item-remove {
+    height: 0;
+
+    i {
+      &:hover {
+        color: red;;
+      }
     }
   }
 }
@@ -294,6 +304,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    margin-top: 3rem;
   }
 
   h3 {

@@ -217,7 +217,7 @@ nav #nav-links .nav-back #last-nav {
 
 .cart {
   position: absolute;
-  min-height: 100vh;
+  min-height: 25vh;
   top: 0;
   right: 0;
   -webkit-transition: all 0.3s ease-in-out;
@@ -241,6 +241,14 @@ nav #nav-links .nav-back #last-nav {
 .cart h3:hover {
   color: red;
   cursor: pointer;
+}
+
+.cart .cart-item-remove {
+  height: 0;
+}
+
+.cart .cart-item-remove i:hover {
+  color: red;
 }
 
 .show-cart {
@@ -330,6 +338,7 @@ nav #nav-links .nav-back #last-nav {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+  margin-top: 3rem;
 }
 
 #deals h3 {
