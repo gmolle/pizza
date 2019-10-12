@@ -1,0 +1,1719 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap');
+
+/* ===================================== 
+   ScrollBar
+======================================== */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+/////////////////////////////////
+/////////// HEADER //////////////
+/////////////////////////////////
+
+#home-header {
+  background: #e44c15;
+  display: flex;
+  justify-content: center;
+  height: 10vh;
+
+  #topHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 75%;
+    
+    .logo {
+      background-image: url(../img/logo.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      width: 10%;
+    }
+
+    #sign-up {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: 20%;
+
+      a {
+        font-size: 1.2rem;
+        color: white;
+        text-decoration: none;
+        margin-left: 1rem;
+      }
+    }
+  }
+}
+
+/////////////////////////////////
+///////////// NAV ///////////////
+/////////////////////////////////
+
+nav {
+  background: lightskyblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+
+  #nav-links {
+    width: 75%;
+    display: flex;
+    justify-content: flex-start;
+
+    .nav-back {
+      a{
+        text-decoration: none;
+        color: black;
+        font-size: 1.5rem;
+        margin-right: 1.5rem;
+        transition: 0.15s all;
+      
+        &:hover {
+          border-bottom: 2px solid black;
+          padding-bottom: 0.5rem;
+        }
+      }
+      #last-nav {
+        margin-right: 0;
+      }
+    }  
+  }
+}
+
+#nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem;
+
+  .navbar {
+    width: 75%;
+    background: white !important;
+    padding: 0;
+    margin: 0;
+
+    .navbar-nav {
+      display: flex;
+      width: 75%;
+
+      .nav-item {
+
+        a {
+          font-size: 1.25rem;
+          transition: 0.15s all;
+          
+          &:hover {
+            border-bottom: 2px solid black;
+            animation: border 1s;
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+
+    form {
+      display: flex;
+      width: 100%;
+      justify-content: flex-end;
+
+      button {
+        color: #e44c15;
+        border-color: #e44c15;
+
+        &:hover {
+          color: white;
+          background: #e44c15;
+        }
+      }
+    }
+  }
+
+  i{
+    color: #e44c15;
+    font-size: 1.5rem;
+  }
+}
+
+.active {
+  border-bottom: 2px solid black;
+}
+
+/////////////////////////////////
+///////////// CART //////////////
+/////////////////////////////////
+
+.cart-info {
+  border: 0.1rem solid #e44c15;
+  border-radius: 0.25rem;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  margin-right: 0 !important;
+  transition: 0.25s all;
+
+  &:hover {
+    background: #e44c15;
+    color: white;
+  }
+
+  span {
+
+    .fa-shopping-cart {
+      transition: 0.25s all;
+    }
+  }
+}
+
+.cart {
+  position: absolute;
+  min-height:100vh;
+  top: 0;
+  right: 0;
+  transition: all 0.3s ease-in-out;
+  background: rgb(211, 211, 211);
+  width: 0;
+  overflow: hidden;
+
+  h3 {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    transition: 0.25s all;
+
+    &:hover {
+      color: white;
+      cursor: pointer;
+    }
+  }
+}
+
+.show-cart {
+  width: 18rem;
+  padding: 2rem 1.5rem;
+}
+
+
+
+/////////////////////////////////
+////////// IMG HEADER ///////////
+/////////////////////////////////
+
+.jumbotron {
+  padding: 0;
+  width: 75%;
+  min-height: 50vh;
+  background-image: url(../img/pizza-header.webp);
+  background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  display: flex;
+  margin-top: 0.5rem;
+  flex-direction: column;
+
+  .container {
+    width: 30%;
+    height: 100%;  
+    color: white;
+    padding-top: 3rem;
+    transform: rotate(-15deg);
+    margin: 0;
+
+    div {
+      background: #f55f29;
+      transform: skew(45deg);
+      width: 100%;
+      text-align: center;
+      border-radius: 0.5rem;
+       
+      &:nth-child(2) {
+        margin-top: 1rem;
+      }
+
+      &:nth-child(3) {
+        margin-top: 1rem;
+      }
+
+      h4 {
+        transform: skew(-45deg);       
+      }
+    }
+
+    .pizza-img {
+      width: 100%;
+
+    }
+  }
+}
+
+/////////////////////////////////
+//////////// DEALS //////////////
+/////////////////////////////////
+
+#deals {
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+
+  #deal-labels {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  h3 {
+    margin: 0;
+    text-transform: uppercase;
+  }
+  
+  a {
+    font-weight: 500;
+    text-decoration: none;
+  }
+}
+
+#deals-preview {
+  height: 35vh;
+  width: 75%;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  grid-template-areas: 
+    "deal1 deal2 deal3";
+  margin-bottom: 1rem;
+  grid-auto-flow: row;
+  grid-auto-rows: 1fr;
+
+  #deal1 {
+    grid-area: deal1;
+  }
+  #deal2 {
+    grid-area: deal2;
+
+  }
+  #deal3 {
+    grid-area: deal3;  
+  }
+
+  .deal-home {
+    border: solid 1px #cfcecc;
+    border-radius: 0.5rem;
+  }
+
+  .deal-name {
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+
+    h4 {
+      margin-bottom: 0;
+      text-transform: uppercase;
+    }
+  }
+
+  .deal-img {
+    background-image: url(../img/pizza-header.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 50%;
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+
+  .deal-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50%;
+
+    .deal-btn {
+      
+      button {
+        border-radius: 0.5rem;
+        border: 0.1rem solid #e44c15;
+        margin-left: 1rem;
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+        font-size: 1.25rem;
+        font-weight: 500;
+        background: white;
+        transition: 0.15s all;
+        font-weight: 400;
+
+        &:hover {
+         cursor: pointer;
+         background: #e44c15;
+         color: white;
+        }
+      }
+    }
+  }
+}
+
+/////////////////////////////////
+/////////// DEAL PAGE ///////////
+/////////////////////////////////
+
+#deals-page {
+  height: 100vh;
+  width: 75%;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  grid-template-areas: 
+    "deal1 deal2 deal3";
+  margin-bottom: 1rem;
+  grid-auto-flow: row;
+  grid-auto-rows: 1fr;
+
+  #deal1 {
+    grid-area: deal1;
+  }
+  #deal2 {
+    grid-area: deal2;
+
+  }
+  #deal3 {
+    grid-area: deal3;  
+  }
+
+  .deal-home {
+    border: solid 1px #cfcecc;
+    border-radius: 0.5rem;
+  }
+
+  .deal-name {
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+
+    h4 {
+      margin-bottom: 0;
+      text-transform: uppercase;
+    }
+  }
+
+  .deal-img {
+    background-image: url(../img/pizza-header.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 50%;
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+
+  .deal-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50%;
+
+    .deal-btn {
+      
+      button {
+        border-radius: 0.5rem;
+        border: 0.1rem solid #e44c15;
+        margin-left: 1rem;
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+        font-size: 1.25rem;
+        font-weight: 500;
+        background: white;
+        transition: 0.15s all;
+        font-weight: 400;
+
+        &:hover {
+         cursor: pointer;
+         background: #e44c15;
+         color: white;
+        }
+      }
+    }
+  }
+}
+
+/////////////////////////////////
+///////////// MENUS /////////////
+/////////////////////////////////
+
+#menus {
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  #menu-labels {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+
+    h3 {
+      text-transform: uppercase;
+    }
+  } 
+}
+
+#menus-preview {
+  height: 35vh;
+  width: 75%;
+  margin-bottom: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 2rem;
+  grid-template-areas: 
+    "menu1 menu2 menu3"
+    "menu4 menu5 menu6";
+
+    .menu-hover {
+      transition: 0.25s all;
+      filter: brightness(70%);
+
+      &:hover {
+        transform: scale(1.1);
+        box-shadow: 1px 10px 10px rgba(0,0,0,.5);
+        filter: brightness(100%);
+      }
+    }
+
+    .menu-home-img {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    
+    #menu1 {
+      grid-area: menu1;
+      background-image: url(../img/pizza-header.webp);
+    }
+    
+    #menu2 {
+      grid-area: menu2;
+      background-image: url(../img/pizza-header.webp);
+    }
+
+    #menu3 {
+      grid-area: menu3;
+      background-image: url(../img/pizza-header.webp);
+    }
+
+    #menu4 {
+      grid-area: menu4;
+      background-image: url(../img/pizza-header.webp);
+    }
+
+    #menu5 {
+      grid-area: menu5;
+      background-image: url(../img/pizza-header.webp);
+    }
+
+    #menu6 {
+      grid-area: menu6;
+      background-image: url(../img/pizza-header.webp);  
+    }
+
+  h3 {
+    color: white;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+    height: 100%;
+    width: 100%;
+  }
+
+  div {
+    border-radius: 0.5rem;
+  }
+
+  a {
+    text-decoration: none;
+    
+  }
+}
+
+
+/////////////////////////////////
+////////// MENU PAGE ////////////
+/////////////////////////////////
+
+
+// General Styling
+#menu {
+
+  .menu-title {
+    margin: 0 auto;
+    margin-top: 3rem;
+    width: 75%;
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .menu-type {
+    min-height: 35vh;
+    width: 75%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 24.15%);
+    grid-template-rows: 1fr;
+    grid-gap: 1rem;
+    grid-auto-rows: auto;
+    grid-auto-columns: 24.15%;
+    grid-auto-flow: column;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-bottom: 1rem;
+    padding-bottom: 0.25rem;
+  }
+  
+  .item-img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 50%;
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+  
+  .item-info {
+    // margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+  }
+  
+  .item-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  .item {
+    border: solid 1px #cfcecc;
+    border-radius: 0.5rem;
+  }
+
+  button {
+    border-radius: 0.5rem;
+    border: 0.1rem solid #e44c15;
+    padding: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    background: white;
+    transition: 0.15s all;
+    height: 30%;
+    width: 50%;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+
+    &:hover {
+      cursor: pointer;
+      color: white;
+      background: #e44c15;
+     }
+  }
+}
+
+
+
+
+// Pizza Section
+#pizza-menu {
+
+  #menu-title {
+   
+    h1 {
+      text-transform: uppercase;
+    }
+  }
+
+  #pizza-type {
+    grid-template-areas: 
+    "pizza1 pizza2 pizza3 pizza4";
+  
+    #pizza-img {
+      background-image: url(../img/pizza_Cheese.webp);
+    }
+  
+    #pizza1 {
+      grid-area: pizza1;
+    }
+  
+    #pizza2 {
+      grid-area: pizza2;
+    }
+  
+    #pizza3 {
+      grid-area: pizza3;
+    }
+  
+    #pizza4 {
+      grid-area: pizza4;
+    }
+  
+  }
+}
+
+
+// Wing Section
+#wings-menu {
+
+  #wings-title {
+  
+    h1 {
+      text-transform: uppercase;
+    }
+  }
+
+  #wing-type {
+    grid-template-areas: 
+    "wing1 wing2 wing3 wing4";
+
+    #wing-img {
+      background-image: url(../img/buffalo-wings-slate-compressed.webp);
+    }
+  }
+
+  #wing1 {
+    grid-area: wing1;
+  }
+
+  #wing2 {
+    grid-area: wing2;
+  }
+
+  #wing3 {
+    grid-area: wing3;
+  }
+
+  #wing4 {
+    grid-area: wing4;
+  }
+}
+
+
+// Sandwich Section
+#sandwich-menu {
+
+  #sandwich-title {
+  
+    h1 {
+      text-transform: uppercase;
+    }
+  }
+
+  #sandwich-type {
+    grid-template-areas: 
+    "sandwich1 sandwich2 sandwich3 sandwich4";
+    
+    #sandwich-img {
+      background-image: url(../img/sandwich-meatball-provalon-compressed.webp);
+    }
+  }
+
+  #sandwich1 {
+    grid-area: sandwich1;
+
+    #sandwich-img {
+      
+    }
+  }
+
+  #sandwich2 {
+    grid-area: sandwich2;
+  }
+
+  #sandwich3 {
+    grid-area: sandwich3;
+  }
+
+  #sandwich4 {
+    grid-area: sandwich4;
+  }
+}
+
+
+
+// Side section
+#sides-menu {
+
+  #side-title {
+  
+    h1 {
+      text-transform: uppercase;
+    }
+  }
+
+  #side-type {
+    grid-template-areas: 
+    "side1 side2 side3 side4";
+
+    #side-img {
+      background-image: url(../img/garlic-knots-slate-compressed.webp);
+    }
+  }
+
+  #side1 {
+    grid-area: side1;
+  }
+
+  #side2 {
+    grid-area: side2;
+  }
+
+  #side3 {
+    grid-area: side3;
+  }
+
+  #side4 {
+    grid-area: side4;
+  }
+}
+
+
+
+// Dessert Section
+#dessert-menu {
+
+  #dessert-title {
+  
+    h1 {
+      text-transform: uppercase;
+    }
+  }
+
+  #dessert-type {
+    grid-template-areas: 
+    "dessert1 dessert2 dessert3 dessert4";
+
+    #dessert-img {
+      background-image: url(../img/brownie-slate-compressed.webp);
+    }
+  }
+
+  #dessert1 {
+    grid-area: dessert1;
+  }
+
+  #dessert2 {
+    grid-area: dessert2;
+  }
+
+  #dessert3 {
+    grid-area: dessert3;
+  }
+
+  #dessert4 {
+    grid-area: dessert4;
+  }
+}
+
+
+// Drink Section
+#drink-menu {
+
+  #drink-title {
+  
+    h1 {
+      text-transform: uppercase;
+    }
+  }
+
+  #drink-type {
+    grid-template-areas: 
+    "drink1 drink2 drink3 drink4";
+
+    #drink-img {
+      background-image: url(../img/2ltr-20oz-mtn-dew-compressed.webp);
+    }
+  }
+
+  #drink1 {
+    grid-area: drink1;
+  }
+
+  #drink2 {
+    grid-area: drink2;
+  }
+
+  #drink3 {
+    grid-area: drink3;
+  }
+
+  #drink4 {
+    grid-area: drink4;
+  }
+}
+
+
+
+/////////////////////////////////
+///////// Media Queries /////////
+/////////////////////////////////
+@media screen and (max-width: 1200px) {
+  #menu {
+    .menu-title {
+     
+    }
+    .menu-type {
+      
+      .item-img {
+        height: 30%;
+      }
+       
+      .item-info {
+        margin-left: 0;
+        margin-top: 0.25rem;
+        height: 70%;
+    
+        .item-name {
+          text-align: center;
+          justify-content: space-between;
+  
+          button {
+            font-size: 1rem;
+            width: 75%;
+            align-self: center;
+
+    
+          }
+
+          h4 {
+            font-size: 1.1rem;
+          }
+
+          p {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 1000px) {
+  header {
+
+    #sign-up{
+      width: 100% !important;
+    }
+  }
+
+  #deals-preview {
+    grid-gap: 1rem;
+
+    .deal-name {
+      
+      h4 {
+        font-size: 1rem;
+      }
+
+      p{
+        font-size: 0.75rem;
+      }
+      
+    }
+
+    .deal-info {
+      
+      .deal-btn {
+
+        display: flex;
+        margin-left: 1rem;
+        align-items: center;
+        button {
+          margin-bottom: 0.5rem;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  .jumbotron {
+   
+    .container {
+      width: 40%;
+
+      div {
+  
+        h4 {  
+          font-size: 0.9rem;    
+        }
+      }
+    }
+  } 
+
+  #menu {
+    .menu-title {
+     
+    }
+    .menu-type {
+      
+      .item-img {
+        height: 40%;
+      }
+       
+      .item-info {
+        margin-left: 0;
+        margin-top: 0.25rem;
+        height: 60%;
+    
+        .item-name {
+          text-align: center;
+          justify-content: space-between;
+  
+          button {
+            font-size: 0.75rem;
+            width: 75%;
+            align-self: center;
+    
+          }
+
+          h4 {
+            font-size: 1rem;
+          }
+
+          p {
+            font-size: 0.75rem;
+          }
+        }
+      }
+    }
+  }
+
+  #deals-page {
+    
+    .deal-name {
+      margin-left: 0;
+      text-align: center;
+    }
+  
+    .deal-img {
+      height: 35%;
+    }
+  
+    .deal-info {
+      align-items: center;
+      height: 65%;
+
+      .deal-btn {
+        
+        button {
+          margin-left: 0;
+          font-size: 1.1rem;
+
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 800px) {
+  header {
+
+    #sign-up{
+      width: 50% !important;
+      a{
+        font-size: 1rem !important;
+      }
+    }
+
+    .logo {
+      width: 20% !important;
+    }
+  }
+
+  #deals-preview {
+    grid-gap: 1rem;
+
+    .deal-name {
+      
+      h4 {
+        font-size: 1rem;
+      }
+
+      p{
+        font-size: 0.75rem;
+      }
+      
+    }
+
+    .deal-info {
+      
+
+      .deal-name {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0;
+      }
+      
+      .deal-btn {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0;
+        button {
+          margin-bottom: 0.5rem;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  #menus-preview {
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "menu1 menu2"
+    "menu3 menu4"
+    "menu5 menu6";
+
+    h3 {
+      font-size: 1rem;
+    }
+  }
+
+  .jumbotron {
+   
+    .container {
+      width: 45%;
+  
+      div {
+  
+        h4 {  
+          font-size: 0.9rem;    
+        }
+      }
+    }
+  } 
+
+
+  #menu {
+    .menu-title {
+     
+    }
+    .menu-type {
+      
+      .item-img {
+        height: 40%;
+      }
+       
+      .item-info {
+        margin-left: 0;
+        height: 60%;
+
+    
+        .item-name {
+          text-align: center;
+          justify-content: space-between;
+          height: 100%;
+  
+          button {
+            font-size: 0.75rem;
+            width: 75%;
+            align-self: center;
+          }
+
+          h4 {
+            font-size: 0.98rem;
+          }
+
+          p {
+            font-size: 0.7rem;
+          }
+        }
+      }
+    }
+  }
+
+  #deals-page {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+      "deal1 deal2"
+      "deal3 deal4"
+      "deal5 deal6";
+
+    #deal4 {
+      grid-area: deal4;  
+    }
+  
+    #deal5 {
+      grid-area: deal5;  
+    }
+  
+    #deal6 {
+      grid-area: deal6;  
+    }
+  
+    .deal-name {
+
+      p {
+        font-size: 0.75rem;
+      }
+    }
+  
+    .deal-img {
+      height: 35%;
+    }
+  
+    .deal-info {
+      height: 65%;
+  
+      .deal-btn {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        button {
+          width: 50%;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  #deals-preview {
+    height: calc(35vh/2);
+
+    .deal-img {
+      background-image: none;
+      height: 0;
+    }
+
+    .deal-info {
+      align-items: center;
+      text-align: center;
+      height: 100%;
+
+      .deal-name {
+        margin-left: 0;
+      }
+
+      .deal-btn {
+
+        button {
+          font-size: 0.75rem;
+          margin: 0;
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+
+  #menus {
+
+    h3 {
+      margin-top: 0.5rem;
+    }
+  }
+
+  .jumbotron {
+   
+    .container {
+      width: 50%;
+    }
+  } 
+
+  #sign-up{
+    width: 50% !important;
+    a{
+      font-size: 1rem !important;
+    }
+  }
+
+  .logo {
+    width: 10% !important;
+  }
+
+  #menu {
+    .menu-title { 
+      h1 {
+      }
+    }
+  
+    .menu-type {
+      min-height: 75vh;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr 1fr;
+      grid-auto-flow: row;
+
+      .item-img {
+        height: 40%;
+      }
+  
+  
+      .item-info {
+        display: flex;
+        align-items: center;
+    
+        .item-name {
+          
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          width: 100%;
+          justify-content: space-between;
+  
+          button {
+            font-size: 0.61rem;
+            height: 25%;
+          }
+
+          h4 {
+            font-size: 0.8rem;
+          }
+
+          p {
+            font-size: 0.75rem;
+          }
+        }
+      }
+    }
+
+    #pizza-type {
+      grid-template-areas: 
+      "pizza1 pizza2"
+      "pizza3 pizza4";
+    }
+
+    #wing-type {
+      grid-template-areas: 
+      "wing1 wing2"
+      "wing3 wing4";
+    }
+
+    #sandwich-type {
+      grid-template-areas: 
+      "sandwich1 sandwich2"
+      "sandwich3 sandwich4"; 
+    }
+
+    #side-type {
+      grid-template-areas: 
+      "side1 side2"
+      "side3 side4"; 
+    }
+
+    #dessert-type {
+      grid-template-areas: 
+      "dessert1 dessert2"
+      "dessert3 dessert4"; 
+    }
+
+    #drink-type {
+      grid-template-areas: 
+      "drink1 drink2"
+      "drink3 drink4"; 
+    }
+  }
+  
+
+  #deals-page {
+    height: 200vh;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "deal1"
+      "deal2"
+      "deal3"
+      "deal4"
+      "deal5"
+      "deal6";
+
+    .deal-img {
+      height: 45%;
+    }
+  
+    .deal-info {
+      height: 55%;
+      align-items: center;
+  
+      .deal-btn {  
+
+        button {
+          font-size: 1rem;
+          width: 75%;
+
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+
+  #deals-preview { 
+    height: 75vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "deal1"
+    "deal2"
+    "deal3";
+
+    .deal-img {
+      background-image: url(../img/pizza-header.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 40%;
+    border-radius: 0.5rem 0.5rem 0 0;
+    }
+
+    .deal-info {
+      height: 60%;
+    }
+
+    button {
+      font-size: 0.25rem;
+    }
+  }
+
+  #menus-preview {
+
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 100px);
+    grid-template-areas: 
+    "menu1"
+    "menu2"
+    "menu3"
+    "menu4"
+    "menu5"
+    "menu6";
+
+    h3 {
+      font-size: 1rem;
+    }
+  }
+
+  .jumbotron {
+   
+    .container {
+      width: 75%;
+
+      div {
+  
+        h4 {  
+          font-size: 0.9rem;    
+        }
+      }
+    }
+  } 
+
+  #sign-up{
+    width: 50% !important;
+  }
+
+  #menu {
+    .menu-title { 
+      h1 {
+      }
+    }
+  
+    .menu-type {
+      min-height: 150vh;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      grid-auto-flow: row;
+      grid-auto-rows: 1fr;
+      margin-bottom: 1rem;
+    
+      .item-img {
+        height: 40%;
+      }
+  
+  
+      .item-info {
+        display: flex;
+        align-items: center;
+    
+        .item-name {
+          
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          width: 100%;
+          justify-content: space-around;
+          align-items: center;
+  
+          button {
+            font-size: 0.75rem;
+            height: 35%;
+          }
+
+          h4 {
+            font-size: 1rem;
+            margin-bottom: 0;
+          }
+
+          p {
+            font-size: 0.85rem;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    #pizza-type {
+      grid-template-areas: 
+      "pizza1"
+      "pizza2"
+      "pizza3" 
+      "pizza4";
+    }
+
+    #wing-type {
+      grid-template-areas: 
+      "wing1"
+      "wing2"
+      "wing3" 
+      "wing4";
+    }
+
+    #sandwich-type {
+      grid-template-areas: 
+      "sandwich1"
+      "sandwich2"
+      "sandwich3" 
+      "sandwich4";
+    }
+
+    #side-type {
+      grid-template-areas: 
+      "side1"
+      "side2"
+      "side3" 
+      "side4";
+    }
+
+    #dessert-type {
+      grid-template-areas: 
+      "dessert1"
+      "dessert2"
+      "dessert3" 
+      "dessert4";
+    }
+
+    #drink-type {
+      grid-template-areas: 
+      "drink1"
+      "drink2"
+      "drink3" 
+      "drink4";
+    }
+  }
+}
+
+
+@media screen and (max-height: 750px) {
+  #deals-preview {
+    grid-gap: 1rem;
+
+    .deal-name {
+      
+      h4 {
+        font-size: 1rem;
+      }
+
+      p{
+        font-size: 0.75rem;
+      }
+      
+    }
+
+    .deal-info {
+      
+      .deal-btn {
+
+        display: flex;
+        align-items: center;
+        button {
+          margin-bottom: 0.5rem;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-height: 600px) {
+
+  #deals-page {
+
+    .deal-img {
+      height: 30%;
+    }
+  
+    .deal-info {
+      height: 70%;
+    
+      .deal-btn { 
+
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        button {
+          font-size: 1rem;
+          width: 75%;
+
+        }
+      }
+    }
+  }
+
+  #menu {
+
+    .item-img {
+      height: 35%;
+    }
+    
+    .item-info {
+      height: 65%;
+    }
+    
+    .item-name {
+      h4 {
+        font-size: 1rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@media  screen and  (max-height: 600px)  {
+  @media  screen and  (max-width: 800px)  {
+  
+
+    #deals-page {
+
+      .deal-img {
+        height: 30%;
+      }
+    
+      .deal-info {
+        height: 70%;
+
+        .deal-name {
+          h4 {
+            font-size: 1rem;
+          }
+        }
+      
+        .deal-btn { 
+          width: 100%;
+
+          button {
+            font-size: 0.75rem;
+            width: 75%;
+  
+          }
+        }
+      }
+    }
+
+    #menu {
+
+      .menu-type {
+        .item-img {
+          height: 35%;
+        }
+        
+        .item-info {
+          height: 65%;
+        }
+        
+        .item-name {
+          h4 {
+            font-size: 0.85rem !important;
+          }
+    
+          p {
+            font-size: 0.9rem;
+          }
+        }
+      } 
+    }   
+  }
+}
+
+@media  screen and  (max-height: 700px)  {
+  @media  screen and  (max-width: 400px)  {
+  
+
+    #deals-page {
+
+      .deal-img {
+        height: 30%;
+      }
+    
+      .deal-info {
+        height: 70%;
+
+        .deal-name {
+          h4 {
+            font-size: 1rem;
+          }
+        }
+      
+        .deal-btn { 
+          width: 100%;
+
+          button {
+            font-size: 0.75rem;
+            width: 75%;
+  
+          }
+        }
+      }
+    }
+  }
+}

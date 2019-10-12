@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/style.css">
+  <title>Menu</title>
+</head>
+
+<body>
+
+  <header id="home-header">
+    <div id="topHeader">
+      <a href="../index.html" class="logo"></a>
+      <!-- <h1>Garrett's Pizza</h1> -->
+      <div id="sign-up">
+        <a href="">Log In</a>
+        <a href="">Sign Up</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="nav">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Menu <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../deals/">Deals</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../about/">About Us</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Coupon Code" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Apply</button>
+        </form>
+      </div>
+      <!-- <i class="fas fa-shopping-cart"></i> -->
+      <div id="cart-info" class="nav-info align-items-center cart-info d-flex justify-content-between mx-lg-5">
+        <span class="cart-info__icon mr-lg-3"><i class="fas fa-shopping-cart"></i></span>
+        <p class="mb-0 text-capitalize"><span id="item-count">0 </span> items - $<span class="item-total">0</span>
+        </p>
+      </div>
+    </nav>
+  </div>
+
+
+  <div id="cart" class="cart">
+    <!-- cart total -->
+    <div class="cart-total-container d-flex justify-content-around text-capitalize mt-5">
+      <h5>total</h5>
+      <h5> $ <strong id="cart-total" class="font-weight-bold">0.00</strong> </h5>
+    </div>
+    <!--end cart total -->
+    <!-- cart buttons -->
+
+    <div class="cart-buttons-container mt-3 d-flex justify-content-between">
+      <h3 class="cart-close">X</h3>
+      <a href="#" id="clear-cart" class="btn btn-outline-secondary btn-black text-uppercase">clear cart</a>
+      <a href="#" class="btn btn-outline-secondary text-uppercase btn-pink">checkout</a>
+    </div>
+    <!--end of  cart buttons -->
+    <!--  -->
+  </div>
+
+
+  <!-- MENU PAGE -->
+
+  <div id="menu">
+
+    <section id="pizza-menu">
+      <div id="menu-title" class="menu-title">
+        <h1 id="pizza">Pizza</h1>
+      </div>
+
+      <div id="pizza-type" class="menu-type">
+
+        <div id="pizza1" class="pizza item">
+          <div id="pizza-img" class="item-img"></div>
+          <div id="pizza-info" class="item-info">
+            <div id="pizza-name" class="item-name store-item-icon">
+              <h4>Cheese Pizza</h4>
+              <p>Classic cheese pizza</p>
+              <button class="store-item-icon">Order Now</button>
+              <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+            </div>
+          </div>
+        </div>
+
+        <div id="pizza2" class="pizza item">
+          <div id="pizza-img" class="item-img"></div>
+          <div id="pizza-info" class="item-info">
+            <div id="pizza-name" class="item-name">
+              <h4>Cheese Pizza</h4>
+              <p>Classic cheese pizza</p>
+              <button class="store-item-icon">Order Now</button>
+              <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+            </div>
+          </div>
+        </div>
+
+        <div id="pizza3" class="pizza item">
+          <div id="pizza-img" class="item-img"></div>
+          <div id="pizza-info" class="item-info">
+            <div id="pizza-name" class="item-name">
+              <h4>Cheese Pizza</h4>
+              <p>Classic cheese pizza</p>
+              <button class="store-item-icon">Order Now</button>
+              <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+            </div>
+          </div>
+        </div>
+
+
+        <div id="pizza4" class="pizza item">
+          <div id="pizza-img" class="item-img"></div>
+          <div id="pizza-info" class="item-info">
+            <div id="pizza-name" class="item-name">
+              <h4>Cheese Pizza</h4>
+              <p>Classic cheese pizza</p>
+              <button class="store-item-icon">Order Now</button>
+              <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+            </div>
+          </div>
+        </div>
+
+        <div id="pizza5" class="pizza item">
+          <div id="pizza-img" class="item-img"></div>
+          <div id="pizza-info" class="item-info">
+            <div id="pizza-name" class="item-name">
+              <h4>Cheese Pizza</h4>
+              <p>Classic cheese pizza</p>
+              <button class="store-item-icon">Order Now</button>
+              <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="wings-menu">
+      <div id="wings-title" class="menu-title">
+        <h1 id="wings">Wings</h1>
+      </div>
+
+      <div id="wing-type" class="menu-type">
+
+        <div id="wing1" class="wings item">
+          <div id="wing-img" class="item-img"></div>
+          <div id="wing-info" class="item-info">
+            <div id="wing-name" class="item-name">
+              <h4>Buffalo Wings</h4>
+              <p>Classic cheese pizza</p>
+              <button class="store-item-icon">Order Now</button>
+              <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+            </div>
+          </div>
+        </div>
+
+        <div id="wing2" class="wings item">
+          <div id="wing-img" class="item-img"></div>
+          <div id="wing-info" class="item-info">
+            <div id="wing-name" class="item-name">
+              <h4>BBQ Wings</h4>
+              <p>Classic cheese pizza</p>
+              <button class="store-item-icon">Order Now</button>
+              <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+            </div>
+          </div>
+        </div>
+
+        <div id="wing3" class="wings item">
+          <div id="wing-img" class="item-img"></div>
+          <div id="wing-info" class="item-info">
+            <div id="wing-name" class="item-name">
+              <h4>Honey Chipotle Wings</h4>
+              <p>Classic cheese pizza</p>
+              <button class="store-item-icon">Order Now</button>
+              <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+            </div>
+          </div>
+        </div>
+
+        <div id="wing4" class="wings item">
+          <div id="wing-img" class="item-img"></div>
+          <div id="wing-info" class="item-info">
+            <div id="wing-name" class="item-name">
+              <h4>Boneless Wings</h4>
+              <p>Classic cheese pizza</p>
+              <button class="store-item-icon">Order Now</button>
+              <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+            </div>
+          </div>
+        </div>
+
+        <div id="wing5" class="wings item">
+          <div id="wing-img" class="item-img"></div>
+          <div id="wing-info" class="item-info">
+            <div id="wing-name" class="item-name">
+              <h4>Boneless Wings</h4>
+              <p>Classic cheese pizza</p>
+              <button class="store-item-icon">Order Now</button>
+              <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+            </div>
+          </div>
+        </div>
+
+
+    </section>
+
+    <section id="sandwich-menu">
+      <div id="sandwich-title" class="menu-title">
+        <h1 id="sandwiches">Sandwiches</h1>
+      </div>
+
+      <div id="sandwich-type" class="menu-type">
+
+        <div id="sandwich1" class="sandwiches item">
+          <div id="sandwich-img" class="item-img"></div>
+          <div id="sandwich-info" class="item-info">
+            <div id="sandwich-name" class="item-name">
+              <h4>Buffalo Wings</h4>
+              <p>Classic cheese pizza</p>
+              <button class="store-item-icon">Order Now</button>
+              <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+            </div>
+          </div>
+        </div>
+
+        <div id="sandwich2" class="sandwiches item">
+          <div id="sandwich-img" class="item-img"></div>
+          <div id="sandwich-info" class="item-info">
+            <div id="sandwich-name" class="item-name">
+              <h4>BBQ Wings</h4>
+              <p>Classic cheese pizza</p>
+              <button class="store-item-icon">Order Now</button>
+              <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+            </div>
+          </div>
+        </div>
+
+        <div id="sandwich3" class="sandwiches item">
+          <div id="sandwich-img" class="item-img"></div>
+          <div id="sandwich-info" class="item-info">
+            <div id="sandwich-name" class="item-name">
+              <h4>Honey Chipotle Wings</h4>
+              <p>Classic cheese pizza</p>
+              <button class="store-item-icon">Order Now</button>
+              <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+            </div>
+          </div>
+        </div>
+
+        <div id="sandwich4" class="sandwiches item">
+          <div id="sandwich-img" class="item-img"></div>
+          <div id="sandwich-info" class="item-info">
+            <div id="sandwich-name" class="item-name">
+              <h4>Boneless Wings</h4>
+              <p>Classic cheese pizza</p>
+              <button class="store-item-icon">Order Now</button>
+              <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+            </div>
+          </div>
+        </div>
+
+        <div id="sandwich5" class="sandwiches item">
+          <div id="sandwich-img" class="item-img"></div>
+          <div id="sandwich-info" class="item-info">
+            <div id="sandwich-name" class="item-name">
+              <h4>Boneless Wings</h4>
+              <p>Classic cheese pizza</p>
+              <button class="store-item-icon">Order Now</button>
+              <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+            </div>
+          </div>
+        </div>
+    </section>
+
+
+
+    <section id="sides-menu">
+      <div id="side-title" class="menu-title">
+        <h1 id="sides">Sides</h1>
+      </div>
+
+      <div id="side-type" class="menu-type">
+
+        <div id="side1" class="sides item">
+          <div id="side-img" class="item-img"></div>
+          <div id="side-info" class="item-info">
+            <div id="side-name" class="item-name">
+              <h4>Buffalo Wings</h4>
+              <p>Classic cheese pizza</p>
+              <button class="store-item-icon">Order Now</button>
+              <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+            </div>
+          </div>
+        </div>
+
+        <div id="side2" class="sides item">
+          <div id="side-img" class="item-img"></div>
+          <div id="side-info" class="item-info">
+            <div id="side-name" class="item-name">
+              <h4>BBQ Wings</h4>
+              <p>Classic cheese pizza</p>
+              <button class="store-item-icon">Order Now</button>
+              <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+            </div>
+          </div>
+        </div>
+
+        <div id="side3" class="sides item">
+          <div id="side-img" class="item-img"></div>
+          <div id="side-info" class="item-info">
+            <div id="side-name" class="item-name">
+              <h4>Honey Chipotle Wings</h4>
+              <p>Classic cheese pizza</p>
+              <button class="store-item-icon">Order Now</button>
+              <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+            </div>
+          </div>
+        </div>
+
+        <div id="side4" class="sides item">
+          <div id="side-img" class="item-img"></div>
+          <div id="side-info" class="item-info">
+            <div id="side-name" class="item-name">
+              <h4>Boneless Wings</h4>
+              <p>Classic cheese pizza</p>
+              <button class="store-item-icon">Order Now</button>
+              <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+            </div>
+          </div>
+        </div>
+
+        <div id="side5" class="sides item">
+          <div id="side-img" class="item-img"></div>
+          <div id="side-info" class="item-info">
+            <div id="side-name" class="item-name">
+              <h4>Boneless Wings</h4>
+              <p>Classic cheese pizza</p>
+              <button class="store-item-icon">Order Now</button>
+              <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+            </div>
+          </div>
+        </div>
+    </section>
+
+
+
+
+    <section id="dessert-menu">
+      <div id="dessert-title" class="menu-title">
+        <h1 id="dessert">Dessert</h1>
+      </div>
+
+      <div id="dessert-type" class="menu-type">
+
+        <div id="dessert1" class="desserts item">
+          <div id="dessert-img" class="item-img"></div>
+          <div id="dessert-info" class="item-info">
+            <div id="dessert-name" class="item-name">
+              <h4>Buffalo Wings</h4>
+              <p>Classic cheese pizza</p>
+              <button class="store-item-icon">Order Now</button>
+              <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+            </div>
+          </div>
+        </div>
+
+        <div id="dessert2" class="desserts item">
+          <div id="dessert-img" class="item-img"></div>
+          <div id="dessert-info" class="item-info">
+            <div id="dessert-name" class="item-name">
+              <h4>BBQ Wings</h4>
+              <p>Classic cheese pizza</p>
+              <button class="store-item-icon">Order Now</button>
+              <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+            </div>
+          </div>
+        </div>
+
+        <div id="dessert3" class="desserts item">
+          <div id="dessert-img" class="item-img"></div>
+          <div id="dessert-info" class="item-info">
+            <div id="dessert-name" class="item-name">
+              <h4>Honey Chipotle Wings</h4>
+              <p>Classic cheese pizza</p>
+              <button class="store-item-icon">Order Now</button>
+              <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+            </div>
+          </div>
+        </div>
+
+        <div id="dessert4" class="desserts item">
+          <div id="dessert-img" class="item-img"></div>
+          <div id="dessert-info" class="item-info">
+            <div id="dessert-name" class="item-name">
+              <h4>Boneless Wings</h4>
+              <p>Classic cheese pizza</p>
+              <button class="store-item-icon">Order Now</button>
+              <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+            </div>
+          </div>
+        </div>
+
+        <div id="dessert5" class="desserts item">
+          <div id="dessert-img" class="item-img"></div>
+          <div id="dessert-info" class="item-info">
+            <div id="dessert-name" class="item-name">
+              <h4>Boneless Wings</h4>
+              <p>Classic cheese pizza</p>
+              <button class="store-item-icon">Order Now</button>
+              <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+            </div>
+          </div>
+        </div>
+    </section>
+
+
+
+    <section id="drink-menu">
+      <div id="drink-title" class="menu-title">
+        <h1 id="drinks">Drinks</h1>
+      </div>
+
+      <div id="drink-type" class="menu-type">
+
+        <div id="drink1" class="drinks item">
+          <div id="drink-img" class="item-img"></div>
+          <div id="drink-info" class="item-info">
+            <div id="drink-name" class="item-name">
+              <h4>Buffalo Wings</h4>
+              <p>Classic cheese pizza</p>
+              <button class="store-item-icon">Order Now</button>
+              <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+            </div>
+          </div>
+        </div>
+
+        <div id="drink2" class="drinks item">
+          <div id="drink-img" class="item-img"></div>
+          <div id="drink-info" class="item-info">
+            <div id="drink-name" class="item-name">
+              <h4>BBQ Wings</h4>
+              <p>Classic cheese pizza</p>
+              <button class="store-item-icon">Order Now</button>
+              <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+            </div>
+          </div>
+        </div>
+
+        <div id="drink3" class="drinks item">
+          <div id="drink-img" class="item-img"></div>
+          <div id="drink-info" class="item-info">
+            <div id="drink-name" class="item-name">
+              <h4>Honey Chipotle Wings</h4>
+              <p>Classic cheese pizza</p>
+              <button class="store-item-icon">Order Now</button>
+              <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+            </div>
+          </div>
+        </div>
+
+        <div id="drink4" class="drinks item">
+          <div id="drink-img" class="item-img"></div>
+          <div id="drink-info" class="item-info">
+            <div id="drink-name" class="item-name">
+              <h4>Boneless Wings</h4>
+              <p>Classic cheese pizza</p>
+              <button class="store-item-icon">Order Now</button>
+              <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+            </div>
+          </div>
+        </div>
+
+        <div id="drink5" class="drinks item">
+          <div id="drink-img" class="item-img"></div>
+          <div id="drink-info" class="item-info">
+            <div id="drink-name" class="item-name">
+              <h4>Boneless Wings</h4>
+              <p>Classic cheese pizza</p>
+              <button class="store-item-icon">Order Now</button>
+              <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+            </div>
+          </div>
+        </div>
+    </section>
+  </div>
+
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="../js/app.js"></script>
+</body>
+
+</html>

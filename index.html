@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Garrett's Pizza</title>
+</head>
+
+<body>
+
+  <header id="home-header">
+    <div id="topHeader">
+      <a href="#" class="logo"></a>
+      <!-- <h1>Garrett's Pizza</h1> -->
+      <div id="sign-up">
+        <a href="">Log In</a>
+        <a href="">Sign Up</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="nav">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="menu/">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="deals/">Deals</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about/">About Us</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Coupon Code" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Apply</button>
+        </form>
+      </div>
+      <!-- <i class="fas fa-shopping-cart" title="Cart"></i> -->
+      <div id="cart-info" class="nav-info align-items-center cart-info d-flex justify-content-between mx-lg-5">
+        <span class="cart-info__icon mr-lg-3"><i class="fas fa-shopping-cart"></i></span>
+        <p class="mb-0 text-capitalize"><span id="item-count">0 </span> items - $<span class="item-total">0</span>
+        </p>
+      </div>
+    </nav>
+
+  </div>
+
+  <div id="cart" class="cart">
+    <!-- cart total -->
+    <div class="cart-total-container d-flex justify-content-around text-capitalize mt-5">
+      <h5>total</h5>
+      <h5> $ <strong id="cart-total" class="font-weight-bold">0.00</strong> </h5>
+    </div>
+    <!--end cart total -->
+    <!-- cart buttons -->
+    <div class="cart-buttons-container mt-3 d-flex justify-content-between">
+      <h3 class="cart-close">X</h3>
+      <a href="#" id="clear-cart" class="btn btn-outline-secondary btn-black text-uppercase">clear cart</a>
+      <a href="#" class="btn btn-outline-secondary text-uppercase btn-pink">checkout</a>
+    </div>
+    <!--end of  cart buttons -->
+    <!--  -->
+  </div>
+
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <div>
+        <h4>Best Pizza</h4>
+      </div>
+
+      <div>
+        <h4>in</h4>
+      </div>
+
+      <div>
+        <h4>Columbus, Ohio</h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid" id="deals">
+    <div id="deal-labels">
+      <h3>Deals</h3>
+      <a href="deals/">View All Deals</a>
+    </div>
+  </div>
+
+  <div class="container-fluid" id="deals-preview">
+
+    <div id="deal1" class="deal-home">
+      <div class="deal-img"></div>
+      <div class="deal-info">
+        <div class="deal-name">
+          <h4>Local Deals</h4>
+          <p>Delivery or Carryout</p>
+        </div>
+        <div class="deal-btn">
+          <button>Order Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="deal2" class="deal-home">
+      <div class="deal-img"></div>
+      <div class="deal-info">
+        <div class="deal-name">
+          <h4>Local Deals</h4>
+          <p>Delivery or Carryout</p>
+        </div>
+        <div class="deal-btn">
+          <button>Order Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="deal3" class="deal-home">
+      <div class="deal-img"></div>
+      <div class="deal-info">
+        <div class="deal-name">
+          <h4>Local Deals</h4>
+          <p>Delivery or Carryout</p>
+        </div>
+        <div class="deal-btn">
+          <button>Order Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid" id="menus">
+    <div id="menu-labels">
+      <h3>Menu</h3>
+    </div>
+  </div>
+
+  <div class="container-fluid" id="menus-preview">
+
+    <div id="menu1" class="menu-hover menu-home-img">
+      <a href="menu/#pizza">
+        <h3 class="menu-type">Pizza</h3>
+      </a>
+    </div>
+
+    <div id="menu2" class="menu-hover menu-home-img">
+      <a href="menu/#wings">
+        <h3 class="menu-type">Wings</h3>
+      </a>
+    </div>
+
+    <div id="menu3" class="menu-hover menu-home-img">
+      <a href="menu/#sandwiches">
+        <h3 class="menu-type">Sandwiches</h3>
+      </a>
+    </div>
+
+    <div id="menu4" class="menu-hover menu-home-img">
+      <a href="menu/#sides">
+        <h3 class="menu-type">Sides</h3>
+      </a>
+    </div>
+
+    <div id="menu5" class="menu-hover menu-home-img">
+      <a href="menu/#dessert">
+        <h3 class="menu-type">Dessert</h3>
+      </a>
+    </div>
+
+    <div id="menu6" class="menu-hover menu-home-img">
+      <a href="menu/#drinks">
+        <h3 class="menu-type">Drinks</h3>
+      </a>
+    </div>
+
+  </div>
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
