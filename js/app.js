@@ -54,7 +54,7 @@ cartInfo.addEventListener('mouseout', () => {
         item.name = name;
 
 
-        console.log(item);
+        // console.log(item);
         // const items = [];
         // items.push(item.name);
         // console.log(items);
@@ -77,6 +77,9 @@ cartInfo.addEventListener('mouseout', () => {
           </a>
         </div>`;
 
+        cartItem.getElementsByClassName('fa-trash')[0].addEventListener('click', removeItem)
+
+
         // select cart
         const cart = document.querySelector('#cart');
         const total = document.querySelector('.cart-total-container');
@@ -89,32 +92,91 @@ cartInfo.addEventListener('mouseout', () => {
       }
     });
   });
-
-  // Show totals
-  function showTotals() {
-    const total = [];
-    const items = document.querySelectorAll('.cart-item-price');
-
-    items.forEach(function (item) {
-      total.push(parseFloat(item.textContent));
-    });
-
-    const totalMoney = total.reduce(function (total, item) {
-      total += item;
-      return total;
-    }, 0);
-    const finalMoney = totalMoney.toFixed(2);
-
-    document.querySelector('#cart-total').textContent = finalMoney;
-    document.querySelector('.item-total').textContent = finalMoney;
-    document.querySelector('#item-count').textContent = total.length;
-
-  }
 })();
 
-// console.log(localStorage);
+// Show totals
+function showTotals() {
+  const total = [];
+  const items = document.querySelectorAll('.cart-item-price');
 
-if (pathname === '/deals/') {
+  items.forEach(function (item) {
+    total.push(parseFloat(item.textContent));
+  });
 
+  const totalMoney = total.reduce(function (total, item) {
+    total += item;
+    return total;
+  }, 0);
+  const finalMoney = totalMoney.toFixed(2);
+
+  document.querySelector('#cart-total').textContent = finalMoney;
+  document.querySelector('.item-total').textContent = finalMoney;
+  document.querySelector('#item-count').textContent = total.length;
 
 }
+// console.log(localStorage);
+
+// if (pathname === '/deals/') {
+
+
+// }
+
+// Remove individual Items
+function removeItem(e) {
+  let buttonClicked = e.target;
+  buttonClicked.parentElement.parentElement.remove();
+  showTotals();
+}
+
+const removeAllBtn = document.querySelector('#clear-cart');
+removeAllBtn.addEventListener('click', removeAllItems);
+
+// Clear Entire Cart
+function removeAllItems(e) {
+  const cartItem = document.querySelectorAll('.cart-item');
+  for (let i = 0; i < cartItem.length; i++) {
+    if (cartItem.length > 0) {
+      cartItem[i].remove();
+
+    }
+  }
+  showTotals();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

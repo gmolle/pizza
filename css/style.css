@@ -239,7 +239,7 @@ nav #nav-links .nav-back #last-nav {
 }
 
 .cart h3:hover {
-  color: white;
+  color: red;
   cursor: pointer;
 }
 
