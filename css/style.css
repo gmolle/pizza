@@ -5,7 +5,7 @@
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
-  height: 10px;
+  height: 3px;
 }
 
 /* Track */
@@ -186,6 +186,17 @@ nav #nav-links .nav-back #last-nav {
   background: #e44c15;
 }
 
+#nav .navbar form button:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+#nav .navbar form input:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(228, 76, 21, 0.25);
+          box-shadow: 0 0 0 0.2rem rgba(228, 76, 21, 0.25);
+  border-color: #e44c15;
+}
+
 #nav i {
   color: #e44c15;
   font-size: 1.5rem;
@@ -225,6 +236,12 @@ nav #nav-links .nav-back #last-nav {
   background: lightgray;
   width: 0;
   overflow: hidden;
+  z-index: 999;
+}
+
+.cart .cart-total-container h5 #discountAmt {
+  font-weight: normal;
+  font-size: 1rem;
 }
 
 .cart h3 {
@@ -252,7 +269,7 @@ nav #nav-links .nav-back #last-nav {
 }
 
 .show-cart {
-  width: 18rem;
+  width: 25rem;
   padding: 2rem 1.5rem;
 }
 
@@ -602,42 +619,42 @@ nav #nav-links .nav-back #last-nav {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: menu1;
-  background-image: url(../img/header.png);
+  background-image: url(../img/pizza-home2.jpg);
 }
 
 #menus-preview #menu2 {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: menu2;
-  background-image: url(../img/header.png);
+  background-image: url(../img/wings-home.jpg);
 }
 
 #menus-preview #menu3 {
   -ms-grid-row: 1;
   -ms-grid-column: 3;
   grid-area: menu3;
-  background-image: url(../img/header.png);
+  background-image: url(../img/burger-home.jpg);
 }
 
 #menus-preview #menu4 {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: menu4;
-  background-image: url(../img/header.png);
+  background-image: url(../img/side-home.jpg);
 }
 
 #menus-preview #menu5 {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: menu5;
-  background-image: url(../img/header.png);
+  background-image: url(../img/dessert-home.jpg);
 }
 
 #menus-preview #menu6 {
   -ms-grid-row: 2;
   -ms-grid-column: 3;
   grid-area: menu6;
-  background-image: url(../img/header.png);
+  background-image: url(../img/drink-home.jpg);
 }
 
 #menus-preview h3 {
@@ -669,7 +686,7 @@ nav #nav-links .nav-back #last-nav {
 }
 
 #menu .menu-type {
-  min-height: 35vh;
+  min-height: 45vh;
   width: 75%;
   margin: 0 auto;
   display: -ms-grid;
@@ -738,6 +755,15 @@ nav #nav-links .nav-back #last-nav {
   width: 100%;
 }
 
+#menu .item-desc {
+  text-align: center;
+  width: 100%;
+}
+
+#menu .item-desc select {
+  width: 50%;
+}
+
 #menu .item {
   border: solid 1px #cfcecc;
   border-radius: 0.5rem;
@@ -764,8 +790,42 @@ nav #nav-links .nav-back #last-nav {
   background: #e44c15;
 }
 
+#pizza-menu #menu-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 #pizza-menu #menu-title h1 {
   text-transform: uppercase;
+}
+
+#pizza-menu #menu-title span {
+  width: 100%;
+  background: #f84e4e;
+  border-radius: 0.5rem;
+  color: white;
+  padding-left: 1rem;
+  -webkit-animation: 1s fadeIn;
+          animation: 1s fadeIn;
+}
+
+#pizza-menu #menu-title span #close {
+  float: right;
+  padding: 0;
+  margin-right: 0.25rem;
+  width: 1%;
+  -webkit-transition: 0.15s all;
+  transition: 0.15s all;
+}
+
+#pizza-menu #menu-title span #close:hover {
+  color: #b6babd;
+  cursor: pointer;
 }
 
 #pizza-menu #pizza-type {
@@ -782,10 +842,18 @@ nav #nav-links .nav-back #last-nav {
   grid-area: pizza1;
 }
 
+#pizza-menu #pizza-type #pizza1 .item-img {
+  background-image: url(../img/cheese-pizza.jpg);
+}
+
 #pizza-menu #pizza-type #pizza2 {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: pizza2;
+}
+
+#pizza-menu #pizza-type #pizza2 .item-img {
+  background-image: url(../img/pizza-home2.jpg);
 }
 
 #pizza-menu #pizza-type #pizza3 {
@@ -798,6 +866,124 @@ nav #nav-links .nav-back #last-nav {
   -ms-grid-row: 1;
   -ms-grid-column: 4;
   grid-area: pizza4;
+}
+
+.right-arrow {
+  background: rgba(48, 48, 48, 0.5);
+  position: absolute;
+  border-radius: 50%;
+  height: 44px;
+  width: 44px;
+  text-align: center;
+  right: 13%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.right-arrow span {
+  color: white;
+  font-size: 2rem;
+}
+
+.right-arrow span i {
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+}
+
+.right-arrow:hover {
+  cursor: pointer;
+}
+
+#right-arrow1 {
+  top: 50%;
+}
+
+#right-arrow2 {
+  top: 106%;
+}
+
+#right-arrow3 {
+  top: 162%;
+}
+
+#right-arrow4 {
+  top: 218%;
+}
+
+#right-arrow5 {
+  top: 274%;
+}
+
+#right-arrow6 {
+  top: 330%;
+}
+
+.left-arrow {
+  background: rgba(48, 48, 48, 0.5);
+  position: absolute;
+  border-radius: 50%;
+  height: 44px;
+  width: 44px;
+  text-align: center;
+  left: 13%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.left-arrow span {
+  color: white;
+  font-size: 2rem;
+}
+
+.left-arrow:hover {
+  cursor: pointer;
+}
+
+#left-arrow1 {
+  top: 50%;
+}
+
+#left-arrow2 {
+  top: 106%;
+}
+
+#left-arrow3 {
+  top: 162%;
+}
+
+#left-arrow4 {
+  top: 218%;
+}
+
+#left-arrow5 {
+  top: 274%;
+}
+
+#left-arrow6 {
+  top: 330%;
+}
+
+.item-desc select {
+  border: 1px solid #e44c15;
+}
+
+.item-desc select:focus {
+  outline: none;
 }
 
 #wings-menu #wings-title h1 {
@@ -844,14 +1030,14 @@ nav #nav-links .nav-back #last-nav {
       grid-template-areas: "sandwich1 sandwich2 sandwich3 sandwich4";
 }
 
-#sandwich-menu #sandwich-type #sandwich-img {
-  background-image: url(../img/meatball-sub.png);
-}
-
 #sandwich-menu #sandwich1 {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: sandwich1;
+}
+
+#sandwich-menu #sandwich1 #sandwich-img {
+  background-image: url(../img/burger-home.jpg);
 }
 
 #sandwich-menu #sandwich2 {
@@ -860,16 +1046,32 @@ nav #nav-links .nav-back #last-nav {
   grid-area: sandwich2;
 }
 
+#sandwich-menu #sandwich2 #sandwich-img {
+  background-image: url(../img/turkey-club.jpg);
+}
+
 #sandwich-menu #sandwich3 {
   -ms-grid-row: 1;
   -ms-grid-column: 3;
   grid-area: sandwich3;
 }
 
+#sandwich-menu #sandwich3 #sandwich-img {
+  background-image: url(../img/bacon-cheeseburger.jpg);
+}
+
 #sandwich-menu #sandwich4 {
   -ms-grid-row: 1;
   -ms-grid-column: 4;
   grid-area: sandwich4;
+}
+
+#sandwich-menu #sandwich4 #sandwich-img {
+  background-image: url(../img/chicken-sandwich.jpg);
+}
+
+#sandwich-menu #sandwich5 #sandwich-img {
+  background-image: url(../img/veggie-burger.jpg);
 }
 
 #sides-menu #side-title h1 {
@@ -890,10 +1092,18 @@ nav #nav-links .nav-back #last-nav {
   grid-area: side1;
 }
 
+#sides-menu #side1 #side-img {
+  background-image: url(../img/side-home.jpg);
+}
+
 #sides-menu #side2 {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: side2;
+}
+
+#sides-menu #side2 #side-img {
+  background-image: url(../img/spinach-salad.jpg);
 }
 
 #sides-menu #side3 {
@@ -902,10 +1112,22 @@ nav #nav-links .nav-back #last-nav {
   grid-area: side3;
 }
 
+#sides-menu #side3 #side-img {
+  background-image: url(../img/breadsticks.jpg);
+}
+
 #sides-menu #side4 {
   -ms-grid-row: 1;
   -ms-grid-column: 4;
   grid-area: side4;
+}
+
+#sides-menu #side4 #side-img {
+  background-image: url(../img/macncheese.jpg);
+}
+
+#sides-menu #side5 #side-img {
+  background-image: url(../img/jalapeno-popper.jpg);
 }
 
 #dessert-menu #dessert-title h1 {
@@ -916,14 +1138,14 @@ nav #nav-links .nav-back #last-nav {
       grid-template-areas: "dessert1 dessert2 dessert3 dessert4";
 }
 
-#dessert-menu #dessert-type #dessert-img {
-  background-image: url(../img/brownie.png);
-}
-
 #dessert-menu #dessert1 {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: dessert1;
+}
+
+#dessert-menu #dessert1 #dessert-img {
+  background-image: url(../img/dessert-home.jpg);
 }
 
 #dessert-menu #dessert2 {
@@ -932,16 +1154,32 @@ nav #nav-links .nav-back #last-nav {
   grid-area: dessert2;
 }
 
+#dessert-menu #dessert2 #dessert-img {
+  background-image: url(../img/brownie.jpg);
+}
+
 #dessert-menu #dessert3 {
   -ms-grid-row: 1;
   -ms-grid-column: 3;
   grid-area: dessert3;
 }
 
+#dessert-menu #dessert3 #dessert-img {
+  background-image: url(../img/choc-cake.jpg);
+}
+
 #dessert-menu #dessert4 {
   -ms-grid-row: 1;
   -ms-grid-column: 4;
   grid-area: dessert4;
+}
+
+#dessert-menu #dessert4 #dessert-img {
+  background-image: url(../img/milkshake.jpg);
+}
+
+#dessert-menu #dessert5 #dessert-img {
+  background-image: url(../img/Sundae.jpg);
 }
 
 #drink-menu #drink-title h1 {
@@ -952,14 +1190,14 @@ nav #nav-links .nav-back #last-nav {
       grid-template-areas: "drink1 drink2 drink3 drink4";
 }
 
-#drink-menu #drink-type #drink-img {
-  background-image: url(../img/mtn-dew.png);
-}
-
 #drink-menu #drink1 {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: drink1;
+}
+
+#drink-menu #drink1 #drink-img {
+  background-image: url(../img/coke.jpg);
 }
 
 #drink-menu #drink2 {
@@ -968,16 +1206,32 @@ nav #nav-links .nav-back #last-nav {
   grid-area: drink2;
 }
 
+#drink-menu #drink2 #drink-img {
+  background-image: url(../img/dr-pepper.jpg);
+}
+
 #drink-menu #drink3 {
   -ms-grid-row: 1;
   -ms-grid-column: 3;
   grid-area: drink3;
 }
 
+#drink-menu #drink3 #drink-img {
+  background-image: url(../img/lemonade.jpg);
+}
+
 #drink-menu #drink4 {
   -ms-grid-row: 1;
   -ms-grid-column: 4;
   grid-area: drink4;
+}
+
+#drink-menu #drink4 #drink-img {
+  background-image: url(../img/iced-tea.jpg);
+}
+
+#drink-menu #drink5 #drink-img {
+  background-image: url(../img/water.jpg);
 }
 
 @media screen and (max-width: 1200px) {
@@ -1592,6 +1846,24 @@ nav #nav-links .nav-back #last-nav {
   }
   #menu .menu-type .item-name p {
     font-size: 1rem !important;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -7,7 +7,7 @@
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
-  height: 10px;
+  height: 3px;
 }
 
 /* Track */
@@ -152,6 +152,19 @@ nav {
           color: white;
           background: #e44c15;
         }
+
+        &:focus {
+          box-shadow: none;
+        }
+      }
+
+      input {
+
+        &:focus {
+          box-shadow: 0 0 0 0.2rem rgba(228, 76, 21, 0.25);
+          border-color: #e44c15;
+        }
+
       }
     }
   }
@@ -200,6 +213,22 @@ nav {
   background: rgb(211, 211, 211);
   width: 0;
   overflow: hidden;
+  z-index: 999;
+
+  .cart-total-container {
+   
+    h5 {
+
+      #discountAmt {
+        font-weight: normal;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .cart-item{
+    
+  }
 
   h3 {
     position: absolute;
@@ -228,7 +257,7 @@ nav {
 }
 
 .show-cart {
-  width: 18rem;
+  width: 25rem;
   padding: 2rem 1.5rem;
 }
 
@@ -530,32 +559,32 @@ nav {
     
     #menu1 {
       grid-area: menu1;
-      background-image: url(../img/header.png);
+      background-image: url(../img/pizza-home2.jpg);
     }
     
     #menu2 {
       grid-area: menu2;
-      background-image: url(../img/header.png);
+      background-image: url(../img/wings-home.jpg);
     }
 
     #menu3 {
       grid-area: menu3;
-      background-image: url(../img/header.png);
+      background-image: url(../img/burger-home.jpg);
     }
 
     #menu4 {
       grid-area: menu4;
-      background-image: url(../img/header.png);
+      background-image: url(../img/side-home.jpg);
     }
 
     #menu5 {
       grid-area: menu5;
-      background-image: url(../img/header.png);
+      background-image: url(../img/dessert-home.jpg);
     }
 
     #menu6 {
       grid-area: menu6;
-      background-image: url(../img/header.png);  
+      background-image: url(../img/drink-home.jpg);  
     }
 
   h3 {
@@ -594,7 +623,7 @@ nav {
   }
   
   .menu-type {
-    min-height: 35vh;
+    min-height: 45vh;
     width: 75%;
     margin: 0 auto;
     display: grid;
@@ -642,6 +671,15 @@ nav {
     width: 100%;
   }
 
+  .item-desc {
+    text-align: center;
+    width: 100%;
+
+    select {
+      width: 50%;
+    }
+  }
+
   .item {
     border: solid 1px #cfcecc;
     border-radius: 0.5rem;
@@ -676,8 +714,32 @@ nav {
 
   #menu-title {
    
+    display: flex;
+    flex-direction: column;
     h1 {
       text-transform: uppercase;
+    }
+
+    span {
+      width: 100%;
+      background: rgb(248, 78, 78);
+      border-radius: 0.5rem;
+      color: white;
+      padding-left: 1rem;
+      animation: 1s fadeIn;
+
+      #close {
+        float: right;
+        padding: 0;
+        margin-right: 0.25rem;
+        width: 1%;
+        transition: 0.15s all;
+
+        &:hover {
+          color: #b6babd;
+          cursor: pointer;
+        }
+      }
     }
   }
 
@@ -691,22 +753,142 @@ nav {
   
     #pizza1 {
       grid-area: pizza1;
+
+      .item-img {
+        background-image: url(../img/cheese-pizza.jpg);
+      }
     }
   
     #pizza2 {
       grid-area: pizza2;
+
+      .item-img {
+        background-image: url(../img/pizza-home2.jpg);
+      }
     }
   
     #pizza3 {
       grid-area: pizza3;
+
+      .item-img {
+
+      }
     }
   
     #pizza4 {
       grid-area: pizza4;
-    }
-  
+    } 
   }
 }
+
+
+// Left/Right Arrow Styling
+.right-arrow {
+  background: rgba(48, 48, 48, 0.5);
+  position: absolute;
+  border-radius: 50%;
+  height: 44px;
+  width: 44px;
+  text-align: center;
+  right: 13%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span {
+    color: white;
+    font-size: 2rem;
+    i {
+      border-radius: 50%;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+#right-arrow1 {
+  top: 50%;
+}
+
+#right-arrow2 {
+  top: 106%;
+}
+
+#right-arrow3 {
+  top: 162%;
+}
+
+#right-arrow4 {
+  top: 218%;
+}
+
+#right-arrow5 {
+  top: 274%;
+}
+
+#right-arrow6 {
+  top: 330%;
+}
+
+.left-arrow {
+  background: rgba(48, 48, 48, 0.5);
+  position: absolute;
+  border-radius: 50%;
+  height: 44px;
+  width: 44px;
+  text-align: center;
+  left: 13%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span {
+    color: white;
+    font-size: 2rem;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+#left-arrow1 {
+  top: 50%;
+}
+
+#left-arrow2 {
+  top: 106%;
+}
+
+#left-arrow3 {
+  top: 162%;
+}
+
+#left-arrow4 {
+  top: 218%;
+}
+
+#left-arrow5 {
+  top: 274%;
+}
+
+#left-arrow6 {
+  top: 330%;
+}
+
+.item-desc {
+
+  select {
+    border: 1px solid #e44c15;
+    
+    &:focus {
+     outline: none;
+    }
+  }
+}
+
 
 
 // Wing Section
@@ -759,30 +941,46 @@ nav {
   #sandwich-type {
     grid-template-areas: 
     "sandwich1 sandwich2 sandwich3 sandwich4";
-    
-    #sandwich-img {
-      background-image: url(../img/meatball-sub.png);
-    }
+  
   }
 
   #sandwich1 {
     grid-area: sandwich1;
 
     #sandwich-img {
-      
+      background-image: url(../img/burger-home.jpg);
     }
   }
 
   #sandwich2 {
     grid-area: sandwich2;
+
+    #sandwich-img {
+      background-image: url(../img/turkey-club.jpg);
+    }
   }
 
   #sandwich3 {
     grid-area: sandwich3;
+
+    #sandwich-img {
+      background-image: url(../img/bacon-cheeseburger.jpg);
+    }
   }
 
   #sandwich4 {
     grid-area: sandwich4;
+
+    #sandwich-img {
+      background-image: url(../img/chicken-sandwich.jpg);
+    }
+  }
+
+  #sandwich5 {
+
+    #sandwich-img {
+      background-image: url(../img/veggie-burger.jpg);
+    }
   }
 }
 
@@ -809,18 +1007,41 @@ nav {
 
   #side1 {
     grid-area: side1;
+
+    #side-img {
+      background-image: url(../img/side-home.jpg);
+    }
   }
 
   #side2 {
     grid-area: side2;
+
+    #side-img {
+      background-image: url(../img/spinach-salad.jpg);
+    }
   }
 
   #side3 {
     grid-area: side3;
+
+    #side-img {
+      background-image: url(../img/breadsticks.jpg);
+    }
   }
 
   #side4 {
     grid-area: side4;
+
+    #side-img {
+      background-image: url(../img/macncheese.jpg);
+    }
+  }
+
+  #side5 {
+
+    #side-img {
+      background-image: url(../img/jalapeno-popper.jpg);
+    }
   }
 }
 
@@ -839,26 +1060,46 @@ nav {
   #dessert-type {
     grid-template-areas: 
     "dessert1 dessert2 dessert3 dessert4";
-
-    #dessert-img {
-      background-image: url(../img/brownie.png);
-    }
   }
 
   #dessert1 {
     grid-area: dessert1;
+
+    #dessert-img {
+      background-image: url(../img/dessert-home.jpg);
+    }
   }
 
   #dessert2 {
     grid-area: dessert2;
+
+    #dessert-img {
+      background-image: url(../img/brownie.jpg);
+    }
   }
 
   #dessert3 {
     grid-area: dessert3;
+
+    #dessert-img {
+      background-image: url(../img/choc-cake.jpg);
+    }
   }
 
   #dessert4 {
     grid-area: dessert4;
+
+    #dessert-img {
+      background-image: url(../img/milkshake.jpg);
+    }
+  }
+
+  #dessert5 {
+  
+
+    #dessert-img {
+      background-image: url(../img/Sundae.jpg);
+    }
   }
 }
 
@@ -876,26 +1117,45 @@ nav {
   #drink-type {
     grid-template-areas: 
     "drink1 drink2 drink3 drink4";
-
-    #drink-img {
-      background-image: url(../img/mtn-dew.png);
-    }
   }
 
   #drink1 {
     grid-area: drink1;
+
+    #drink-img {
+      background-image: url(../img/coke.jpg);
+    }
   }
 
   #drink2 {
     grid-area: drink2;
+
+    #drink-img {
+      background-image: url(../img/dr-pepper.jpg);
+    }
   }
 
   #drink3 {
     grid-area: drink3;
+
+    #drink-img {
+      background-image: url(../img/lemonade.jpg);
+    }
   }
 
   #drink4 {
     grid-area: drink4;
+
+    #drink-img {
+      background-image: url(../img/iced-tea.jpg);
+    }
+  }
+
+  #drink5 {
+
+    #drink-img {
+      background-image: url(../img/water.jpg);
+    }
   }
 }
 
@@ -1774,5 +2034,19 @@ nav {
         }
       } 
     }   
+  }
+}
+
+
+
+
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

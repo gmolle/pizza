@@ -44,9 +44,9 @@
             <a class="nav-link" href="../about/">About Us</a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Coupon Code" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Apply</button>
+        <form class="form-inline my-2 my-lg-0 coupon-form">
+          <input class="form-control mr-sm-2 coupon" type="search" placeholder="Coupon Code" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0 apply" type="submit">Apply</button>
         </form>
       </div>
       <!-- <i class="fas fa-shopping-cart"></i> -->
@@ -61,7 +61,7 @@
 
   <div id="cart" class="cart">
     <!-- cart total -->
-    <div class="cart-total-container d-flex justify-content-around text-capitalize mt-5">
+    <div class="cart-total-container d-flex justify-content-between text-capitalize mt-4">
       <h5>total</h5>
       <h5> $ <strong id="cart-total" class="font-weight-bold">0.00</strong> </h5>
     </div>
@@ -89,12 +89,29 @@
 
       <div id="pizza-type" class="menu-type">
 
+        <div class="right-arrow" id="right-arrow1">
+          <span><i class="fas fa-angle-right"></i></span>
+        </div>
+
+        <div class="left-arrow" id="left-arrow1">
+          <span><i class="fas fa-angle-left"></i></span>
+        </div>
+
         <div id="pizza1" class="pizza item">
           <div id="pizza-img" class="item-img"></div>
           <div id="pizza-info" class="item-info">
             <div id="pizza-name" class="item-name store-item-icon">
-              <h4>Cheese Pizza</h4>
-              <p>Classic cheese pizza</p>
+              <div class="item-desc">
+                <h4>Cheese Pizza</h4>
+                <p>Classic cheese pizza</p>
+                <select class="pizza-size">
+                  <option value="0">Select size:</option>
+                  <option value="small">Small</option>
+                  <option value="medium">Medium</option>
+                  <option value="large">Large</option>
+                  <option value="XL">Extra Large</option>
+                </select>
+              </div>
               <div class="price-div">
                 <button class="store-item-icon">Order Now</button>
                 <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
@@ -107,8 +124,17 @@
           <div id="pizza-img" class="item-img"></div>
           <div id="pizza-info" class="item-info">
             <div id="pizza-name" class="item-name">
-              <h4>Cheese Pizza</h4>
-              <p>Classic cheese pizza</p>
+              <div class="item-desc">
+                <h4>Pepperoni Pizza</h4>
+                <p>Classic pepperoni pizza</p>
+                <select class="pizza-size">
+                  <option value="0">Select size:</option>
+                  <option value="small">Small</option>
+                  <option value="medium">Medium</option>
+                  <option value="large">Large</option>
+                  <option value="XL">Extra Large</option>
+                </select>
+              </div>
               <div class="price-div">
                 <button class="store-item-icon">Order Now</button>
                 <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
@@ -121,8 +147,17 @@
           <div id="pizza-img" class="item-img"></div>
           <div id="pizza-info" class="item-info">
             <div id="pizza-name" class="item-name">
-              <h4>Cheese Pizza</h4>
-              <p>Classic cheese pizza</p>
+              <div class="item-desc">
+                <h4>Cheese Pizza</h4>
+                <p>Classic cheese pizza</p>
+                <select class="pizza-size">
+                  <option value="0">Select size:</option>
+                  <option value="small">Small</option>
+                  <option value="medium">Medium</option>
+                  <option value="large">Large</option>
+                  <option value="XL">Extra Large</option>
+                </select>
+              </div>
               <div class="price-div">
                 <button class="store-item-icon">Order Now</button>
                 <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
@@ -136,8 +171,17 @@
           <div id="pizza-img" class="item-img"></div>
           <div id="pizza-info" class="item-info">
             <div id="pizza-name" class="item-name">
-              <h4>Cheese Pizza</h4>
-              <p>Classic cheese pizza</p>
+              <div class="item-desc">
+                <h4>Cheese Pizza</h4>
+                <p>Classic cheese pizza</p>
+                <select class="pizza-size">
+                  <option value="0">Select size:</option>
+                  <option value="small">Small</option>
+                  <option value="medium">Medium</option>
+                  <option value="large">Large</option>
+                  <option value="XL">Extra Large</option>
+                </select>
+              </div>
               <div class="price-div">
                 <button class="store-item-icon">Order Now</button>
                 <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
@@ -150,8 +194,17 @@
           <div id="pizza-img" class="item-img"></div>
           <div id="pizza-info" class="item-info">
             <div id="pizza-name" class="item-name">
-              <h4>Cheese Pizza</h4>
-              <p>Classic cheese pizza</p>
+              <div class="item-desc">
+                <h4>Cheese Pizza</h4>
+                <p>Classic cheese pizza</p>
+                <select class="pizza-size">
+                  <option value="0">Select size:</option>
+                  <option value="small">Small</option>
+                  <option value="medium">Medium</option>
+                  <option value="large">Large</option>
+                  <option value="XL">Extra Large</option>
+                </select>
+              </div>
               <div class="price-div">
                 <button class="store-item-icon">Order Now</button>
                 <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
@@ -170,15 +223,32 @@
 
       <div id="wing-type" class="menu-type">
 
+        <div class="right-arrow" id="right-arrow2">
+          <span><i class="fas fa-angle-right"></i></span>
+        </div>
+
+        <div class="left-arrow" id="left-arrow2">
+          <span><i class="fas fa-angle-left"></i></span>
+        </div>
+
         <div id="wing1" class="wings item">
           <div id="wing-img" class="item-img"></div>
           <div id="wing-info" class="item-info">
             <div id="wing-name" class="item-name">
-              <h4>Buffalo Wings</h4>
-              <p>Classic cheese pizza</p>
+              <div class="item-desc">
+                <h4>Buffalo Wings</h4>
+                <p>Classic cheese pizza</p>
+                <select class="wing-amount">
+                  <option value="0">Select size:</option>
+                  <option value="6">6 Wings</option>
+                  <option value="12">12 Wings</option>
+                  <option value="24">24 Wings</option>
+                  <option value="50">50 Wings</option>
+                </select>
+              </div>
               <div class="price-div">
                 <button class="store-item-icon">Order Now</button>
-                <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+                <h5 class="store-item-value">$ <strong id="store-item-price">6.89</strong></h5>
               </div>
             </div>
           </div>
@@ -188,11 +258,20 @@
           <div id="wing-img" class="item-img"></div>
           <div id="wing-info" class="item-info">
             <div id="wing-name" class="item-name">
-              <h4>BBQ Wings</h4>
-              <p>Classic cheese pizza</p>
+              <div class="item-desc">
+                <h4>BBQ Wings</h4>
+                <p>Classic cheese pizza</p>
+                <select class="wing-amount">
+                  <option value="0">Select size:</option>
+                  <option value="6">6 Wings</option>
+                  <option value="12">12 Wings</option>
+                  <option value="24">24 Wings</option>
+                  <option value="50">50 Wings</option>
+                </select>
+              </div>
               <div class="price-div">
                 <button class="store-item-icon">Order Now</button>
-                <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+                <h5 class="store-item-value">$ <strong id="store-item-price">6.89</strong></h5>
               </div>
             </div>
           </div>
@@ -202,11 +281,20 @@
           <div id="wing-img" class="item-img"></div>
           <div id="wing-info" class="item-info">
             <div id="wing-name" class="item-name">
-              <h4>Honey Chipotle Wings</h4>
-              <p>Classic cheese pizza</p>
+              <div class="item-desc">
+                <h4>Honey Chipotle Wings</h4>
+                <p>Classic cheese pizza</p>
+                <select class="wing-amount">
+                  <option value="0">Select size:</option>
+                  <option value="6">6 Wings</option>
+                  <option value="12">12 Wings</option>
+                  <option value="24">24 Wings</option>
+                  <option value="50">50 Wings</option>
+                </select>
+              </div>
               <div class="price-div">
                 <button class="store-item-icon">Order Now</button>
-                <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+                <h5 class="store-item-value">$ <strong id="store-item-price">6.89</strong></h5>
               </div>
             </div>
           </div>
@@ -216,11 +304,20 @@
           <div id="wing-img" class="item-img"></div>
           <div id="wing-info" class="item-info">
             <div id="wing-name" class="item-name">
-              <h4>Boneless Wings</h4>
-              <p>Classic cheese pizza</p>
+              <div class="item-desc">
+                <h4>Boneless Wings</h4>
+                <p>Classic cheese pizza</p>
+                <select class="wing-amount">
+                  <option value="0">Select size:</option>
+                  <option value="6">6 Wings</option>
+                  <option value="12">12 Wings</option>
+                  <option value="24">24 Wings</option>
+                  <option value="50">50 Wings</option>
+                </select>
+              </div>
               <div class="price-div">
                 <button class="store-item-icon">Order Now</button>
-                <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+                <h5 class="store-item-value">$ <strong id="store-item-price">6.89</strong></h5>
               </div>
             </div>
           </div>
@@ -230,11 +327,20 @@
           <div id="wing-img" class="item-img"></div>
           <div id="wing-info" class="item-info">
             <div id="wing-name" class="item-name">
-              <h4>Boneless Wings</h4>
-              <p>Classic cheese pizza</p>
+              <div class="item-desc">
+                <h4>Boneless Wings</h4>
+                <p>Classic cheese pizza</p>
+                <select class="wing-amount">
+                  <option value="0">Select size:</option>
+                  <option value="6">6 Wings</option>
+                  <option value="12">12 Wings</option>
+                  <option value="24">24 Wings</option>
+                  <option value="50">50 Wings</option>
+                </select>
+              </div>
               <div class="price-div">
                 <button class="store-item-icon">Order Now</button>
-                <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+                <h5 class="store-item-value">$ <strong id="store-item-price">6.89</strong></h5>
               </div>
             </div>
           </div>
@@ -245,17 +351,27 @@
 
     <section id="sandwich-menu">
       <div id="sandwich-title" class="menu-title">
-        <h1 id="sandwiches">Sandwiches</h1>
+        <h1 id="sandwiches">Burgers & Sandwiches</h1>
       </div>
 
       <div id="sandwich-type" class="menu-type">
+
+        <div class="right-arrow" id="right-arrow3">
+          <span><i class="fas fa-angle-right"></i></span>
+        </div>
+
+        <div class="left-arrow" id="left-arrow3">
+          <span><i class="fas fa-angle-left"></i></span>
+        </div>
 
         <div id="sandwich1" class="sandwiches item">
           <div id="sandwich-img" class="item-img"></div>
           <div id="sandwich-info" class="item-info">
             <div id="sandwich-name" class="item-name">
-              <h4>Buffalo Wings</h4>
-              <p>Classic cheese pizza</p>
+              <div class="item-desc">
+                <h4>American Cheeseburger</h4>
+                <p>Classic cheeseburger</p>
+              </div>
               <div class="price-div">
                 <button class="store-item-icon">Order Now</button>
                 <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
@@ -268,8 +384,10 @@
           <div id="sandwich-img" class="item-img"></div>
           <div id="sandwich-info" class="item-info">
             <div id="sandwich-name" class="item-name">
-              <h4>BBQ Wings</h4>
-              <p>Classic cheese pizza</p>
+              <div class="item-desc">
+                <h4>Turkey Club</h4>
+                <p>Turkey Sandwich</p>
+              </div>
               <div class="price-div">
                 <button class="store-item-icon">Order Now</button>
                 <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
@@ -282,8 +400,10 @@
           <div id="sandwich-img" class="item-img"></div>
           <div id="sandwich-info" class="item-info">
             <div id="sandwich-name" class="item-name">
-              <h4>Honey Chipotle Wings</h4>
-              <p>Classic cheese pizza</p>
+              <div class="item-desc">
+                <h4>Bacon Cheeseburger</h4>
+                <p>Cheeseburger with added bacon</p>
+              </div>
               <div class="price-div">
                 <button class="store-item-icon">Order Now</button>
                 <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
@@ -296,8 +416,10 @@
           <div id="sandwich-img" class="item-img"></div>
           <div id="sandwich-info" class="item-info">
             <div id="sandwich-name" class="item-name">
-              <h4>Boneless Wings</h4>
-              <p>Classic cheese pizza</p>
+              <div class="item-desc">
+                <h4>Chicken Sandwich</h4>
+                <p>Fried chicken sandwich</p>
+              </div>
               <div class="price-div">
                 <button class="store-item-icon">Order Now</button>
                 <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
@@ -310,8 +432,10 @@
           <div id="sandwich-img" class="item-img"></div>
           <div id="sandwich-info" class="item-info">
             <div id="sandwich-name" class="item-name">
-              <h4>Boneless Wings</h4>
-              <p>Classic cheese pizza</p>
+              <div class="item-desc">
+                <h4>Veggie Burger</h4>
+                <p>Vegetarian hamburger</p>
+              </div>
               <div class="price-div">
                 <button class="store-item-icon">Order Now</button>
                 <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
@@ -330,12 +454,22 @@
 
       <div id="side-type" class="menu-type">
 
+        <div class="right-arrow" id="right-arrow4">
+          <span><i class="fas fa-angle-right"></i></span>
+        </div>
+
+        <div class="left-arrow" id="left-arrow4">
+          <span><i class="fas fa-angle-left"></i></span>
+        </div>
+
         <div id="side1" class="sides item">
           <div id="side-img" class="item-img"></div>
           <div id="side-info" class="item-info">
             <div id="side-name" class="item-name">
-              <h4>Buffalo Wings</h4>
-              <p>Classic cheese pizza</p>
+              <div class="item-desc">
+                <h4>Garlic Bread</h4>
+                <p>Oven baked garlic bread</p>
+              </div>
               <div class="price-div">
                 <button class="store-item-icon">Order Now</button>
                 <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
@@ -348,8 +482,10 @@
           <div id="side-img" class="item-img"></div>
           <div id="side-info" class="item-info">
             <div id="side-name" class="item-name">
-              <h4>BBQ Wings</h4>
-              <p>Classic cheese pizza</p>
+              <div class="item-desc">
+                <h4>Spinach Salad</h4>
+                <p>Spinach, chicken, and pomegranate salad</p>
+              </div>
               <div class="price-div">
                 <button class="store-item-icon">Order Now</button>
                 <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
@@ -362,8 +498,10 @@
           <div id="side-img" class="item-img"></div>
           <div id="side-info" class="item-info">
             <div id="side-name" class="item-name">
-              <h4>Honey Chipotle Wings</h4>
-              <p>Classic cheese pizza</p>
+              <div class="item-desc">
+                <h4>Breadsticks</h4>
+                <p>Breadsticks with dipping sauce</p>
+              </div>
               <div class="price-div">
                 <button class="store-item-icon">Order Now</button>
                 <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
@@ -376,8 +514,10 @@
           <div id="side-img" class="item-img"></div>
           <div id="side-info" class="item-info">
             <div id="side-name" class="item-name">
-              <h4>Boneless Wings</h4>
-              <p>Classic cheese pizza</p>
+              <div class="item-desc">
+                <h4>Macaroni and Cheese</h4>
+                <p>Baked maacaroni</p>
+              </div>
               <div class="price-div">
                 <button class="store-item-icon">Order Now</button>
                 <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
@@ -390,8 +530,10 @@
           <div id="side-img" class="item-img"></div>
           <div id="side-info" class="item-info">
             <div id="side-name" class="item-name">
-              <h4>Boneless Wings</h4>
-              <p>Classic cheese pizza</p>
+              <div class="item-desc">
+                <h4>Jalapeno Poppers</h4>
+                <p>Jalapeno stuffed with cheese and wrapped in bacon</p>
+              </div>
               <div class="price-div">
                 <button class="store-item-icon">Order Now</button>
                 <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
@@ -411,12 +553,22 @@
 
       <div id="dessert-type" class="menu-type">
 
+        <div class="right-arrow" id="right-arrow5">
+          <span><i class="fas fa-angle-right"></i></span>
+        </div>
+
+        <div class="left-arrow" id="left-arrow5">
+          <span><i class="fas fa-angle-left"></i></span>
+        </div>
+
         <div id="dessert1" class="desserts item">
           <div id="dessert-img" class="item-img"></div>
           <div id="dessert-info" class="item-info">
             <div id="dessert-name" class="item-name">
-              <h4>Buffalo Wings</h4>
-              <p>Classic cheese pizza</p>
+              <div class="item-desc">
+                <h4>Chocolate Chip Cookie</h4>
+                <p>Chocolate chip cookies</p>
+              </div>
               <div class="price-div">
                 <button class="store-item-icon">Order Now</button>
                 <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
@@ -429,8 +581,10 @@
           <div id="dessert-img" class="item-img"></div>
           <div id="dessert-info" class="item-info">
             <div id="dessert-name" class="item-name">
-              <h4>BBQ Wings</h4>
-              <p>Classic cheese pizza</p>
+              <div class="item-desc">
+                <h4>Brownie</h4>
+                <p>Brownie with chocolate syrup</p>
+              </div>
               <div class="price-div">
                 <button class="store-item-icon">Order Now</button>
                 <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
@@ -443,8 +597,10 @@
           <div id="dessert-img" class="item-img"></div>
           <div id="dessert-info" class="item-info">
             <div id="dessert-name" class="item-name">
-              <h4>Honey Chipotle Wings</h4>
-              <p>Classic cheese pizza</p>
+              <div class="item-desc">
+                <h4>Chocolate Cake</h4>
+                <p>Threee-layer chocolate cake</p>
+              </div>
               <div class="price-div">
                 <button class="store-item-icon">Order Now</button>
                 <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
@@ -457,8 +613,10 @@
           <div id="dessert-img" class="item-img"></div>
           <div id="dessert-info" class="item-info">
             <div id="dessert-name" class="item-name">
-              <h4>Boneless Wings</h4>
-              <p>Classic cheese pizza</p>
+              <div class="item-desc">
+                <h4>Milkshake</h4>
+                <p>Milkshakes in many flavors</p>
+              </div>
               <div class="price-div">
                 <button class="store-item-icon">Order Now</button>
                 <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
@@ -471,8 +629,10 @@
           <div id="dessert-img" class="item-img"></div>
           <div id="dessert-info" class="item-info">
             <div id="dessert-name" class="item-name">
-              <h4>Boneless Wings</h4>
-              <p>Classic cheese pizza</p>
+              <div class="item-desc">
+                <h4>Vanilla Sundae</h4>
+                <p>One or two scoop sundae</p>
+              </div>
               <div class="price-div">
                 <button class="store-item-icon">Order Now</button>
                 <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
@@ -491,12 +651,22 @@
 
       <div id="drink-type" class="menu-type">
 
+        <div class="right-arrow" id="right-arrow6">
+          <span><i class="fas fa-angle-right"></i></span>
+        </div>
+
+        <div class="left-arrow" id="left-arrow6">
+          <span><i class="fas fa-angle-left"></i></span>
+        </div>
+
         <div id="drink1" class="drinks item">
           <div id="drink-img" class="item-img"></div>
           <div id="drink-info" class="item-info">
             <div id="drink-name" class="item-name">
-              <h4>Buffalo Wings</h4>
-              <p>Classic cheese pizza</p>
+              <div class="item-desc">
+                <h4>Coca Cola</h4>
+                <p>16oz Coca Cola</p>
+              </div>
               <div class="price-div">
                 <button class="store-item-icon">Order Now</button>
                 <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
@@ -509,8 +679,10 @@
           <div id="drink-img" class="item-img"></div>
           <div id="drink-info" class="item-info">
             <div id="drink-name" class="item-name">
-              <h4>BBQ Wings</h4>
-              <p>Classic cheese pizza</p>
+              <div class="item-desc">
+                <h4>Dr. Pepper</h4>
+                <p>16oz Dr. Pepper</p>
+              </div>
               <div class="price-div">
                 <button class="store-item-icon">Order Now</button>
                 <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
@@ -523,8 +695,10 @@
           <div id="drink-img" class="item-img"></div>
           <div id="drink-info" class="item-info">
             <div id="drink-name" class="item-name">
-              <h4>Honey Chipotle Wings</h4>
-              <p>Classic cheese pizza</p>
+              <div class="item-desc">
+                <h4>Lemonade</h4>
+                <p>Homemade lemonade</p>
+              </div>
               <div class="price-div">
                 <button class="store-item-icon">Order Now</button>
                 <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
@@ -537,8 +711,10 @@
           <div id="drink-img" class="item-img"></div>
           <div id="drink-info" class="item-info">
             <div id="drink-name" class="item-name">
-              <h4>Boneless Wings</h4>
-              <p>Classic cheese pizza</p>
+              <div class="item-desc">
+                <h4>Iced Tea</h4>
+                <p>Iced tea</p>
+              </div>
               <div class="price-div">
                 <button class="store-item-icon">Order Now</button>
                 <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
@@ -551,8 +727,10 @@
           <div id="drink-img" class="item-img"></div>
           <div id="drink-info" class="item-info">
             <div id="drink-name" class="item-name">
-              <h4>Boneless Wings</h4>
-              <p>Classic cheese pizza</p>
+              <div class="item-desc">
+                <h4>Water</h4>
+                <p>Bottle of water</p>
+              </div>
               <div class="price-div">
                 <button class="store-item-icon">Order Now</button>
                 <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>

@@ -44,9 +44,37 @@
             <a class="nav-link" href="#">About Us <span class="sr-only">(current)</span></a>
           </li>
         </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Coupon Code" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Apply</button>
+        </form>
+      </div>
+      <div id="cart-info" class="nav-info align-items-center cart-info d-flex justify-content-between mx-lg-5">
+        <span class="cart-info__icon mr-lg-3"><i class="fas fa-shopping-cart"></i></span>
+        <p class="mb-0 text-capitalize"><span id="item-count">0 </span> items - $<span class="item-total">0</span>
+        </p>
       </div>
     </nav>
   </div>
+
+  <div id="cart" class="cart">
+    <!-- cart total -->
+    <div class="cart-total-container d-flex justify-content-around text-capitalize mt-5">
+      <h5>total</h5>
+      <h5> $ <strong id="cart-total" class="font-weight-bold">0.00</strong> </h5>
+    </div>
+    <!--end cart total -->
+    <!-- cart buttons -->
+
+    <div class="cart-buttons-container mt-3 d-flex justify-content-between">
+      <h3 class="cart-close">X</h3>
+      <a href="#" id="clear-cart" class="btn btn-outline-secondary btn-black text-uppercase">clear cart</a>
+      <a href="#" class="btn btn-outline-secondary text-uppercase btn-pink">checkout</a>
+    </div>
+    <!--end of  cart buttons -->
+    <!--  -->
+  </div>
+
 
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
