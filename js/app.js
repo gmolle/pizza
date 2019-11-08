@@ -335,7 +335,7 @@ for (let i = 0; i < pizzaSize.length; i++) {
       price.textContent = '12.99';
     } else if (size == 'large') {
       price.textContent = '14.99';
-    } else if (size == 'extra-large') {
+    } else if (size == 'XL') {
       price.textContent = '16.99';
     }
 
