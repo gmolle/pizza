@@ -286,39 +286,39 @@ window.onload = function () {
 
 
 
-// Functionality for left/right arrows on menu horizontal scrolling
-// const rightArrow = document.querySelectorAll('.right-arrow');
-// for (let i = 0; i < rightArrow.length; i++) {
-//   rightArrow[i].addEventListener('click', () => {
-//     const container = document.querySelectorAll('.menu-type');
+//Functionality for left / right arrows on menu horizontal scrolling
+const rightArrow = document.querySelectorAll('.right-arrow');
+for (let i = 0; i < rightArrow.length; i++) {
+  rightArrow[i].addEventListener('click', () => {
+    const container = document.querySelectorAll('.menu-type');
 
-//     sideScroll(container[i], 'right', 15, 360, 30);
-//   })
-// }
+    sideScroll(container[i], 'right', 15, 360, 30);
+  })
+}
 
-// const leftArrow = document.querySelectorAll('.left-arrow');
-// for (let i = 0; i < leftArrow.length; i++) {
-//   leftArrow[i].addEventListener('click', () => {
-//     const container = document.querySelectorAll('.menu-type');
+const leftArrow = document.querySelectorAll('.left-arrow');
+for (let i = 0; i < leftArrow.length; i++) {
+  leftArrow[i].addEventListener('click', () => {
+    const container = document.querySelectorAll('.menu-type');
 
-//     sideScroll(container[i], 'left', 15, 360, 30);
-//   })
-// }
+    sideScroll(container[i], 'left', 15, 360, 30);
+  })
+}
 
-// function sideScroll(element, direction, speed, distance, step) {
-//   scrollAmount = 0;
-//   let slideTimer = setInterval(function () {
-//     if (direction == 'left') {
-//       element.scrollLeft -= step;
-//     } else {
-//       element.scrollLeft += step;
-//     }
-//     scrollAmount += step;
-//     if (scrollAmount >= distance) {
-//       window.clearInterval(slideTimer);
-//     }
-//   }, speed);
-// }
+function sideScroll(element, direction, speed, distance, step) {
+  scrollAmount = 0;
+  let slideTimer = setInterval(function () {
+    if (direction == 'left') {
+      element.scrollLeft -= step;
+    } else {
+      element.scrollLeft += step;
+    }
+    scrollAmount += step;
+    if (scrollAmount >= distance) {
+      window.clearInterval(slideTimer);
+    }
+  }, speed);
+}
 
 
 // Adjust prices for different pizza sizes
@@ -406,5 +406,3 @@ couponForm.addEventListener('submit', (e) => {
   // Resets coupon insert value to being empty
   coupon.value = '';
 });
-
-

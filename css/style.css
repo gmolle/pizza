@@ -655,6 +655,12 @@
   overflow-y: hidden;
   margin-bottom: 1rem;
   padding-bottom: 0.25rem;
+  -webkit-transition: 0.15s all;
+  transition: 0.15s all;
+}
+
+#menu .menu-type:hover .arrows {
+  opacity: 1;
 }
 
 #menu .item-img {
@@ -844,6 +850,58 @@
   -ms-grid-row: 1;
   -ms-grid-column: 4;
   grid-area: pizza4;
+}
+
+.arrow {
+  background: rgba(48, 48, 48, 0.5);
+  position: absolute;
+  border-radius: 50%;
+  height: 44px;
+  width: 44px;
+  text-align: center;
+  top: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.15s all;
+  transition: 0.15s all;
+}
+
+.arrow span {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 2rem;
+}
+
+.arrow:hover {
+  cursor: pointer;
+  background: rgba(48, 48, 48, 0.85);
+}
+
+.arrow:hover span {
+  color: white;
+}
+
+.arrows {
+  position: absolute;
+  height: 54%;
+  width: 75%;
+  opacity: 0;
+  -webkit-transition: .15s all;
+  transition: .15s all;
+}
+
+.right-arrow {
+  right: 1%;
+}
+
+.left-arrow {
+  left: 1%;
 }
 
 .item-desc select {
@@ -1685,7 +1743,7 @@
   }
 }
 
-@media screen and (max-height: 650px) and (max-width: 800px) {
+@media screen and (max-height: 650px) and (max-width: 1000px) {
   #deals-page .deal-img {
     height: 30%;
   }
@@ -1714,6 +1772,9 @@
   #menu .menu-type .item-name p {
     font-size: 0.9rem;
   }
+  #menu .menu-type .item-name button {
+    width: 75% !important;
+  }
 }
 
 @media screen and (max-height: 700px) and (max-width: 400px) {
@@ -1734,10 +1795,10 @@
     width: 75%;
   }
   #menu .menu-type .item-img {
-    height: 0%;
+    height: 30%;
   }
   #menu .menu-type .item-info {
-    height: 100%;
+    height: 70%;
   }
   #menu .menu-type .item-name h4 {
     font-size: 1.2rem !important;
