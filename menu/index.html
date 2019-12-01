@@ -68,12 +68,22 @@
     <div class="cart-buttons-container mt-3 d-flex justify-content-between">
       <h3 class="cart-close">X</h3>
       <a href="#" id="clear-cart" class="btn btn-outline-secondary btn-black text-uppercase">clear cart</a>
-      <a href="#" class="btn btn-outline-secondary text-uppercase btn-pink">checkout</a>
+      <a href="#" id="checkout" class="btn btn-outline-secondary text-uppercase" data-toggle="modal"
+        data-target="#exampleModalCenter">checkout</a>
     </div>
     <!--end of  cart buttons -->
     <!--  -->
   </div>
 
+
+  <div id="menu-nav">
+    <a href="#pizza">Pizza</a>
+    <a href="#wings">Wings</a>
+    <a href="#sandwiches">Burgers & Sandwiches</a>
+    <a href="#sides">Sides</a>
+    <a href="#dessert">Dessert</a>
+    <a href="#drinks">Drinks</a>
+  </div>
 
   <!-- MENU PAGE -->
 
@@ -81,25 +91,27 @@
 
     <section id="pizza-menu">
       <div id="menu-title" class="menu-title">
-        <h1 id="pizza">Pizza</h1>
+        <div class="title" id="pizza">
+          <h1>Pizza</h1>
+        </div>
       </div>
 
       <div id="pizza-type" class="menu-type">
 
         <div class="arrows">
           <div class="right-arrow arrow" id="right-arrow1">
-            <span><i class="fas fa-angle-right"></i></span>
+            <span><i class="fas fa-caret-right"></i></span>
           </div>
 
           <div class="left-arrow arrow" id="left-arrow1">
-            <span><i class="fas fa-angle-left"></i></span>
+            <span><i class="fas fa-caret-left"></i></span>
           </div>
         </div>
 
         <div id="pizza1" class="pizza item">
           <div id="pizza-img" class="item-img"></div>
           <div id="pizza-info" class="item-info">
-            <div id="pizza-name" class="item-name store-item-icon">
+            <div id="pizza-name" class="item-name">
               <div class="item-desc">
                 <h4>Cheese Pizza</h4>
                 <p>Classic cheese pizza</p>
@@ -217,18 +229,20 @@
 
     <section id="wings-menu">
       <div id="wings-title" class="menu-title">
-        <h1 id="wings">Wings</h1>
+        <div class="title" id="wings">
+          <h1>Wings</h1>
+        </div>
       </div>
 
       <div id="wing-type" class="menu-type">
 
         <div class="arrows">
           <div class="right-arrow arrow" id="right-arrow2">
-            <span><i class="fas fa-angle-right"></i></span>
+            <span><i class="fas fa-caret-right"></i></span>
           </div>
 
           <div class="left-arrow arrow" id="left-arrow2">
-            <span><i class="fas fa-angle-left"></i></span>
+            <span><i class="fas fa-caret-left"></i></span>
           </div>
         </div>
 
@@ -352,18 +366,20 @@
 
     <section id="sandwich-menu">
       <div id="sandwich-title" class="menu-title">
-        <h1 id="sandwiches">Burgers & Sandwiches</h1>
+        <div class="title" id="sandwiches">
+          <h1>Burgers & Sandwiches</h1>
+        </div>
       </div>
 
       <div id="sandwich-type" class="menu-type">
 
         <div class="arrows">
           <div class="right-arrow arrow" id="right-arrow3">
-            <span><i class="fas fa-angle-right"></i></span>
+            <span><i class="fas fa-caret-right"></i></span>
           </div>
 
           <div class="left-arrow arrow" id="left-arrow3">
-            <span><i class="fas fa-angle-left"></i></span>
+            <span><i class="fas fa-caret-left"></i></span>
           </div>
         </div>
 
@@ -452,18 +468,20 @@
 
     <section id="sides-menu">
       <div id="side-title" class="menu-title">
-        <h1 id="sides">Sides</h1>
+        <div class="title" id="sides">
+          <h1>Sides</h1>
+        </div>
       </div>
 
       <div id="side-type" class="menu-type">
 
         <div class="arrows">
           <div class="right-arrow arrow" id="right-arrow4">
-            <span><i class="fas fa-angle-right"></i></span>
+            <span><i class="fas fa-caret-right"></i></span>
           </div>
 
           <div class="left-arrow arrow" id="left-arrow4">
-            <span><i class="fas fa-angle-left"></i></span>
+            <span><i class="fas fa-caret-left"></i></span>
           </div>
         </div>
 
@@ -553,18 +571,20 @@
 
     <section id="dessert-menu">
       <div id="dessert-title" class="menu-title">
-        <h1 id="dessert">Dessert</h1>
+        <div class="title" id="dessert">
+          <h1>Dessert</h1>
+        </div>
       </div>
 
       <div id="dessert-type" class="menu-type">
 
         <div class="arrows">
           <div class="right-arrow arrow" id="right-arrow5">
-            <span><i class="fas fa-angle-right"></i></span>
+            <span><i class="fas fa-caret-right"></i></span>
           </div>
 
           <div class="left-arrow arrow" id="left-arrow5">
-            <span><i class="fas fa-angle-left"></i></span>
+            <span><i class="fas fa-caret-left"></i></span>
           </div>
         </div>
 
@@ -653,18 +673,20 @@
 
     <section id="drink-menu">
       <div id="drink-title" class="menu-title">
-        <h1 id="drinks">Drinks</h1>
+        <div class="title" id="drinks">
+          <h1>Drinks</h1>
+        </div>
       </div>
 
       <div id="drink-type" class="menu-type">
 
         <div class="arrows">
           <div class="right-arrow arrow" id="right-arrow6">
-            <span><i class="fas fa-angle-right"></i></span>
+            <span><i class="fas fa-caret-right"></i></span>
           </div>
 
           <div class="left-arrow arrow" id="left-arrow6">
-            <span><i class="fas fa-angle-left"></i></span>
+            <span><i class="fas fa-caret-left"></i></span>
           </div>
         </div>
 
@@ -750,6 +772,28 @@
     </section>
   </div>
 
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Checkout</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div id="order"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn closeBtn" data-dismiss="modal">Close</button>
+          <button type="button" class="btn checkoutBtn">Submit Order</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 

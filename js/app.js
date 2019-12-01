@@ -30,6 +30,7 @@ cartInfo.addEventListener('mouseout', () => {
   const cart = document.querySelector('#cart');
   const cartClose = document.querySelector('.cart-close');
 
+
   cartInfo.addEventListener('click', () => {
     cart.classList.toggle('show-cart');
   });
@@ -108,20 +109,22 @@ function cartAction() {
 
           let name = e.target.parentElement.previousElementSibling.children[0].textContent;
           let price2 = e.target.nextElementSibling.children[0].textContent;
+          // let image = e.target.parentElement.parentElement.parentElement.previousElementSibling;
 
+          // console.log(image.style.background);
           item.name = name;
           item.price = price2;
+          // item.image = image;
 
 
           // Adds item options to the cart
           let option = e.target.parentElement.previousElementSibling.children[2];
-          // item.option = option.value;
           function options() {
             if (option) {
               item.option = option.value;
               return item.option + ' - ';
             } else {
-              items.push(item);
+              // items.push(item);
               return '';
             }
           }
@@ -129,7 +132,7 @@ function cartAction() {
           items.push(item);
 
           // console.log(item);
-          // console.log(items);
+          console.log(items);
 
           localStorage.setItem('cart', JSON.stringify(items));
 
@@ -163,6 +166,19 @@ function cartAction() {
 
           e.stopPropagation();
           e.preventDefault();
+
+
+          const order = document.querySelector('#order');
+          order.innerHTML +=
+            `<div class="item-text">
+            <p id="cart-item-title" class="font-weight-bold mb-0">${options()}${item.name}</p>
+            <span>$<span id="cart-item-price" class="cart-item-price" class="mb-0">${item.price}</span></span>
+            <a href="#" id='cart-item-remove' class="cart-item-remove">
+            <i class="fas fa-trash"></i>
+          </a>
+          </div>`;
+
+
         }
       }
     });
@@ -189,11 +205,11 @@ function showTotals() {
   // If statement to change "items" to "item" if there is only 1 item in the cart
   if (total.length == 1) {
     document.querySelector('#cart-info p').innerHTML =
-      `<p class="mb-0 text-capitalize"><span id="item-count">1 </span> item - $<span class="item-total">0</span>`
+      `<p class="mb-0 text-capitalize" > <span id="item-count">1 </span> item - $ <span class="item-total" > 0</span > `
   }
   else {
     document.querySelector('#cart-info p').innerHTML =
-      `<p class="mb-0 text-capitalize"><span id="item-count">0 </span> items - $<span class="item-total">0</span>`
+      `<p class="mb-0 text-capitalize" > <span id="item-count">0 </span> items - $ <span class="item-total" > 0</span > `
   }
 
   document.querySelector('#cart-total').textContent = finalMoney;
@@ -252,14 +268,28 @@ window.onload = function () {
         const cartStoragePrice = cartStorage[i].price;
         const cartStorageOption = cartStorage[i].option;
 
+        // console.log(cartStorageOption);
+
+        // // Adds item options to the cart
+        // let option = e.target.parentElement.previousElementSibling.children[2];
+        // // item.option = option.value;
+        // function options() {
+        //   if (option) {
+        //     item.option = option.value;
+        //     return item.option + ' - ';
+        //   } else {
+        //     items.push(item);
+        //     return '';
+        //   }
+        // }
 
 
         const cartItem = document.createElement('div');
         cartItem.classList.add('cart-item', 'd-flex', 'justify-content-between', 'text-capitalize', 'my-3')
         cartItem.innerHTML =
-          // `<img src="${item.img}" class="img-fluid rounded-circle" id="item-img" alt="">
+          // `< img src = "${item.img}" class="img-fluid rounded-circle" id = "item-img" alt = "" >
           `<div class="item-text">
-              <p id="cart-item-title" class="font-weight-bold mb-0">${cartStorageName}</p>
+              <p id="cart-item-title" class="font-weight-bold mb-0">${cartStorageOption} - ${cartStorageName}</p>
               <span>$</span>
               <span id="cart-item-price" class="cart-item-price" class="mb-0">${cartStoragePrice}</span>
             </div>
@@ -406,3 +436,87 @@ couponForm.addEventListener('submit', (e) => {
   // Resets coupon insert value to being empty
   coupon.value = '';
 });
+
+
+
+const menuType = document.querySelectorAll('.menu-type');
+
+for (let i = 0; i < menuType.length; i++) {
+  menuType[i].addEventListener('scroll', () => {
+
+    let scrollValue = menuType[i].scrollLeft;
+    // console.log(scrollValue);
+
+    if (scrollValue > 150) {
+      leftArrow[i].style.opacity = '1';
+    } else {
+      leftArrow[i].style.opacity = '0';
+    }
+
+    if (scrollValue < 100) {
+      rightArrow[i].style.opacity = '1'
+    } else {
+      rightArrow[i].style.opacity = '0'
+    }
+
+    if (rightArrow[i].style.opacity == '0') {
+      rightArrow[i].style.cursor = 'default';
+    } else {
+      rightArrow[i].style.cursor = 'pointer';
+    }
+
+    if (leftArrow[i].style.opacity == '0') {
+      leftArrow[i].style.cursor = 'default';
+    } else {
+      leftArrow[i].style.cursor = 'pointer';
+    }
+  });
+}
+
+
+// Add 'active' class functionality for the menu page navigation bar
+const menuNavigation = document.querySelector('#menu-nav');
+const menuNavigationLinks = document.querySelectorAll('#menu-nav a');
+
+for (let i = 0; i < menuNavigationLinks.length; i++) {
+  menuNavigationLinks[i].addEventListener('click', (e) => {
+
+    // Removes 'active' classes on click from previous active nav link
+    const activeMenuNav = document.querySelectorAll('.active-menu-nav');
+    if (activeMenuNav.length > 0) {
+      for (let i = 0; i < activeMenuNav.length; i++) {
+        activeMenuNav[i].classList.remove('active-menu-nav');
+      }
+    }
+    // Adds 'active' class to the target in the nav that is clicked
+    e.target.classList.toggle('active-menu-nav');
+  });
+}
+
+// Functionality for the menu navigation to stay fixed to top of screen
+// after a certain scroll position
+window.addEventListener('scroll', () => {
+  let scrollAmt = window.scrollY;
+
+  if (scrollAmt >= 150) {
+    menuNavigation.classList.add('scrolled');
+  } else {
+    menuNavigation.classList.remove('scrolled');
+  }
+});
+
+
+// Closes cart if the checkout modal is open
+const body = document.querySelector('body');
+const cart2 = document.querySelector('#cart');
+function closeCart() {
+  if (body.classList.contains('modal-open')) {
+    cart2.classList.remove('show-cart');
+  }
+}
+setInterval(() => {
+  closeCart();
+}, 100);
+
+
+

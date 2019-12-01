@@ -31,6 +31,10 @@
   font-family: 'Roboto', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 #home-header {
   background: #e44c15;
   display: -webkit-box;
@@ -157,6 +161,108 @@
   border-bottom: 2px solid black;
 }
 
+#menu-nav {
+  margin-top: 0.5rem;
+  text-align: center;
+  width: 100%;
+  background: white;
+  z-index: 9999;
+}
+
+#menu-nav a {
+  margin-right: 1rem;
+  border-right: 1px solid #7c7c7c;
+  padding-right: 1rem;
+  color: #7c7c7c;
+  -webkit-transition: .15s all;
+  transition: .15s all;
+  margin-bottom: 2rem;
+}
+
+#menu-nav a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+#menu-nav a:first-of-type {
+  border-left: 1px solid #7c7c7c;
+  padding-left: 1rem;
+}
+
+#menu-nav a:last-of-type {
+  margin-right: 2rem;
+}
+
+#menu-nav .active-menu-nav {
+  color: black;
+}
+
+.scrolled {
+  position: fixed;
+  top: 0;
+  margin-top: 0 !important;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+}
+
+.modal-body #order .item-text {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.modal-body #order .item-text a {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  position: absolute;
+}
+
+.modal-body #order .item-text a:hover {
+  color: red;
+}
+
+.modal-footer .checkoutBtn {
+  border-radius: 0.5rem;
+  border-color: #e44c15;
+  padding: 0.5rem;
+  font-weight: 500;
+  background: white;
+  -webkit-transition: 0.15s all;
+  transition: 0.15s all;
+  font-size: 1rem;
+}
+
+.modal-footer .checkoutBtn:hover {
+  cursor: pointer;
+  color: white;
+  background: #e44c15;
+}
+
+.modal-footer .closeBtn {
+  border-radius: 0.5rem;
+  color: #6c757d;
+  background-color: transparent;
+  border-color: #6c757d;
+  -webkit-transition: 0.15s all;
+  transition: 0.15s all;
+  padding: 0.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.modal-footer .closeBtn:hover {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
 .cart-info {
   border: 0.1rem solid #e44c15;
   border-radius: 0.25rem;
@@ -178,7 +284,7 @@
 }
 
 .cart {
-  position: absolute;
+  position: fixed;
   min-height: 25vh;
   top: 0;
   right: 0;
@@ -187,7 +293,7 @@
   background: lightgray;
   width: 0;
   overflow: hidden;
-  z-index: 999;
+  z-index: 10000;
 }
 
 .cart .cart-total-container h5 #discountAmt {
@@ -627,14 +733,39 @@
 
 #menu .menu-title {
   margin: 0 auto;
-  margin-top: 3rem;
+  margin-top: 2rem;
+  width: 100%;
+  height: 40vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+#menu .menu-title .title {
   width: 75%;
+  height: 100%;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#menu .menu-title .title h1 {
+  color: white;
+  font-size: 5rem;
+  text-align: center;
+  text-shadow: 1px 1px 2px black;
+}
+
+#menu .menu-title:first-of-type {
+  margin-top: 0.5rem;
 }
 
 #menu .menu-type {
@@ -653,14 +784,18 @@
   grid-auto-flow: column;
   overflow-x: auto;
   overflow-y: hidden;
-  margin-bottom: 1rem;
+  margin-top: 2rem;
   padding-bottom: 0.25rem;
   -webkit-transition: 0.15s all;
   transition: 0.15s all;
 }
 
-#menu .menu-type:hover .arrows {
+#menu .menu-type:hover .right-arrow {
   opacity: 1;
+}
+
+#menu .menu-type:last-of-type {
+  margin-bottom: 2rem;
 }
 
 #menu .item-img {
@@ -774,7 +909,12 @@
   background: #e44c15;
 }
 
+.item {
+  z-index: 2;
+}
+
 #pizza-menu #menu-title {
+  background-image: url(../img/pizza-home2.jpg);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -786,12 +926,12 @@
 
 #pizza-menu #menu-title h1 {
   text-transform: uppercase;
+  color: white;
 }
 
 #pizza-menu #menu-title span {
   width: 100%;
   background: #f84e4e;
-  border-radius: 0.5rem;
   color: white;
   padding-left: 1rem;
   -webkit-animation: 1s fadeIn;
@@ -871,6 +1011,8 @@
           align-items: center;
   -webkit-transition: 0.15s all;
   transition: 0.15s all;
+  margin-top: 0.25rem;
+  z-index: 3;
 }
 
 .arrow span {
@@ -891,17 +1033,18 @@
   position: absolute;
   height: 54%;
   width: 75%;
-  opacity: 0;
   -webkit-transition: .15s all;
   transition: .15s all;
 }
 
 .right-arrow {
-  right: 1%;
+  right: 0.5%;
+  opacity: 0;
 }
 
 .left-arrow {
-  left: 1%;
+  left: 0.5%;
+  opacity: 0;
 }
 
 .item-desc select {
@@ -910,6 +1053,10 @@
 
 .item-desc select:focus {
   outline: none;
+}
+
+#wings-menu #wings-title {
+  background-image: url(../img/wings-home.jpg);
 }
 
 #wings-menu #wings-title h1 {
@@ -946,6 +1093,10 @@
   -ms-grid-row: 1;
   -ms-grid-column: 4;
   grid-area: wing4;
+}
+
+#sandwich-menu #sandwich-title {
+  background-image: url(../img/burger-home.jpg);
 }
 
 #sandwich-menu #sandwich-title h1 {
@@ -998,6 +1149,10 @@
 
 #sandwich-menu #sandwich5 #sandwich-img {
   background-image: url(../img/veggie-burger.jpg);
+}
+
+#sides-menu #side-title {
+  background-image: url(../img/side-home.jpg);
 }
 
 #sides-menu #side-title h1 {
@@ -1056,6 +1211,10 @@
   background-image: url(../img/jalapeno-popper.jpg);
 }
 
+#dessert-menu #dessert-title {
+  background-image: url(../img/dessert-home.jpg);
+}
+
 #dessert-menu #dessert-title h1 {
   text-transform: uppercase;
 }
@@ -1106,6 +1265,10 @@
 
 #dessert-menu #dessert5 #dessert-img {
   background-image: url(../img/Sundae.jpg);
+}
+
+#drink-menu #drink-title {
+  background-image: url(../img/drink-home.jpg);
 }
 
 #drink-menu #drink-title h1 {
@@ -1505,6 +1668,10 @@
   }
   #menu .menu-type .item-info .item-name .item-desc select {
     width: 75%;
+  }
+  #menu #sandwich-menu #sandwich-title h1 {
+    font-size: 2.5rem;
+    width: 100%;
   }
   #menu #pizza-type {
         grid-template-areas: "pizza1 pizza2" "pizza3 pizza4";
