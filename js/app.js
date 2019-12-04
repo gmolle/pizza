@@ -1,10 +1,8 @@
 const item = document.querySelectorAll('.nav-item');
 const link = document.querySelectorAll('.nav-link');
 
-const cart = document.querySelector('.fa-shopping-cart');
+const cartIcon = document.querySelector('.fa-shopping-cart');
 const cartInfo = document.querySelector('.cart-info');
-
-const pathname = window.location.pathname;
 
 for (let i = 0; i < item.length; i++) {
   if (item[i].classList.contains('active')) {
@@ -13,23 +11,24 @@ for (let i = 0; i < item.length; i++) {
   }
 }
 
-
 cartInfo.addEventListener('mouseover', () => {
-  cart.style.color = 'white';
+  cartIcon.style.color = 'white';
 });
 
 cartInfo.addEventListener('mouseout', () => {
-  cart.style.color = '#e44c15';
+  cartIcon.style.color = '#e44c15';
 });
 
+const menuNavCart = document.querySelector('#nav-cart');
+menuNavCart.addEventListener('click', () => {
+  cart.classList.toggle('show-cart');
+});
 
 // show cart
-
 (function () {
   const cartInfo = document.querySelector('#cart-info');
   const cart = document.querySelector('#cart');
   const cartClose = document.querySelector('.cart-close');
-  const menuNavCart = document.querySelector('#nav-cart');
 
   cartInfo.addEventListener('click', () => {
     cart.classList.toggle('show-cart');
@@ -38,15 +37,7 @@ cartInfo.addEventListener('mouseout', () => {
   cartClose.addEventListener('click', () => {
     cart.classList.toggle('show-cart');
   });
-
-  if (pathname == '/menu/') {
-    menuNavCart.addEventListener('click', () => {
-      cart.classList.toggle('show-cart');
-    });
-  }
-
 })();
-
 
 // Array for items to be pushed to local storage
 const items = [];
@@ -57,7 +48,6 @@ function cartAction() {
 
   cartBtn.forEach(function (btn) {
     btn.addEventListener('click', (e) => {
-
 
       // Select the selection for certain menu items
       const selection = e.target.parentElement.previousElementSibling.lastElementChild;
@@ -120,7 +110,6 @@ function cartAction() {
           item.name = name;
           item.price = price2;
 
-
           // Adds item options to the cart
           let option = e.target.parentElement.previousElementSibling.children[2] || '';
           // console.log(option.value);
@@ -138,9 +127,6 @@ function cartAction() {
 
           // console.log(item);
           // console.log(items);
-
-
-
 
           localStorage.setItem('cart', JSON.stringify(items));
 
@@ -163,7 +149,6 @@ function cartAction() {
         </div>`;
 
           cartItem.getElementsByClassName('fa-trash')[0].addEventListener('click', removeItem)
-
 
           // select cart
           const cart = document.querySelector('#cart');
@@ -263,7 +248,6 @@ function removeAllItems() {
 
 }
 
-
 // Add items to cart on refresh or change of page from local storage
 window.onload = function () {
 
@@ -279,7 +263,6 @@ window.onload = function () {
         const cartStorageOption = cartStorage[i].option;
 
         // console.log(cartStorageOption);
-
 
         function options() {
           if (cartStorageOption === undefined) {
@@ -322,8 +305,6 @@ window.onload = function () {
         </div>`;
       }
       showTotals();
-
-
     }
     cartStorageRetrieve();
   }
@@ -331,8 +312,6 @@ window.onload = function () {
 
 // window.localStorage.clear();
 // console.log(localStorage);
-
-
 
 //Functionality for left / right arrows on menu horizontal scrolling
 const rightArrow = document.querySelectorAll('.right-arrow');
@@ -368,7 +347,6 @@ function sideScroll(element, direction, speed, distance, step) {
   }, speed);
 }
 
-
 // Adjust prices for different pizza sizes
 const pizzaSize = document.querySelectorAll('.pizza-size');
 
@@ -379,13 +357,10 @@ for (let i = 0; i < pizzaSize.length; i++) {
     const price = e.target.parentElement.nextElementSibling.children[1].children[0];
     const name = e.target.parentElement.children[0].textContent;
 
-
-
     // Remove the "select size:" option after changing sizes once
     if (e.target.length >= 5) {
       e.target.remove(e.target.children[0]);
     }
-
 
     if (size === '0') {
       // price.style.visibility = 'hidden';
@@ -439,7 +414,6 @@ for (let i = 0; i < wingAmount.length; i++) {
     if (e.target.length >= 5) {
       e.target.remove(e.target.children[0]);
     }
-
 
     if (amount == '6') {
       if (name == 'Buffalo Wings' || name == 'BBQ Wings') {
@@ -499,12 +473,10 @@ window.onload = function () {
   }
 }
 
-
 // Coupon Code functionality
 const coupon = document.querySelector('.coupon');
 const couponApply = document.querySelector('.apply');
 const couponForm = document.querySelector('.coupon-form');
-
 
 couponForm.addEventListener('submit', (e) => {
   // Prevents the form from default submitting behavior
@@ -526,8 +498,6 @@ couponForm.addEventListener('submit', (e) => {
   // Resets coupon insert value to being empty
   coupon.value = '';
 });
-
-
 
 const menuType = document.querySelectorAll('.menu-type');
 
@@ -563,7 +533,6 @@ for (let i = 0; i < menuType.length; i++) {
   });
 }
 
-
 // Add 'active' class functionality for the menu page navigation bar
 const menuNavigation = document.querySelector('#menu-nav');
 const menuNavigationLinks = document.querySelectorAll('#menu-nav a');
@@ -585,19 +554,18 @@ for (let i = 0; i < menuNavigationLinks.length; i++) {
 
 // Functionality for the menu navigation to stay fixed to top of screen
 // after a certain scroll position
-const menuNavCart = document.querySelector('#nav-cart');
+const menuNavCart2 = document.querySelector('#nav-cart');
 window.addEventListener('scroll', () => {
   let scrollAmt = window.scrollY;
 
   if (scrollAmt >= 150) {
     menuNavigation.classList.add('scrolled');
-    menuNavCart.style.display = 'inline-block';
+    menuNavCart2.style.display = 'inline-block';
   } else {
     menuNavigation.classList.remove('scrolled');
-    menuNavCart.style.display = 'none';
+    menuNavCart2.style.display = 'none';
   }
 });
-
 
 // Closes cart if the checkout modal is open
 const body = document.querySelector('body');
@@ -610,7 +578,6 @@ function closeCart() {
 setInterval(() => {
   closeCart();
 }, 100);
-
 
 const nameError = document.querySelector('#name-error');
 const emailError = document.querySelector('#email-error');

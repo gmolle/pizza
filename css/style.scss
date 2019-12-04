@@ -1098,10 +1098,6 @@ html {
     grid-template-areas: 
     "pizza1 pizza2 pizza3 pizza4";
   
-    #pizza-img {
-      background-image: url(../img/cheese-pizza.png);
-    }
-  
     #pizza1 {
       grid-area: pizza1;
 
@@ -1328,10 +1324,6 @@ html {
   #side-type {
     grid-template-areas: 
     "side1 side2 side3 side4";
-
-    #side-img {
-      background-image: url(../img/garlic-knots.png);
-    }
   }
 
   #side1 {

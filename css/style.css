@@ -1267,10 +1267,6 @@ html {
       grid-template-areas: "pizza1 pizza2 pizza3 pizza4";
 }
 
-#pizza-menu #pizza-type #pizza-img {
-  background-image: url(../img/cheese-pizza.png);
-}
-
 #pizza-menu #pizza-type #pizza1 {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
@@ -1496,10 +1492,6 @@ html {
 
 #sides-menu #side-type {
       grid-template-areas: "side1 side2 side3 side4";
-}
-
-#sides-menu #side-type #side-img {
-  background-image: url(../img/garlic-knots.png);
 }
 
 #sides-menu #side1 {
