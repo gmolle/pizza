@@ -189,12 +189,28 @@ html {
   padding-left: 1rem;
 }
 
-#menu-nav a:last-of-type {
-  margin-right: 2rem;
-}
-
 #menu-nav .active-menu-nav {
   color: black;
+}
+
+#menu-nav #nav-cart {
+  display: none;
+  float: right;
+}
+
+#menu-nav #nav-cart span {
+  margin-right: 1rem;
+  padding-right: 1rem;
+  color: #7c7c7c;
+  -webkit-transition: .15s all;
+  transition: .15s all;
+  margin-bottom: 2rem;
+}
+
+#menu-nav #nav-cart span:hover {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .scrolled {
@@ -207,15 +223,28 @@ html {
           box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
 }
 
+.modal-body {
+  padding: 0;
+}
+
+.modal-body #order {
+  border-bottom: 1px solid #e9ecef;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .modal-body #order .item-text {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .modal-body #order .item-text a {
@@ -226,6 +255,265 @@ html {
 
 .modal-body #order .item-text a:hover {
   color: red;
+}
+
+.modal-body #order #total-checkout {
+  width: 100%;
+  height: 25px;
+}
+
+.modal-body #order #total-checkout span {
+  float: right;
+}
+
+.modal-body #personal-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 100%;
+}
+
+.modal-body #personal-info h3 {
+  text-align: center;
+  margin: auto 0;
+}
+
+.modal-body #personal-info input {
+  width: 100%;
+  height: 25px;
+}
+
+.modal-body #personal-info label {
+  margin-bottom: 0;
+}
+
+.modal-body #address {
+  width: 50%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: (1fr)[4];
+      grid-template-rows: repeat(4, 1fr);
+      grid-template-areas: "header header" "fullname email" "street city" "state zip";
+  grid-gap: 10px;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  border-right: 1px solid #e9ecef;
+  padding-bottom: 1rem;
+}
+
+.modal-body #address h3 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: header;
+}
+
+.modal-body #address #full-name {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: fullname;
+}
+
+.modal-body #address #email-container {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: email;
+}
+
+.modal-body #address #street-container {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: street;
+}
+
+.modal-body #address #city-container {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: city;
+}
+
+.modal-body #address #states {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: state;
+  width: 100%;
+  height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.modal-body #address #zip-container {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: zip;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.modal-body #payment-info {
+  width: 50%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: (1fr)[4];
+      grid-template-rows: repeat(4, 1fr);
+      grid-template-areas: "header header header" "name number number" "month year cvv" "accepted accepted accepted";
+  grid-gap: 10px;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  padding-left: 1rem;
+}
+
+.modal-body #payment-info select {
+  width: 100%;
+}
+
+.modal-body #payment-info h3 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: header;
+}
+
+.modal-body #payment-info #accepted-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: accepted;
+  text-align: center;
+}
+
+.modal-body #payment-info #accepted-cards i {
+  font-size: 1.75rem;
+}
+
+.modal-body #payment-info #accepted-cards i:nth-child(1) {
+  color: navy;
+}
+
+.modal-body #payment-info #accepted-cards i:nth-child(2) {
+  color: red;
+}
+
+.modal-body #payment-info #accepted-cards i:nth-child(3) {
+  color: orange;
+}
+
+.modal-body #payment-info #accepted-cards i:nth-child(4) {
+  color: blue;
+}
+
+.modal-body #payment-info #name-on-card-container {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: name;
+}
+
+.modal-body #payment-info #card-number-container {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: number;
+}
+
+.modal-body #payment-info #months {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: month;
+  height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.modal-body #payment-info #years {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: year;
+  height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.modal-body #payment-info #cvv-container {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: cvv;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.modal-body #same-address-check {
+  padding-left: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 49%;
+  padding-bottom: 1rem;
+  border-right: 1px solid #e9ecef;
+}
+
+.modal-body #same-address-check label {
+  margin-bottom: 0;
+}
+
+.modal-body #same-address-check input {
+  margin: 0;
+  margin-left: 0.25rem;
+}
+
+.modal-body .error {
+  border: 1px solid red;
+}
+
+.modal-body .validation-error {
+  display: none;
+}
+
+.modal-body #order-errors {
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .modal-footer .checkoutBtn {
@@ -285,15 +573,22 @@ html {
 
 .cart {
   position: fixed;
-  min-height: 25vh;
+  height: 100vh;
   top: 0;
   right: 0;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   background: lightgray;
   width: 0;
-  overflow: hidden;
+  overflow: auto;
   z-index: 10000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .cart .cart-total-container h5 #discountAmt {
@@ -328,6 +623,10 @@ html {
 .show-cart {
   width: 25rem;
   padding: 2rem 1.5rem;
+}
+
+.cart-item-title {
+  text-transform: capitalize;
 }
 
 .jumbotron {
@@ -843,6 +1142,10 @@ html {
   width: 75%;
 }
 
+#menu .item-info .price-div .store-item-value {
+  visibility: hidden;
+}
+
 #menu .item-name {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -881,6 +1184,14 @@ html {
 
 #menu .item-desc select {
   width: 50%;
+}
+
+#menu .item-desc p {
+  width: 90%;
+}
+
+#menu .item-desc h4 {
+  margin-bottom: 0.25rem;
 }
 
 #menu .item {
@@ -986,10 +1297,18 @@ html {
   grid-area: pizza3;
 }
 
+#pizza-menu #pizza-type #pizza3 .item-img {
+  background-image: url(../img/sausage-pizza.jpg);
+}
+
 #pizza-menu #pizza-type #pizza4 {
   -ms-grid-row: 1;
   -ms-grid-column: 4;
   grid-area: pizza4;
+}
+
+#pizza-menu #pizza-type #pizza4 .item-img {
+  background-image: url(../img/supreme-pizza.jpg);
 }
 
 .arrow {
@@ -1067,14 +1386,14 @@ html {
       grid-template-areas: "wing1 wing2 wing3 wing4";
 }
 
-#wings-menu #wing-type #wing-img {
-  background-image: url(../img/buffalo-wings.png);
-}
-
 #wings-menu #wing1 {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: wing1;
+}
+
+#wings-menu #wing1 .item-img {
+  background-image: url(../img/buffalo-wings.jpg);
 }
 
 #wings-menu #wing2 {
@@ -1083,16 +1402,32 @@ html {
   grid-area: wing2;
 }
 
+#wings-menu #wing2 .item-img {
+  background-image: url(../img/BBQ-wings.jpg);
+}
+
 #wings-menu #wing3 {
   -ms-grid-row: 1;
   -ms-grid-column: 3;
   grid-area: wing3;
 }
 
+#wings-menu #wing3 .item-img {
+  background-image: url(../img/honey-chipotle-wings.jpg);
+}
+
 #wings-menu #wing4 {
   -ms-grid-row: 1;
   -ms-grid-column: 4;
   grid-area: wing4;
+}
+
+#wings-menu #wing4 .item-img {
+  background-image: url(../img/boneless-wings.jpg);
+}
+
+#wings-menu #wing5 .item-img {
+  background-image: url(../img/wings-home.jpg);
 }
 
 #sandwich-menu #sandwich-title {
@@ -1622,6 +1957,9 @@ html {
   }
   .logo {
     width: 10% !important;
+  }
+  #menu .menu-title .title h1 {
+    font-size: 3rem;
   }
   #menu .menu-type {
     min-height: 125vh;

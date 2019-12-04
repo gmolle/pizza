@@ -66,7 +66,8 @@
     <div class="cart-buttons-container mt-3 d-flex justify-content-between">
       <h3 class="cart-close">X</h3>
       <a href="#" id="clear-cart" class="btn btn-outline-secondary btn-black text-uppercase">clear cart</a>
-      <a href="#" class="btn btn-outline-secondary text-uppercase btn-pink">checkout</a>
+      <a href="#" id="checkout" class="btn btn-outline-secondary text-uppercase" data-toggle="modal"
+        data-target="#exampleModalCenter">checkout</a>
     </div>
     <!--end of  cart buttons -->
     <!--  -->
@@ -159,6 +160,231 @@
     </div>
   </div>
 
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Checkout</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div id="order">
+            <div id="order-items"></div>
+            <div id="total-checkout"></div>
+          </div>
+
+
+          <div id="order-errors">
+            <div id="name-error" class="validation-error">
+              <span>Please enter a valid name</span>
+            </div>
+            <div id="email-error" class="validation-error">
+              <span>Email field must contain a valid email address</span>
+            </div>
+            <div id="street-error" class="validation-error">
+              <span>Please enter a valid street address</span>
+            </div>
+            <div id="city-error" class="validation-error">
+              <span>Please enter a valid city name</span>
+            </div>
+            <div id="state-error" class="validation-error">
+              <span>Please select a state</span>
+            </div>
+            <div id="zip-error" class="validation-error">
+              <span>Pleae enter a valid 5 digit ZIP code</span>
+            </div>
+            <div id="cc-name-error" class="validation-error">
+              <span>Please enter a valid name for your credit card</span>
+            </div>
+            <div id="cc-number-error" class="validation-error">
+              <span>Please enter a valid credit card number that is 13-16 digits long</span>
+            </div>
+            <div id="cc-month-error" class="validation-error">
+              <span>Please select an expiration month</span>
+            </div>
+            <div id="cc-year-error" class="validation-error">
+              <span>Please select an expiration year</span>
+            </div>
+            <div id="cc-cvv-error" class="validation-error">
+              <span>Please enter a valid 3 digit CVV number</span>
+            </div>
+          </div>
+
+          <div id="personal-info">
+            <div id="address">
+              <h3>Billing Address</h3>
+
+              <div id="full-name">
+                <label for="fullName">Full Name</label>
+                <input type="text" name="fullname" id="fullName" placeholder="John Doe">
+              </div>
+
+              <div id="email-container">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" placeholder="name@example.com">
+              </div>
+
+              <div id="street-container">
+                <label for="street">Street</label>
+                <input type="text" name="street" id="street" placeholder="123 1st Street">
+              </div>
+
+              <div id="city-container">
+                <label for="city">City</label>
+                <input type="text" name="city" id="city" placeholder="Boston">
+              </div>
+
+              <div id="state">
+                <label for="states">State</label>
+                <select id="states">
+                  <option value="0">State:</option>
+                  <option value="AL">Alabama</option>
+                  <option value="AK">Alaska</option>
+                  <option value="AZ">Arizona</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="CA">California</option>
+                  <option value="CO">Colorado</option>
+                  <option value="CT">Connecticut</option>
+                  <option value="DE">Delaware</option>
+                  <option value="DC">District Of Columbia</option>
+                  <option value="FL">Florida</option>
+                  <option value="GA">Georgia</option>
+                  <option value="HI">Hawaii</option>
+                  <option value="ID">Idaho</option>
+                  <option value="IL">Illinois</option>
+                  <option value="IN">Indiana</option>
+                  <option value="IA">Iowa</option>
+                  <option value="KS">Kansas</option>
+                  <option value="KY">Kentucky</option>
+                  <option value="LA">Louisiana</option>
+                  <option value="ME">Maine</option>
+                  <option value="MD">Maryland</option>
+                  <option value="MA">Massachusetts</option>
+                  <option value="MI">Michigan</option>
+                  <option value="MN">Minnesota</option>
+                  <option value="MS">Mississippi</option>
+                  <option value="MO">Missouri</option>
+                  <option value="MT">Montana</option>
+                  <option value="NE">Nebraska</option>
+                  <option value="NV">Nevada</option>
+                  <option value="NH">New Hampshire</option>
+                  <option value="NJ">New Jersey</option>
+                  <option value="NM">New Mexico</option>
+                  <option value="NY">New York</option>
+                  <option value="NC">North Carolina</option>
+                  <option value="ND">North Dakota</option>
+                  <option value="OH">Ohio</option>
+                  <option value="OK">Oklahoma</option>
+                  <option value="OR">Oregon</option>
+                  <option value="PA">Pennsylvania</option>
+                  <option value="RI">Rhode Island</option>
+                  <option value="SC">South Carolina</option>
+                  <option value="SD">South Dakota</option>
+                  <option value="TN">Tennessee</option>
+                  <option value="TX">Texas</option>
+                  <option value="UT">Utah</option>
+                  <option value="VT">Vermont</option>
+                  <option value="VA">Virginia</option>
+                  <option value="WA">Washington</option>
+                  <option value="WV">West Virginia</option>
+                  <option value="WI">Wisconsin</option>
+                  <option value="WY">Wyoming</option>
+                </select>
+              </div>
+
+              <div id="zip-container">
+                <label for="zip">ZIP Code</label>
+                <input type="text" name="zip" id="zip" placeholder="10011">
+              </div>
+            </div>
+
+            <div id="payment-info">
+              <h3>Payment</h3>
+
+              <div id="accepted-cards">
+                <label for="">Accepted Cards</label>
+                <div id="card-imgs">
+                  <i class="fab fa-cc-visa" title="Visa"></i>
+                  <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                  <i class="fab fa-cc-discover" title="Discover"></i>
+                  <i class="fab fa-cc-amex" title="American Express"></i>
+                </div>
+              </div>
+
+              <div id="name-on-card-container">
+                <label for="name-on-card">Name on Card</label>
+                <input type="text" name="name-on-card" id="name-on-card" placeholder="John Doe">
+              </div>
+
+              <div id="card-number-container">
+                <label for="card-number">Credit Card Number</label>
+                <input type="text" name="card-number" id="card-number" placeholder="1111-2222-3333-4444">
+              </div>
+
+              <div id="months">
+                <label for="month">Exp Month</label>
+                <select id="month">
+                  <option value="0">Month</option>
+                  <option value="January">January</option>
+                  <option value="Febuary">Febuary</option>
+                  <option value="March">March</option>
+                  <option value="April">April</option>
+                  <option value="May">May</option>
+                  <option value="June">June</option>
+                  <option value="July">July</option>
+                  <option value="August">August</option>
+                  <option value="September">September</option>
+                  <option value="October">October</option>
+                  <option value="November">November</option>
+                  <option value="December">December</option>
+                </select>
+              </div>
+
+              <div id="years">
+                <label for="year"> Exp Year</label>
+                <select id="year">
+                  <option value="0">Year</option>
+                  <option value="2020">2020</option>
+                  <option value="2021">2021</option>
+                  <option value="2022">2022</option>
+                  <option value="2023">2023</option>
+                  <option value="2024">2024</option>
+                  <option value="2025">2025</option>
+                  <option value="2026">2026</option>
+                  <option value="2027">2027</option>
+                  <option value="2028">2028</option>
+                  <option value="2029">2029</option>
+                  <option value="2030">2030</option>
+                </select>
+              </div>
+
+
+              <div id="cvv-container">
+                <label for="cvv">CVV</label>
+                <input type="text" name="cvv" id="cvv" placeholder="999">
+              </div>
+
+            </div>
+          </div>
+          <div id="same-address-check">
+            <label for="same-address">Shipping address same as billing
+            </label>
+            <input type="checkbox" name="same-address" id="same-address">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn closeBtn" data-dismiss="modal">Close</button>
+          <button type="button" class="btn checkoutBtn">Submit Order</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

@@ -175,13 +175,32 @@ html {
     }
 
     &:last-of-type {
-      margin-right: 2rem;
+      // margin-right: 2rem;
     }
   }
 
   .active-menu-nav {
     color: black;
   }
+
+  #nav-cart {
+    display: none;
+    float: right;
+    span {
+      margin-right: 1rem;
+      padding-right: 1rem;
+      color: rgb(124, 124, 124);
+      transition: .15s all;
+      margin-bottom: 2rem;
+
+      &:hover {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+  }
+  
 }
 
 .scrolled {
@@ -197,17 +216,18 @@ html {
 /////////////////////////////////
 //////// CHECKOUT MODAL /////////
 /////////////////////////////////
-
 .modal-body {
-
+  padding: 0;
   #order {
-    // display: flex;
-    // flex-direction: column;
+    border-bottom: 1px solid #e9ecef;
+    padding-left: 1rem;
+    padding-right: 1rem;
 
     .item-text {
       width: 100%;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
+      justify-content: space-between;
 
       a {
         align-self: flex-end;
@@ -219,7 +239,195 @@ html {
       }
     }
 
+    #total-checkout {
+      width: 100%;
+      height: 25px;
+      span {
+        float: right;
+      
+      }
+    }
+  }
+
+  #personal-info {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+
+    h3 {
+      text-align: center;
+      margin: auto 0;
+    }
+
+    input{
+      width: 100%;
+      height: 25px;
+    }
+
+    label {
+      margin-bottom: 0;
+    }
+
+  }
+
+  #address {
+    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+    "header header"
+    "fullname email"
+    "street city"
+    "state zip";
+    grid-gap: 10px;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    border-right: 1px solid #e9ecef;
+    padding-bottom: 1rem;
+
+    h3 {
+      grid-area: header;
+    }
+
+    #full-name {
+      grid-area: fullname;
+    }
+
+    #email-container {
+      grid-area: email;
+    }
+
+    #street-container {
+      grid-area: street;
+    }
+
+    #city-container {
+      grid-area: city;
+    }
+
+    #states {
+      grid-area: state;
+      width: 100%;
+      height: 25px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #zip-container {
+      grid-area: zip;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  #payment-info {
+    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+    "header header header"
+    "name number number"
+    "month year cvv"
+    "accepted accepted accepted";
+    grid-gap: 10px;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    padding-left: 1rem;
+
+    select {
+      width: 100%;
+      // height: 55%;
+    }
+
+    h3 {
+      grid-area: header;
+    }
+
+    #accepted-cards {
+      display: flex;
+      flex-direction: column;
+      grid-area: accepted;
+      text-align: center;
+
+      i {
+        font-size: 1.75rem;
+
+        &:nth-child(1) {
+          color: navy;
+        }
+        &:nth-child(2) {
+          color: red;
+        }
+        &:nth-child(3) {
+          color: orange;
+        }
+        &:nth-child(4) {
+          color: blue;
+        }
+      }
+    }
+
+    #name-on-card-container {
+      grid-area: name;
+    }
+
+    #card-number-container {
+      grid-area: number;
+    }
+
+    #months {
+      grid-area: month;
+      height: 25px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #years {
+      grid-area: year;
+      height: 25px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #cvv-container {
+      grid-area: cvv;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  #same-address-check {
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+    width: 49%;
+    padding-bottom: 1rem;
+    border-right: 1px solid #e9ecef;
     
+    label {
+      margin-bottom: 0;
+    }
+
+    input {
+      margin: 0;
+      margin-left: 0.25rem;
+    }
+  }
+
+  .error {
+    border: 1px solid red;
+  }
+
+  .validation-error {
+    display: none;
+  }
+
+  #order-errors {
+    padding-left: 1rem;
+    margin-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 }
 
@@ -287,17 +495,19 @@ html {
 
 .cart {
   position: fixed;
-  min-height:25vh;
+  height:100vh;
   top: 0;
   right: 0;
   transition: all 0.3s ease-in-out;
   background: rgb(211, 211, 211);
   width: 0;
-  overflow: hidden;
+  overflow: auto;
   z-index: 10000;
+  display: flex;
+  flex-direction: column;
+
 
   .cart-total-container {
-   
     h5 {
 
       #discountAmt {
@@ -305,10 +515,6 @@ html {
         font-size: 1rem;
       }
     }
-  }
-
-  .cart-item{
-    
   }
 
   h3 {
@@ -342,6 +548,9 @@ html {
   padding: 2rem 1.5rem;
 }
 
+.cart-item-title {
+  text-transform: capitalize;
+}
 
 
 /////////////////////////////////
@@ -780,6 +989,10 @@ html {
         order: 2;
         width: 75%;
       }
+
+      .store-item-value {
+        visibility: hidden;
+      }
     }
   }
   
@@ -802,6 +1015,12 @@ html {
     height: 60%;
     select {
       width: 50%;
+    }
+    p {
+      width: 90%;
+    }
+    h4 {
+      margin-bottom: 0.25rem;
     }
   }
 
@@ -903,12 +1122,16 @@ html {
       grid-area: pizza3;
 
       .item-img {
-
+        background-image: url(../img/sausage-pizza.jpg);
       }
     }
   
     #pizza4 {
       grid-area: pizza4;
+
+      .item-img {
+        background-image: url(../img/supreme-pizza.jpg);
+      }
     } 
   }
 }
@@ -989,26 +1212,45 @@ html {
   #wing-type {
     grid-template-areas: 
     "wing1 wing2 wing3 wing4";
-
-    #wing-img {
-      background-image: url(../img/buffalo-wings.png);
-    }
   }
 
   #wing1 {
     grid-area: wing1;
+
+    .item-img {
+      background-image: url(../img/buffalo-wings.jpg);
+    }
   }
 
   #wing2 {
     grid-area: wing2;
+
+    .item-img {
+      background-image: url(../img/BBQ-wings.jpg);
+    }
   }
 
   #wing3 {
     grid-area: wing3;
+
+    .item-img {
+      background-image: url(../img/honey-chipotle-wings.jpg);
+    }
   }
 
   #wing4 {
     grid-area: wing4;
+
+    .item-img {
+      background-image: url(../img/boneless-wings.jpg);
+    }
+  }
+
+  #wing5 {
+
+    .item-img {
+      background-image: url(../img/wings-home.jpg);
+    }
   }
 }
 
@@ -1426,6 +1668,14 @@ html {
       }
     }
   }
+
+
+  // .modal-content {
+  //   width: 100vw;
+  // }
+  // .modal-body {
+  //   width: 60vw;
+  // }
 }
 
 
@@ -1663,8 +1913,13 @@ html {
 
   #menu {
     .menu-title { 
-      h1 {
+      .title {
+
+        h1 {
+          font-size: 3rem;
+        }
       }
+      
     }
   
     .menu-type {
