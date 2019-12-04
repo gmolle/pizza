@@ -19,10 +19,13 @@ cartInfo.addEventListener('mouseout', () => {
   cartIcon.style.color = '#e44c15';
 });
 
-const menuNavCart = document.querySelector('#nav-cart');
-menuNavCart.addEventListener('click', () => {
-  cart.classList.toggle('show-cart');
-});
+const pathname = window.location.href;
+if (pathname.indexOf('menu') > -1) {
+  const menuNavCart = document.querySelector('#nav-cart');
+  menuNavCart.addEventListener('click', () => {
+    cart.classList.toggle('show-cart');
+  });
+}
 
 // show cart
 (function () {
