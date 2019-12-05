@@ -19,13 +19,13 @@ cartInfo.addEventListener('mouseout', () => {
   cartIcon.style.color = '#e44c15';
 });
 
-const pathname = window.location.href;
-if (pathname.indexOf('menu') > -1) {
-  const menuNavCart = document.querySelector('#nav-cart');
-  menuNavCart.addEventListener('click', () => {
-    cart.classList.toggle('show-cart');
-  });
-}
+// const pathname = window.location.href;
+// if (pathname.indexOf('menu') > -1) {
+//   const menuNavCart = document.querySelector('#nav-cart');
+//   menuNavCart.addEventListener('click', () => {
+//     cart.classList.toggle('show-cart');
+//   });
+// }
 
 // show cart
 (function () {
@@ -129,7 +129,7 @@ function cartAction() {
           items.push(item);
 
           // console.log(item);
-          // console.log(items);
+          console.log(items);
 
           localStorage.setItem('cart', JSON.stringify(items));
 
@@ -254,6 +254,19 @@ function removeAllItems() {
 // Add items to cart on refresh or change of page from local storage
 window.onload = function () {
 
+  // Hides prices of items that have a selection to be made/shows item prices with no selection
+  const price = document.querySelectorAll('.store-item-value');
+  const description = document.querySelectorAll('.item-desc');
+
+  for (let i = 0; i < price.length; i++) {
+    if (description[i].children.length > 2) {
+      price[i].style.visibility = 'hidden';
+    } else {
+      price[i].style.visibility = 'visible';
+    }
+  }
+
+
   if (localStorage.length > 0) {
     function cartStorageRetrieve() {
       const cartStorage = JSON.parse(localStorage.getItem('cart'));
@@ -364,6 +377,7 @@ for (let i = 0; i < pizzaSize.length; i++) {
     if (e.target.length >= 5) {
       e.target.remove(e.target.children[0]);
     }
+    price.style.visibility = 'visible';
 
     if (size === '0') {
       // price.style.visibility = 'hidden';
@@ -462,20 +476,6 @@ for (let i = 0; i < wingAmount.length; i++) {
   });
 }
 
-// Hides prices of items that have a selection to be made/shows item prices with no selection
-window.onload = function () {
-  const price = document.querySelectorAll('.store-item-value');
-  const description = document.querySelectorAll('.item-desc');
-
-  for (let i = 0; i < price.length; i++) {
-    if (description[i].children.length > 2) {
-      price[i].style.visibility = 'hidden';
-    } else {
-      price[i].style.visibility = 'visible';
-    }
-  }
-}
-
 // Coupon Code functionality
 const coupon = document.querySelector('.coupon');
 const couponApply = document.querySelector('.apply');
@@ -557,21 +557,23 @@ for (let i = 0; i < menuNavigationLinks.length; i++) {
 
 // Functionality for the menu navigation to stay fixed to top of screen
 // after a certain scroll position
-const menuNavCart2 = document.querySelector('#nav-cart');
-window.addEventListener('scroll', () => {
-  let scrollAmt = window.scrollY;
+const body = document.querySelector('body');
+if (body.classList.contains('menu-page')) {
+  const menuNavCart2 = document.querySelector('#nav-cart');
+  window.addEventListener('scroll', () => {
+    let scrollAmt = window.scrollY;
 
-  if (scrollAmt >= 150) {
-    menuNavigation.classList.add('scrolled');
-    menuNavCart2.style.display = 'inline-block';
-  } else {
-    menuNavigation.classList.remove('scrolled');
-    menuNavCart2.style.display = 'none';
-  }
-});
+    if (scrollAmt >= 150) {
+      menuNavigation.classList.add('scrolled');
+      menuNavCart2.style.display = 'inline-block';
+    } else {
+      menuNavigation.classList.remove('scrolled');
+      menuNavCart2.style.display = 'none';
+    }
+  });
+}
 
 // Closes cart if the checkout modal is open
-const body = document.querySelector('body');
 const cart2 = document.querySelector('#cart');
 function closeCart() {
   if (body.classList.contains('modal-open')) {
