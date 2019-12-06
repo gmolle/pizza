@@ -40,6 +40,13 @@ if (pathname.indexOf('menu') > -1) {
   cartClose.addEventListener('click', () => {
     cart.classList.toggle('show-cart');
   });
+
+  document.addEventListener('keydown', (e) => {
+    const key = e.keyCode;
+    if (key === 27) {
+      cart.classList.toggle('show-cart');
+    }
+  })
 })();
 
 // Array for items to be pushed to local storage
@@ -129,7 +136,7 @@ function cartAction() {
           items.push(item);
 
           // console.log(item);
-          console.log(items);
+          // console.log(items);
 
           localStorage.setItem('cart', JSON.stringify(items));
 
@@ -158,23 +165,24 @@ function cartAction() {
           const total = document.querySelector('.cart-total-container');
 
           cart.insertBefore(cartItem, total);
-          showTotals();
+
 
           e.stopPropagation();
           e.preventDefault();
 
           const cartTotalCheckout = document.querySelector('#cart-total');
           const totalCheckout = document.querySelector('#total-checkout');
-          totalCheckout.innerHTML = `<span>Total: $${cartTotalCheckout.textContent}</span>`;
+          totalCheckout.innerHTML = `<span></span>`;
           const order = document.querySelector('#order-items');
           order.classList.add('text-capitalize');
           order.innerHTML +=
-            `<div class="item-text">
+            `<div class="item-text checkout-item">
             <p id="cart-item-title" class="mb-0">${options()}${item.name}</p>
             <span>$<span id="cart-item-price" class="mb-0">${item.price}</span></span>
           </div>`;
 
           localStorage.setItem('total', JSON.stringify(cartTotalCheckout.textContent));
+          showTotals();
         }
       }
     });
@@ -210,6 +218,7 @@ function showTotals() {
 
   document.querySelector('#cart-total').textContent = finalMoney;
   document.querySelector('.item-total').textContent = finalMoney;
+  document.querySelector('#total-checkout span').innerHTML = `Total: $${finalMoney}`;
   document.querySelector('#item-count').textContent = total.length;
 
 }
@@ -239,11 +248,16 @@ removeAllBtn.addEventListener('click', removeAllItems);
 // Clear Entire Cart
 function removeAllItems() {
   const cartItem = document.querySelectorAll('.cart-item');
+  const checkoutItem = document.querySelectorAll('.checkout-item');
   for (let i = 0; i < cartItem.length; i++) {
     if (cartItem.length > 0) {
       cartItem[i].remove();
     }
+    if (checkoutItem.length > 0) {
+      checkoutItem[i].remove();
+    }
   }
+
   // Removes all items from local storage along with the cart
   localStorage.removeItem('cart');
   localStorage.removeItem('total');
@@ -265,7 +279,6 @@ window.onload = function () {
       price[i].style.visibility = 'visible';
     }
   }
-
 
   if (localStorage.length > 0) {
     function cartStorageRetrieve() {
@@ -312,10 +325,10 @@ window.onload = function () {
         // Checkout modal local storage functionality
         const totalCheckout = document.querySelector('#total-checkout');
         totalCheckout.innerHTML = `<span>Total: $${totalStorage}</span>`;
-        const order = document.querySelector('#order');
+        const order = document.querySelector('#order-items');
         order.classList.add('text-capitalize');
         order.innerHTML +=
-          `<div class="item-text">
+          `<div class="item-text checkout-item">
           <p id="cart-item-title" class="mb-0">${options()}${cartStorageName}</p>
           <span>$<span id="cart-item-price" class="mb-0">${cartStoragePrice}</span></span>
         </div>`;
