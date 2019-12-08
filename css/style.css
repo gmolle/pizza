@@ -1767,6 +1767,9 @@ html {
     margin-left: 0;
     font-size: 1.1rem;
   }
+  #menu .menu-title {
+    background-attachment: scroll;
+  }
 }
 
 @media screen and (max-width: 800px) {
