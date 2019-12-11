@@ -633,7 +633,7 @@ html {
   padding: 0;
   width: 75%;
   min-height: 50vh;
-  background-image: url(../img/header.png);
+  background-image: url(../img/header.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -696,7 +696,6 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
@@ -711,7 +710,7 @@ html {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 
 #deals h3 {
@@ -746,16 +745,53 @@ html {
   grid-area: deal1;
 }
 
+#deals-preview #deal1 .deal-img {
+  background-image: url(../img/cheese-pizza.jpg);
+}
+
 #deals-preview #deal2 {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: deal2;
 }
 
+#deals-preview #deal2 .deal-img {
+  background-image: url(../img/brownie.jpg);
+}
+
 #deals-preview #deal3 {
   -ms-grid-row: 1;
   -ms-grid-column: 3;
   grid-area: deal3;
+}
+
+#deals-preview #deal3 .deal-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#deals-preview #deal3 .deal-img #salad {
+  width: 50%;
+  height: 100%;
+  background-image: url(../img/spinach-salad.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.5rem 0 0 0;
+}
+
+#deals-preview #deal3 .deal-img #breadsticks {
+  width: 50%;
+  height: 100%;
+  background-image: url(../img/breadsticks.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 0 0.5rem 0 0;
 }
 
 #deals-preview .deal-home {
@@ -766,6 +802,7 @@ html {
 #deals-preview .deal-name {
   margin-left: 1rem;
   margin-top: 0.5rem;
+  text-align: center;
 }
 
 #deals-preview .deal-name h4 {
@@ -773,12 +810,15 @@ html {
   text-transform: uppercase;
 }
 
+#deals-preview .deal-name p {
+  width: 90%;
+}
+
 #deals-preview .deal-img {
-  background-image: url(../img/header.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 50%;
+  height: 40%;
   border-radius: 0.5rem 0.5rem 0 0;
 }
 
@@ -793,10 +833,10 @@ html {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 50%;
+  height: 60%;
 }
 
-#deals-preview .deal-info .deal-btn button {
+#deals-preview .deal-info button {
   border-radius: 0.5rem;
   border: 0.1rem solid #e44c15;
   margin-left: 1rem;
@@ -810,14 +850,30 @@ html {
   font-weight: 400;
 }
 
-#deals-preview .deal-info .deal-btn button:hover {
+#deals-preview .deal-info button:hover {
   cursor: pointer;
   background: #e44c15;
+}
+
+#deals-preview .deal-info button:hover a {
   color: white;
 }
 
+#deals-preview .deal-info button a {
+  text-decoration: none;
+  color: black;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: 0.15s all;
+  transition: 0.15s all;
+  text-align: center;
+}
+
 #deals-page {
-  height: 100vh;
+  height: 70vh;
   width: 75%;
   display: -ms-grid;
   display: grid;
@@ -838,10 +894,18 @@ html {
   grid-area: deal1;
 }
 
+#deals-page #deal1 .deal-img {
+  background-image: url(../img/cheese-pizza.jpg);
+}
+
 #deals-page #deal2 {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: deal2;
+}
+
+#deals-page #deal2 .deal-img {
+  background-image: url(../img/brownie.jpg);
 }
 
 #deals-page #deal3 {
@@ -850,27 +914,71 @@ html {
   grid-area: deal3;
 }
 
+#deals-page #deal3 .deal-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#deals-page #deal3 .deal-img #salad {
+  width: 50%;
+  height: 100%;
+  background-image: url(../img/spinach-salad.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.5rem 0 0 0;
+}
+
+#deals-page #deal3 .deal-img #breadsticks {
+  width: 50%;
+  height: 100%;
+  background-image: url(../img/breadsticks.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 0 0.5rem 0 0;
+}
+
 #deals-page .deal-home {
   border: solid 1px #cfcecc;
   border-radius: 0.5rem;
 }
 
 #deals-page .deal-name {
-  margin-left: 1rem;
   margin-top: 0.5rem;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #deals-page .deal-name h4 {
   margin-bottom: 0;
-  text-transform: uppercase;
+}
+
+#deals-page .deal-name p {
+  width: 90%;
 }
 
 #deals-page .deal-img {
-  background-image: url(../img/header.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 50%;
+  height: 35%;
   border-radius: 0.5rem 0.5rem 0 0;
 }
 
@@ -885,7 +993,31 @@ html {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 50%;
+  height: 65%;
+}
+
+#deals-page .deal-info .deal-btn {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#deals-page .deal-info .deal-btn .store-item-icon {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  width: 50%;
 }
 
 #deals-page .deal-info .deal-btn button {
@@ -894,7 +1026,7 @@ html {
   margin-left: 1rem;
   margin-bottom: 1rem;
   padding: 0.5rem;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 500;
   background: white;
   -webkit-transition: 0.15s all;
@@ -1199,7 +1331,7 @@ html {
   border-radius: 0.5rem;
 }
 
-#menu button {
+#menu button, #menu a {
   border-radius: 0.5rem;
   border: 0.1rem solid #e44c15;
   padding: 0.5rem;
@@ -1212,12 +1344,18 @@ html {
   width: 50%;
   margin-bottom: 0.5rem;
   font-size: 1rem;
+  text-align: center;
 }
 
-#menu button:hover {
+#menu button:hover, #menu a:hover {
   cursor: pointer;
   color: white;
   background: #e44c15;
+}
+
+#menu a {
+  text-decoration: none;
+  color: black;
 }
 
 .item {
@@ -1750,6 +1888,9 @@ html {
         -ms-flex-order: 2;
             order: 2;
   }
+  #deals-page {
+    height: 110vh;
+  }
   #deals-page .deal-name {
     margin-left: 0;
     text-align: center;
@@ -1766,6 +1907,9 @@ html {
   #deals-page .deal-info .deal-btn button {
     margin-left: 0;
     font-size: 1.1rem;
+  }
+  #deals-page .deal-info .deal-btn .store-item-icon {
+    width: 80%;
   }
   #menu .menu-title {
     background-attachment: scroll;
@@ -1784,12 +1928,19 @@ html {
   }
   #deals-preview {
     grid-gap: 1rem;
+    height: 40vh;
+  }
+  #deals-preview .deal-img {
+    height: 30%;
   }
   #deals-preview .deal-name h4 {
     font-size: 1rem;
   }
   #deals-preview .deal-name p {
     font-size: 0.75rem;
+  }
+  #deals-preview .deal-info {
+    height: 70%;
   }
   #deals-preview .deal-info .deal-name {
     display: -webkit-box;
@@ -1870,6 +2021,7 @@ html {
     font-size: 0.7rem;
   }
   #deals-page {
+    height: 150vh;
     -ms-grid-rows: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
     -ms-grid-columns: (1fr)[2];
@@ -1894,6 +2046,9 @@ html {
   #deals-page .deal-name p {
     font-size: 0.75rem;
   }
+  #deals-page .deal-name h4 {
+    font-size: 1.25rem;
+  }
   #deals-page .deal-img {
     height: 35%;
   }
@@ -1917,18 +2072,22 @@ html {
 
 @media screen and (max-width: 600px) {
   #deals-preview {
-    height: calc(35vh/2);
+    height: 100vh;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: "deal1" "deal2" "deal3";
   }
   #deals-preview .deal-img {
-    background-image: none;
-    height: 0;
+    height: 30%;
   }
   #deals-preview .deal-info {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
     text-align: center;
-    height: 100%;
+    height: 70%;
   }
   #deals-preview .deal-info .deal-name {
     margin-left: 0;
@@ -1937,6 +2096,10 @@ html {
     font-size: 0.75rem;
     margin: 0;
     margin-bottom: 0.5rem;
+  }
+  #deals-preview .deal-info .deal-btn button a {
+    margin: 0 auto;
+    text-align: center;
   }
   #menus h3 {
     margin-top: 0.5rem;
@@ -2025,7 +2188,7 @@ html {
         grid-template-areas: "drink1 drink2" "drink3 drink4";
   }
   #deals-page {
-    height: 200vh;
+    height: 250vh;
     -ms-grid-rows: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
     -ms-grid-columns: 1fr;
@@ -2033,10 +2196,10 @@ html {
         grid-template-areas: "deal1" "deal2" "deal3" "deal4" "deal5" "deal6";
   }
   #deals-page .deal-img {
-    height: 45%;
+    height: 30%;
   }
   #deals-page .deal-info {
-    height: 55%;
+    height: 70%;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -2055,23 +2218,13 @@ html {
 
 @media screen and (max-width: 400px) {
   #deals-preview {
-    height: 75vh;
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-    -ms-grid-rows: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        grid-template-areas: "deal1" "deal2" "deal3";
+    height: 100vh;
   }
   #deals-preview .deal-img {
-    background-image: url(../img/header.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 40%;
     border-radius: 0.5rem 0.5rem 0 0;
-  }
-  #deals-preview .deal-info {
-    height: 60%;
   }
   #deals-preview button {
     font-size: 0.25rem;
@@ -2094,6 +2247,13 @@ html {
   }
   #sign-up {
     width: 50% !important;
+  }
+  #deals-page .deal-info .deal-name h4 {
+    font-size: 1.25rem;
+  }
+  #deals-page .deal-info .deal-btn button {
+    font-size: 1rem;
+    width: 75%;
   }
   #menu .menu-type {
     min-height: 250vh;

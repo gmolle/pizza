@@ -10,15 +10,15 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <title>Garrett's Pizza</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <title>Create Your Own</title>
 </head>
 
 <body>
 
   <header id="home-header">
     <div id="topHeader">
-      <a href="#" class="logo"></a>
+      <a href="../index.html" class="logo"></a>
       <div id="sign-up">
         <a href="">Log In</a>
         <a href="">Sign Up</a>
@@ -35,10 +35,10 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="menu/">Menu</a>
+            <a class="nav-link" href="../menu/">Menu</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="deals/">Deals</a>
+            <a class="nav-link" href="../deals/">Deals</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0 coupon-form">
@@ -75,119 +75,24 @@
   </div>
 
 
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <div>
-        <h4>Best Pizza</h4>
+  <div id="create-your-own">
+
+    <div id="toppings">
+      <div id="meats">
+
       </div>
 
-      <div>
-        <h4>in</h4>
+      <div id="cheese">
+
       </div>
 
-      <div>
-        <h4>Columbus, Ohio</h4>
+      <div id="veggie">
+
       </div>
-    </div>
-  </div>
-
-  <div class="container-fluid" id="deals">
-    <div id="deal-labels">
-      <h1>Deals</h1>
-      <a href="deals/">View All Deals</a>
-    </div>
-  </div>
-
-  <div class="container-fluid" id="deals-preview">
-
-    <div id="deal1" class="deal-home">
-      <div class="deal-img"></div>
-      <div class="deal-info">
-        <div class="deal-name">
-          <h4>$11.99 Large Cheese Pizza</h4>
-          <p>Limited time offer! Only $11.99</p>
-        </div>
-        <div class="deal-btn">
-          <button><a href="/deals">View Offer</a></button>
-        </div>
-      </div>
-    </div>
-
-    <div id="deal2" class="deal-home">
-      <div class="deal-img"></div>
-      <div class="deal-info">
-        <div class="deal-name">
-          <h4>Free Dessert</h4>
-          <p>One free dessert on any order over $15 (excludes milkshakes and sundae)</p>
-        </div>
-        <div class="deal-btn">
-          <button><a href="/deals">View Offer</a></button>
-        </div>
-      </div>
-    </div>
-
-    <div id="deal3" class="deal-home">
-      <div class="deal-img">
-        <div id="salad"></div>
-        <div id="breadsticks"></div>
-      </div>
-      <div class="deal-info">
-        <div class="deal-name">
-          <h4>Salad and Breadsticks Deal</h4>
-          <p>Half off breadsticks with order of a spinach salad</p>
-        </div>
-        <div class="deal-btn">
-          <button><a href="/deals">View Offer</a></button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container-fluid" id="menus">
-    <div id="menu-labels">
-      <h1>Menu</h1>
-    </div>
-  </div>
-
-  <div class="container-fluid" id="menus-preview">
-
-    <div id="menu1" class="menu-hover menu-home-img">
-      <a href="menu/#pizza">
-        <h3 class="menu-type">Pizza</h3>
-      </a>
-    </div>
-
-    <div id="menu2" class="menu-hover menu-home-img">
-      <a href="menu/#wings">
-        <h3 class="menu-type">Wings</h3>
-      </a>
-    </div>
-
-    <div id="menu3" class="menu-hover menu-home-img">
-      <a href="menu/#sandwiches">
-        <h3 class="menu-type">Burgers & <br />Sandwiches</h3>
-      </a>
-    </div>
-
-    <div id="menu4" class="menu-hover menu-home-img">
-      <a href="menu/#sides">
-        <h3 class="menu-type">Sides</h3>
-      </a>
-    </div>
-
-    <div id="menu5" class="menu-hover menu-home-img">
-      <a href="menu/#dessert">
-        <h3 class="menu-type">Dessert</h3>
-      </a>
-    </div>
-
-    <div id="menu6" class="menu-hover menu-home-img">
-      <a href="menu/#drinks">
-        <h3 class="menu-type">Drinks</h3>
-      </a>
     </div>
 
   </div>
+
 
   <!-- Modal -->
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
@@ -414,22 +319,6 @@
   </div>
 
 
-
-
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-  <script src="js/app.js"></script>
 </body>
 
 </html>

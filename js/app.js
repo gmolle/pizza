@@ -50,14 +50,15 @@ if (pathname.indexOf('menu') > -1) {
 })();
 
 // Array for items to be pushed to local storage
-const items = [];
+let items = [];
 
 // Function for all cart actions
 function cartAction() {
   const cartBtn = document.querySelectorAll('.store-item-icon');
 
-  cartBtn.forEach(function (btn) {
+  cartBtn.forEach(function (btn, index) {
     btn.addEventListener('click', (e) => {
+      console.log(index);
 
       // Select the selection for certain menu items
       const selection = e.target.parentElement.previousElementSibling.lastElementChild;
@@ -154,7 +155,7 @@ function cartAction() {
             <span id="cart-item-price" class="cart-item-price" class="mb-0">${item.price}</span>
           </div>
           <a href="#" id='cart-item-remove' class="cart-item-remove">
-            <i class="fas fa-trash"></i>
+            <i class="fas fa-trash" data-id='${index}'></i>
           </a>
         </div>`;
 
@@ -172,7 +173,7 @@ function cartAction() {
 
           const cartTotalCheckout = document.querySelector('#cart-total');
           const totalCheckout = document.querySelector('#total-checkout');
-          totalCheckout.innerHTML = `<span></span>`;
+          totalCheckout.innerHTML = `<span class="total-checkout-price"></span>`;
           const order = document.querySelector('#order-items');
           order.classList.add('text-capitalize');
           order.innerHTML +=
@@ -218,7 +219,7 @@ function showTotals() {
 
   document.querySelector('#cart-total').textContent = finalMoney;
   document.querySelector('.item-total').textContent = finalMoney;
-  document.querySelector('#total-checkout span').innerHTML = `Total: $${finalMoney}`;
+  // document.querySelector('.total-checkout-price').innerHTML = `Total: $${finalMoney}`;
   document.querySelector('#item-count').textContent = total.length;
 
 }
@@ -228,18 +229,17 @@ const cartItems = document.getElementsByClassName('cart-item');
 // Remove individual Items
 function removeItem(e) {
   let buttonClicked = e.target;
+  let index = e.currentTarget.getAttribute('data-id');
   buttonClicked.parentElement.parentElement.remove();
   showTotals();
-  // console.log(localStorage);
-
   let storageList = JSON.parse(localStorage.getItem('cart'));
+  // console.log(items.length);
+  console.log(index);
 
-  for (let i = 0; i < storageList.length; i++) {
-    items.splice(i, 1);
-    console.log(items[i])
-    // console.log(storageList);
-  }
-  localStorage.setItem('cart', JSON.stringify(items));
+  let newItems = storageList.filter((item, idx) => idx != index);
+  // console.log(newItems.length);
+
+  localStorage.setItem('cart', JSON.stringify(newItems));
 }
 
 const removeAllBtn = document.querySelector('#clear-cart');
@@ -272,11 +272,13 @@ window.onload = function () {
   const price = document.querySelectorAll('.store-item-value');
   const description = document.querySelectorAll('.item-desc');
 
-  for (let i = 0; i < price.length; i++) {
-    if (description[i].children.length > 2) {
-      price[i].style.visibility = 'hidden';
-    } else {
-      price[i].style.visibility = 'visible';
+  if (pathname.indexOf('menu') > -1) {
+    for (let i = 0; i < price.length; i++) {
+      if (description[i].children.length > 2) {
+        price[i].style.visibility = 'hidden';
+      } else {
+        price[i].style.visibility = 'visible';
+      }
     }
   }
 
@@ -324,7 +326,7 @@ window.onload = function () {
 
         // Checkout modal local storage functionality
         const totalCheckout = document.querySelector('#total-checkout');
-        totalCheckout.innerHTML = `<span>Total: $${totalStorage}</span>`;
+        totalCheckout.innerHTML = `<span class="total-checkout-price">Total: $${totalStorage}</span>`;
         const order = document.querySelector('#order-items');
         order.classList.add('text-capitalize');
         order.innerHTML +=
