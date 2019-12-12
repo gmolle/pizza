@@ -179,14 +179,7 @@ function cartAction() {
 
           const cartTotalCheckout = document.querySelector('#cart-total')
 
-          const totalCheckout = document.querySelector('#total-checkout')
-          totalCheckout.innerHTML = `<span class="total-checkout-price"></span>`
-          const order = document.querySelector('#order-items')
-          order.classList.add('text-capitalize')
-          order.innerHTML += `<div class="item-text checkout-item" data-id='${item.uuid}'>
-            <p id="cart-item-title" class="mb-0">${options()}${item.name}</p>
-            <span>$<span id="cart-item-price" class="mb-0">${item.price}</span></span>
-          </div>`
+
 
           showTotals()
         }
@@ -194,7 +187,6 @@ function cartAction() {
     })
   })
 }
-
 cartAction()
 
 // Show totals
@@ -229,7 +221,19 @@ function showTotals() {
 
 const cartItems = document.getElementsByClassName('cart-item')
 
-
+const goToCheckout = document.querySelector('#checkout');
+goToCheckout.addEventListener('click', () => {
+  items.forEach(function (item) {
+    const totalCheckout = document.querySelector('#total-checkout')
+    totalCheckout.innerHTML = `<span class="total-checkout-price"></span>`
+    const order = document.querySelector('#order-items')
+    order.classList.add('text-capitalize')
+    order.innerHTML += `<div class="item-text checkout-item" data-id='${item.uuid}'>
+            <p id="cart-item-title" class="mb-0">${item.option} - ${item.name}</p>
+            <span>$<span id="cart-item-price" class="mb-0">${item.price}</span></span>
+          </div>`
+  });
+})
 
 // Remove individual Items
 function removeItem(e) {
@@ -244,23 +248,21 @@ function removeItem(e) {
   // console.log(_uuid)
 
   items = storageList.filter((item, idx) => item.uuid != _uuid)
-  // console.log(newItems.length);
-  const checkoutItemID = [];
+  // const checkoutItemID = [];
 
-  for (let i = 0; i < items.length; i++) {
-    checkoutItemID.push(checkoutItem[i].getAttribute('data-id'));
-    checkoutItems.push(checkoutItem[i]);
-  }
-  // console.log(checkoutItemID);
-  console.log(checkoutItems);
+  // for (let i = 0; i < items.length; i++) {
+  //   checkoutItemID.push(checkoutItem[i].getAttribute('data-id'));
+  //   checkoutItems.push(checkoutItem[i]);
+  // }
+  // // console.log(checkoutItemID);
+  // console.log(checkoutItems);
 
-  for (let i = 0; i < items.length; i++) {
-    // console.log(checkoutItemID[i], items[i].uuid);
-    if (checkoutItemID[i] != items[i].uuid) {
 
-      checkoutItems[i].remove();
-    }
-  }
+  // for (let i = 0; i < items.length; i++) {
+  //   if (checkoutItemID[i] != items[i].uuid) {
+  //     checkoutItems[i].remove();
+  //   }
+  // }
 
   localStorage.setItem('cart', JSON.stringify(items))
 }
@@ -355,15 +357,15 @@ window.onload = function () {
 
         cart.insertBefore(cartItem, total)
 
-        // Checkout modal local storage functionality
-        const totalCheckout = document.querySelector('#total-checkout')
-        totalCheckout.innerHTML = `<span class="total-checkout-price">Total: $</span>`
-        const order = document.querySelector('#order-items')
-        order.classList.add('text-capitalize')
-        order.innerHTML += `<div class="item-text checkout-item" data-id='${cartStorageID}'>
-          <p id="cart-item-title" class="mb-0">${options()}${cartStorageName}</p>
-          <span>$<span id="cart-item-price" class="mb-0">${cartStoragePrice}</span></span>
-        </div>`
+        // // Checkout modal local storage functionality
+        // const totalCheckout = document.querySelector('#total-checkout')
+        // totalCheckout.innerHTML = `<span class="total-checkout-price">Total: $</span>`
+        // const order = document.querySelector('#order-items')
+        // order.classList.add('text-capitalize')
+        // order.innerHTML += `<div class="item-text checkout-item" data-id='${cartStorageID}'>
+        //   <p id="cart-item-title" class="mb-0">${options()}${cartStorageName}</p>
+        //   <span>$<span id="cart-item-price" class="mb-0">${cartStoragePrice}</span></span>
+        // </div>`
       }
       showTotals()
     }
