@@ -70,7 +70,7 @@ function cartAction() {
   const cartBtn = document.querySelectorAll('.store-item-icon')
   cartBtn.forEach(function (btn, index) {
     btn.addEventListener('click', e => {
-      console.log(index)
+      // console.log(index)
 
       // Select the selection for certain menu items
       const selection = e.target.parentElement.previousElementSibling.lastElementChild
@@ -133,7 +133,7 @@ function cartAction() {
           // Adds item options to the cart
           let option = e.target.parentElement.previousElementSibling.children[2] || ''
           // console.log(option.value);
-          item.option = option.value
+          item.option = option.value || '';
 
           item.uuid = uuid()
 
@@ -157,7 +157,7 @@ function cartAction() {
           cartItem.classList.add('cart-item', 'd-flex', 'justify-content-between', 'text-capitalize', 'my-3')
           cartItem.innerHTML =
             `<div class="item-text">
-            <p id="cart-item-title" class="font-weight-bold mb-0">${options()}${item.name}</p>
+            <p id="cart-item-title" class="font-weight-bold mb-0">${item.option} ${item.name}</p>
             <span>$</span>
             <span id="cart-item-price" class="cart-item-price" class="mb-0">${item.price}</span>
           </div>
@@ -176,10 +176,6 @@ function cartAction() {
 
           e.stopPropagation()
           e.preventDefault()
-
-          const cartTotalCheckout = document.querySelector('#cart-total')
-
-
 
           showTotals()
         }
@@ -221,24 +217,32 @@ function showTotals() {
 
 const cartItems = document.getElementsByClassName('cart-item')
 
+// Add items to checkout on click of checkout button
 const goToCheckout = document.querySelector('#checkout');
 goToCheckout.addEventListener('click', () => {
+  const checkoutItem = document.querySelectorAll('.checkout-item')
+  for (let i = 0; i < checkoutItem.length; i++) {
+    checkoutItem[i].remove();
+  }
+
+  const itemTotal = document.querySelector('.item-total');
+
   items.forEach(function (item) {
     const totalCheckout = document.querySelector('#total-checkout')
     totalCheckout.innerHTML = `<span class="total-checkout-price"></span>`
     const order = document.querySelector('#order-items')
     order.classList.add('text-capitalize')
     order.innerHTML += `<div class="item-text checkout-item" data-id='${item.uuid}'>
-            <p id="cart-item-title" class="mb-0">${item.option} - ${item.name}</p>
+            <p id="cart-item-title" class="mb-0">${item.option} ${item.name}</p>
             <span>$<span id="cart-item-price" class="mb-0">${item.price}</span></span>
-          </div>`
+          </div>`;
+
+    document.querySelector('.total-checkout-price').innerHTML = `Total: $${itemTotal.textContent}`;
   });
 })
 
 // Remove individual Items
 function removeItem(e) {
-  let checkoutItems = [];
-  const checkoutItem = document.querySelectorAll('.checkout-item')
   let buttonClicked = e.target
   let _uuid = e.currentTarget.getAttribute('data-id')
   buttonClicked.parentElement.parentElement.remove()
@@ -248,21 +252,6 @@ function removeItem(e) {
   // console.log(_uuid)
 
   items = storageList.filter((item, idx) => item.uuid != _uuid)
-  // const checkoutItemID = [];
-
-  // for (let i = 0; i < items.length; i++) {
-  //   checkoutItemID.push(checkoutItem[i].getAttribute('data-id'));
-  //   checkoutItems.push(checkoutItem[i]);
-  // }
-  // // console.log(checkoutItemID);
-  // console.log(checkoutItems);
-
-
-  // for (let i = 0; i < items.length; i++) {
-  //   if (checkoutItemID[i] != items[i].uuid) {
-  //     checkoutItems[i].remove();
-  //   }
-  // }
 
   localStorage.setItem('cart', JSON.stringify(items))
 }
@@ -325,23 +314,14 @@ window.onload = function () {
       for (let i = 0; i < cartStorage.length; i++) {
         const cartStorageName = cartStorage[i].name;
         const cartStoragePrice = cartStorage[i].price;
-        const cartStorageOption = cartStorage[i].option;
+        const cartStorageOption = cartStorage[i].option || '';
         const cartStorageID = cartStorage[i].uuid;
-
-        function options() {
-          if (cartStorageOption === undefined) {
-            return ''
-          } else {
-            return cartStorageOption + ' - '
-          }
-        }
 
         const cartItem = document.createElement('div')
         cartItem.classList.add('cart-item', 'd-flex', 'justify-content-between', 'text-capitalize', 'my-3')
         cartItem.innerHTML =
-          // `< img src = "${item.img}" class="img-fluid rounded-circle" id = "item-img" alt = "" >
           `<div class="item-text">
-              <p id="cart-item-title" class="font-weight-bold mb-0">${options()}${cartStorageName}</p>
+              <p id="cart-item-title" class="font-weight-bold mb-0">${cartStorageOption} ${cartStorageName}</p>
               <span>$</span>
               <span id="cart-item-price" class="cart-item-price" class="mb-0">${cartStoragePrice}</span>
             </div>
@@ -356,25 +336,12 @@ window.onload = function () {
         const total = document.querySelector('.cart-total-container')
 
         cart.insertBefore(cartItem, total)
-
-        // // Checkout modal local storage functionality
-        // const totalCheckout = document.querySelector('#total-checkout')
-        // totalCheckout.innerHTML = `<span class="total-checkout-price">Total: $</span>`
-        // const order = document.querySelector('#order-items')
-        // order.classList.add('text-capitalize')
-        // order.innerHTML += `<div class="item-text checkout-item" data-id='${cartStorageID}'>
-        //   <p id="cart-item-title" class="mb-0">${options()}${cartStorageName}</p>
-        //   <span>$<span id="cart-item-price" class="mb-0">${cartStoragePrice}</span></span>
-        // </div>`
       }
       showTotals()
     }
     cartStorageRetrieve()
   }
 }
-
-// window.localStorage.clear();
-// console.log(localStorage);
 
 //Functionality for left / right arrows on menu horizontal scrolling
 const rightArrow = document.querySelectorAll('.right-arrow')
