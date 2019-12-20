@@ -848,3 +848,142 @@ checkoutBtn.addEventListener('click', () => {
   }
 })
 
+const createYourOwnNav = document.querySelector('#steps')
+const createYourOwnNavLinks = document.querySelectorAll('#steps li')
+const sizeAndCrust = document.querySelector('#crust-and-size');
+const meats = document.querySelector('#meats');
+const cheeses = document.querySelector('#cheese');
+const veggies = document.querySelector('#veggie');
+
+for (let i = 0; i < createYourOwnNavLinks.length; i++) {
+  createYourOwnNavLinks[i].addEventListener('click', e => {
+    const activecreateYourOwnNav = document.querySelectorAll('.active-create-your-own-nav')
+    if (activecreateYourOwnNav.length > 0) {
+      for (let i = 0; i < activecreateYourOwnNav.length; i++) {
+        activecreateYourOwnNav[i].classList.remove('active-create-your-own-nav')
+      }
+    }
+    e.target.classList.add('active-create-your-own-nav')
+
+    if (createYourOwnNavLinks[i].textContent == 'Size & Crust' && createYourOwnNavLinks[i].classList.contains('active-create-your-own-nav')) {
+      sizeAndCrust.style.display = 'block';
+      cheeses.style.display = 'none';
+      meats.style.display = 'none';
+      veggies.style.display = 'none';
+    } else if (createYourOwnNavLinks[i].textContent == 'Cheeses' && createYourOwnNavLinks[i].classList.contains('active-create-your-own-nav')) {
+      sizeAndCrust.style.display = 'none';
+      cheeses.style.display = 'block';
+      meats.style.display = 'none';
+      veggies.style.display = 'none';
+
+    } else if (createYourOwnNavLinks[i].textContent == 'Meats' && createYourOwnNavLinks[i].classList.contains('active-create-your-own-nav')) {
+      meats.style.display = 'block';
+      cheeses.style.display = 'none';
+      sizeAndCrust.style.display = 'none';
+      veggies.style.display = 'none';
+    } else if (createYourOwnNavLinks[i].textContent == 'Veggies' && createYourOwnNavLinks[i].classList.contains('active-create-your-own-nav')) {
+      veggies.style.display = 'block';
+      cheeses.style.display = 'none';
+      sizeAndCrust.style.display = 'none';
+      meats.style.display = 'none';
+    }
+  });
+}
+
+const crustOptions = document.querySelectorAll('#crust .pizza-options');
+const crustLabels = document.querySelectorAll('#crust label');
+const sizeOptions = document.querySelectorAll('#size .pizza-options');
+const sizeLabels = document.querySelectorAll('#size label');
+const cutOptions = document.querySelectorAll('#cut .pizza-options');
+const cutLabels = document.querySelectorAll('#cut label');
+const bakeOptions = document.querySelectorAll('#bake .pizza-options');
+const bakeLabels = document.querySelectorAll('#bake label');
+const sauceOptions = document.querySelectorAll('#sauce .pizza-options');
+const sauceLabels = document.querySelectorAll('#sauce label');
+const sauceAmountOptions = document.querySelectorAll('#sauce-amount .pizza-options');
+const sauceAmountLabels = document.querySelectorAll('#sauce-amount label');
+
+const pizzaOptions = (labelType, optionType, className) => {
+  for (let i = 0; i < labelType.length; i++) {
+    labelType[i].addEventListener('click', e => {
+      const activeType = document.querySelectorAll(`.${className}`)
+      if (optionType.length > 0) {
+        for (let i = 0; i < optionType.length; i++) {
+          activeType[i].classList.remove(className)
+        }
+      }
+      e.target.classList.add(className)
+    });
+  }
+}
+
+pizzaOptions(sauceAmountLabels, sauceAmountOptions, 'sauce-amount-active');
+pizzaOptions(sauceLabels, sauceOptions, 'sauce-active');
+pizzaOptions(bakeLabels, bakeOptions, 'bake-active');
+pizzaOptions(cutLabels, cutOptions, 'cut-active');
+pizzaOptions(sizeLabels, sizeOptions, 'size-active');
+pizzaOptions(crustLabels, crustOptions, 'crust-active');
+
+
+let checkedOptions = {
+  crust: '',
+  size: '',
+  cut: '',
+  bake: '',
+  sauce: '',
+  sauceAmt: ''
+};
+
+const createYourOwnBtn = document.querySelector('#create-your-own-btn');
+const createYourOwnTitleP = document.querySelector('#title p');
+
+if (pathname.indexOf('create-your-own') > -1) {
+  createYourOwnBtn.addEventListener('click', () => {
+    crustLabels.forEach(label => {
+      if (label.classList.contains('crust-active')) {
+        checkedOptions.crust = label.textContent;
+      }
+    });
+
+    sizeLabels.forEach(label => {
+      if (label.classList.contains('size-active')) {
+        checkedOptions.size = label.textContent;
+      }
+    });
+
+    cutLabels.forEach(label => {
+      if (label.classList.contains('cut-active')) {
+        checkedOptions.cut = label.textContent;
+      }
+    });
+
+    bakeLabels.forEach(label => {
+      if (label.classList.contains('bake-active')) {
+        checkedOptions.bake = label.textContent;
+      }
+    });
+
+    sauceLabels.forEach(label => {
+      if (label.classList.contains('sauce-active')) {
+        checkedOptions.sauce = label.textContent;
+      }
+    });
+
+    sauceAmountLabels.forEach(label => {
+      if (label.classList.contains('sauce-amount-active')) {
+        checkedOptions.sauceAmt = label.textContent;
+      }
+    });
+    console.log(checkedOptions);
+  });
+}
+
+const homePageJumbotronDivs = document.querySelectorAll('.container div');
+if (pathname.indexOf('/index.html') > -1) {
+  homePageJumbotronDivs.forEach(div => {
+    div.addEventListener('animationend', () => {
+      div.style.opacity = '1';
+    })
+  });
+}
+

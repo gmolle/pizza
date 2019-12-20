@@ -631,14 +631,13 @@ html {
 
 .jumbotron {
   padding: 0;
-  width: 75%;
+  width: 100%;
   min-height: 50vh;
   background-image: url(../img/header.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   margin: 0 auto;
-  border-radius: 0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -650,39 +649,86 @@ html {
 }
 
 .jumbotron .container {
-  width: 30%;
+  width: 40%;
   height: 100%;
   color: white;
   padding-top: 3rem;
-  -webkit-transform: rotate(-15deg);
-          transform: rotate(-15deg);
+  -webkit-transform: rotate(-5deg);
+          transform: rotate(-5deg);
   margin: 0;
+  margin-left: 1rem;
+  margin-top: 2rem;
 }
 
 .jumbotron .container div {
   background: #f55f29;
   -webkit-transform: skew(45deg);
           transform: skew(45deg);
-  width: 100%;
+  width: auto;
   text-align: center;
-  border-radius: 0.5rem;
+  -webkit-animation: slideIn 0.5s ease;
+          animation: slideIn 0.5s ease;
+  opacity: 0;
 }
 
 .jumbotron .container div:nth-child(2) {
   margin-top: 1rem;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
 }
 
 .jumbotron .container div:nth-child(3) {
   margin-top: 1rem;
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
 }
 
 .jumbotron .container div h4 {
   -webkit-transform: skew(-45deg);
           transform: skew(-45deg);
+  width: auto;
 }
 
 .jumbotron .container .pizza-img {
   width: 100%;
+}
+
+@-webkit-keyframes slideIn {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transform: translateX(-300px) skew(45deg);
+            transform: translateX(-300px) skew(45deg);
+  }
+  80% {
+    -webkit-transform: translateX(25px) skew(45deg);
+            transform: translateX(25px) skew(45deg);
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: translateX(0px) skew(45deg);
+            transform: translateX(0px) skew(45deg);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transform: translateX(-300px) skew(45deg);
+            transform: translateX(-300px) skew(45deg);
+  }
+  80% {
+    -webkit-transform: translateX(25px) skew(45deg);
+            transform: translateX(25px) skew(45deg);
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: translateX(0px) skew(45deg);
+            transform: translateX(0px) skew(45deg);
+  }
 }
 
 #deals {
@@ -1267,7 +1313,7 @@ html {
           flex-direction: column;
 }
 
-#menu .item-info .price-div .store-item-icon {
+#menu .item-info .price-div .store-item-icon, #menu .item-info .price-div a {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
@@ -1788,6 +1834,213 @@ html {
   background-image: url(../img/water.jpg);
 }
 
+#title {
+  width: 75%;
+  margin: 0 auto;
+  border-bottom: solid 1px #cfcecc;
+  margin-top: 0.5rem;
+}
+
+#title h1 {
+  font-weight: normal;
+}
+
+#create-your-own {
+  width: 75%;
+  min-height: 75vh;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 1rem;
+}
+
+#create-your-own #create-img {
+  width: 40%;
+  margin-right: 3rem;
+}
+
+#create-your-own #create-img #img-preview {
+  height: 50%;
+  background-image: url(../img/cheese-pizza.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#create-your-own #toppings {
+  width: 60%;
+}
+
+#create-your-own #toppings #topping-header {
+  height: 5%;
+}
+
+#create-your-own #toppings #topping-header #steps {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 0;
+  height: 100%;
+}
+
+#create-your-own #toppings #topping-header #steps li {
+  background: white;
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem 0 0.5rem 0;
+  text-transform: uppercase;
+  border: solid 1px #cfcecc;
+  border-radius: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 0.5rem;
+}
+
+#create-your-own #toppings #topping-header #steps li:last-of-type {
+  margin-right: 0;
+}
+
+#create-your-own #toppings #topping-header #steps li:hover {
+  cursor: pointer;
+}
+
+#create-your-own #toppings #topping-header #steps .active-create-your-own-nav {
+  background: #e44c15;
+  color: white;
+}
+
+#create-your-own #toppings #topping-types {
+  height: 90%;
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#create-your-own #toppings #topping-types .topping-type {
+  width: 100%;
+  height: 100%;
+}
+
+#create-your-own #toppings #topping-types .topping-type input {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+#create-your-own #toppings #topping-types button {
+  border-radius: 0.5rem;
+  border: 0.1rem solid #e44c15;
+  padding: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  background: white;
+  -webkit-transition: 0.15s all;
+  transition: 0.15s all;
+  font-weight: 400;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+#create-your-own #toppings #topping-types button:hover {
+  cursor: pointer;
+  background: #e44c15;
+  color: white;
+}
+
+#create-your-own #toppings #topping-types fieldset legend {
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+}
+
+#create-your-own #toppings #topping-types fieldset .pizza-options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 5vh;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+#create-your-own #toppings #topping-types fieldset .pizza-options label {
+  margin-right: 2rem;
+  border: solid 1px #cfcecc;
+  border-radius: 0.5rem;
+  width: 20%;
+  min-width: 120px;
+  font-size: 1rem;
+  padding: 0 0.25rem 0 0.25rem;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-transition: 0.15s all;
+  transition: 0.15s all;
+}
+
+#create-your-own #toppings #topping-types fieldset .pizza-options label:hover {
+  border-color: #888888;
+}
+
+#create-your-own #toppings #topping-types fieldset .pizza-options .size-active, #create-your-own #toppings #topping-types fieldset .pizza-options .crust-active,
+#create-your-own #toppings #topping-types fieldset .pizza-options .cut-active, #create-your-own #toppings #topping-types fieldset .pizza-options .bake-active,
+#create-your-own #toppings #topping-types fieldset .pizza-options .sauce-active, #create-your-own #toppings #topping-types fieldset .pizza-options .sauce-amount-active {
+  border-color: #e44c15;
+}
+
+#create-your-own #toppings #topping-types fieldset .pizza-options .size-active:hover, #create-your-own #toppings #topping-types fieldset .pizza-options .crust-active:hover,
+#create-your-own #toppings #topping-types fieldset .pizza-options .cut-active:hover, #create-your-own #toppings #topping-types fieldset .pizza-options .bake-active:hover,
+#create-your-own #toppings #topping-types fieldset .pizza-options .sauce-active:hover, #create-your-own #toppings #topping-types fieldset .pizza-options .sauce-amount-active:hover {
+  border-color: #e44c15;
+}
+
+#create-your-own #toppings #topping-types #crust-and-size {
+  display: block;
+}
+
+#create-your-own #toppings #topping-types #meats {
+  display: none;
+  background: green;
+}
+
+#create-your-own #toppings #topping-types #cheese {
+  background: orange;
+  display: none;
+}
+
+#create-your-own #toppings #topping-types #veggie {
+  display: none;
+  background: pink;
+}
+
 @media screen and (max-width: 1200px) {
   #menu .menu-type .item-img {
     height: 30%;
@@ -1913,6 +2166,42 @@ html {
   }
   #menu .menu-title {
     background-attachment: scroll;
+  }
+  #create-your-own {
+    height: 100vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #create-your-own #create-img {
+    height: 20%;
+    width: 100%;
+  }
+  #create-your-own #create-img #img-preview {
+    height: 100%;
+  }
+  #create-your-own #toppings {
+    width: 100%;
+    height: 80%;
+    margin-top: 1rem;
+  }
+  #create-your-own #toppings #topping-types {
+    height: 90%;
+    margin-top: 1rem;
+  }
+  #create-your-own #toppings #topping-types fieldset .pizza-options label {
+    margin-right: 1rem;
+    min-width: 5%;
+  }
+  #nav .navbar form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
   }
 }
 
@@ -2214,6 +2503,64 @@ html {
   .left-arrow {
     display: none;
   }
+  #title h1 {
+    font-size: 1.8rem;
+  }
+  #create-your-own {
+    height: 100vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #create-your-own #create-img {
+    height: 20%;
+    width: 100%;
+  }
+  #create-your-own #create-img #img-preview {
+    height: 100%;
+  }
+  #create-your-own #toppings {
+    width: 100%;
+    height: 80%;
+    margin-top: 1rem;
+  }
+  #create-your-own #toppings #topping-header #steps li {
+    font-size: 0.66rem;
+  }
+  #create-your-own #toppings #topping-types {
+    height: 90%;
+    margin-top: 1rem;
+  }
+  #create-your-own #toppings #topping-types fieldset legend {
+    font-size: 1.2rem;
+  }
+  #create-your-own #toppings #topping-types fieldset .pizza-options {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5px 10px;
+    margin-bottom: 1.5rem;
+    height: 100%;
+  }
+  #create-your-own #toppings #topping-types fieldset .pizza-options:nth-of-type(1) {
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+  }
+  #create-your-own #toppings #topping-types fieldset .pizza-options label {
+    margin-right: 0.75rem;
+    width: 100%;
+    font-size: 0.85rem;
+  }
+  #create-your-own #toppings #topping-types fieldset .pizza-options label[for="crust-3"] {
+    font-size: 0.6rem;
+  }
+  #create-your-own #toppings #topping-types fieldset .pizza-options label[for="bake-2"] {
+    font-size: 0.6rem;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -2342,6 +2689,49 @@ html {
   }
   #menu #drink-type {
         grid-template-areas: "drink1" "drink2" "drink3"  "drink4";
+  }
+  #title h1 {
+    font-size: 1.2rem;
+  }
+  #create-your-own {
+    height: 100vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #create-your-own #create-img {
+    height: 20%;
+    width: 100%;
+  }
+  #create-your-own #create-img #img-preview {
+    height: 100%;
+  }
+  #create-your-own #toppings {
+    width: 100%;
+    height: 80%;
+    margin-top: 1rem;
+  }
+  #create-your-own #toppings #topping-header #steps li {
+    font-size: 0.66rem;
+  }
+  #create-your-own #toppings #topping-header #steps li:first-of-type {
+    font-size: 0.5rem;
+  }
+  #create-your-own #toppings #topping-types {
+    height: 90%;
+    margin-top: 1rem;
+  }
+  #create-your-own #toppings #topping-types fieldset legend {
+    font-size: 1rem;
+  }
+  #create-your-own #toppings #topping-types fieldset .pizza-options label {
+    margin-right: 0.5rem;
+    min-width: 10%;
+    font-size: 0.7rem;
+  }
+  #create-your-own #toppings #topping-types fieldset .pizza-options label[for="crust-3"] {
+    font-size: 0.6rem;
   }
 }
 

@@ -74,23 +74,134 @@
     <!--  -->
   </div>
 
+  <div id="title">
+    <h1>Create Your Own Pizza</h1>
+    <p>(0) Toppings</p>
+  </div>
 
   <div id="create-your-own">
 
-    <div id="toppings">
-      <div id="meats">
-
-      </div>
-
-      <div id="cheese">
-
-      </div>
-
-      <div id="veggie">
-
-      </div>
+    <div id="create-img">
+      <div id="img-preview"></div>
     </div>
 
+    <div id="toppings">
+      <div id="topping-header">
+        <ul id="steps">
+          <li class="active-create-your-own-nav">Size & Crust</li>
+          <li>Cheeses</li>
+          <li>Meats</li>
+          <li>Veggies</li>
+        </ul>
+      </div>
+
+      <div id="topping-types">
+
+        <div id="crust-and-size" class="topping-type">
+          <fieldset id="crust">
+            <legend>Crust Style</legend>
+            <div class="pizza-options">
+              <input type="radio" name="crust" id="crust-1" checked>
+              <label for="crust-1" class="crust-active">Original</label>
+
+              <input type="radio" name="crust" id="crust-2">
+              <label for="crust-2">Thin</label>
+
+              <input type="radio" name="crust" id="crust-3">
+              <label for="crust-3">Gluten-Free</label>
+            </div>
+          </fieldset>
+
+          <fieldset id="size">
+            <legend>Pizza Size</legend>
+            <div class="pizza-options">
+              <input type="radio" name="size" id="size-1">
+              <label for="size-1">Small</label>
+
+              <input type="radio" name="size" id="size-2">
+              <label for="size-2">Medium</label>
+
+              <input type="radio" name="size" id="size-3" checked>
+              <label for="size-3" class="size-active">Large</label>
+
+              <input type="radio" name="size" id="size-4">
+              <label for="size-4">XL</label>
+            </div>
+          </fieldset>
+
+          <fieldset id="cut">
+            <legend>Cut</legend>
+            <div class="pizza-options">
+              <input type="radio" name="cut" id="cut-1" checked>
+              <label for="cut-1" class="cut-active">Normal</label>
+
+              <input type="radio" name="cut" id="cut-2">
+              <label for="cut-2">Square</label>
+
+              <input type="radio" name="cut" id="cut-3">
+              <label for="cut-3">No Cut</label>
+            </div>
+          </fieldset>
+
+          <fieldset id="bake">
+            <legend>Bake</legend>
+            <div class="pizza-options">
+              <input type="radio" name="bake" id="bake-1" checked>
+              <label for="bake-1" class="bake-active">Normal</label>
+
+              <input type="radio" name="bake" id="bake-2">
+              <label for="bake-2">Well Done</label>
+            </div>
+          </fieldset>
+
+          <fieldset id="sauce">
+            <legend>Sauce</legend>
+            <div class="pizza-options">
+              <input type="radio" name="sauce" id="sauce-1" checked>
+              <label for="sauce-1" class="sauce-active">Original</label>
+
+              <input type="radio" name="sauce" id="sauce-2">
+              <label for="sauce-2">Buffalo</label>
+
+              <input type="radio" name="sauce" id="sauce-3">
+              <label for="sauce-3">BBQ</label>
+
+              <input type="radio" name="sauce" id="sauce-4">
+              <label for="sauce-4">Alfredo</label>
+            </div>
+          </fieldset>
+
+          <fieldset id="sauce-amount">
+            <legend>Sauce Amount</legend>
+            <div class="pizza-options">
+              <input type="radio" name="sauce-amount" id="sauce-amount-1" checked>
+              <label for="sauce-amount-1" class="sauce-amount-active">Normal</label>
+
+              <input type="radio" name="sauce" id="sauce-amount-2">
+              <label for="sauce-amount-2">Light</label>
+
+              <input type="radio" name="sauce" id="sauce-amount-3">
+              <label for="sauce-amount-3">Extra</label>
+
+              <input type="radio" name="sauce" id="sauce-amount-4">
+              <label for="sauce-amount-4">None</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div id="meats" class="topping-type">
+
+        </div>
+
+        <div id="cheese" class="topping-type">
+
+        </div>
+
+        <div id="veggie" class="topping-type">
+        </div>
+        <button id="create-your-own-btn">Order Now</button>
+      </div>
+    </div>
   </div>
 
 
@@ -159,7 +270,7 @@
 
               <div id="email-container">
                 <label for="email">Email</label>
-                <input type="text" name="email" id="email" placeholder="name@example.com">
+                <input type="email" name="email" id="email" placeholder="name@example.com">
               </div>
 
               <div id="street-container">
@@ -319,6 +430,17 @@
   </div>
 
 
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="../js/app.js"></script>
 </body>
 
 </html>
