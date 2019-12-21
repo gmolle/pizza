@@ -905,9 +905,6 @@ const sauceAmountLabels = document.querySelectorAll('#sauce-amount label');
 const cheeseOptions = document.querySelectorAll('#cheese .pizza-options');
 const cheeseLabels = document.querySelectorAll('#cheese label');
 
-for (let i = 0; i < crustOptions.length; i++) {
-  console.log(crustOptions[i].children)
-}
 
 const pizzaOptions = (labelType, optionType, className) => {
   for (let i = 0; i < labelType.length; i++) {
@@ -1026,116 +1023,118 @@ toppings.forEach((topping, index) => {
   });
 })
 
-const cheeseNextBtn = document.querySelector('#cheese-next button');
-const cheeseNext = document.querySelector('#cheese-next');
-const meatNextBtn = document.querySelector('#meat-next button');
-const meatNext = document.querySelector('#meat-next');
-const meatPrevious = document.querySelector('#meat-next a');
-const veggieNextBtn = document.querySelector('#veggie-next button');
-const veggieNext = document.querySelector('#veggie-next');
-const veggiePrevious = document.querySelector('#veggie-next a');
-const finishedBtn = document.querySelector('#finished button');
-const finished = document.querySelector('#finished');
-const finishedPrevious = document.querySelector('#finished a');
+if (pathname.indexOf('create-your-own') > -1) {
+  const cheeseNextBtn = document.querySelector('#cheese-next button');
+  const cheeseNext = document.querySelector('#cheese-next');
+  const meatNextBtn = document.querySelector('#meat-next button');
+  const meatNext = document.querySelector('#meat-next');
+  const meatPrevious = document.querySelector('#meat-next a');
+  const veggieNextBtn = document.querySelector('#veggie-next button');
+  const veggieNext = document.querySelector('#veggie-next');
+  const veggiePrevious = document.querySelector('#veggie-next a');
+  const finishedBtn = document.querySelector('#finished button');
+  const finished = document.querySelector('#finished');
+  const finishedPrevious = document.querySelector('#finished a');
 
-const nextStep = (stepName, toppingHide, toppingShow, stepHide, stepShow, linkHide, linkShow) => {
-  stepName.addEventListener('click', () => {
-    createYourOwnNavLinks[linkShow].classList.add('active-create-your-own-nav');
-    createYourOwnNavLinks[linkHide].classList.remove('active-create-your-own-nav');
+  const nextStep = (stepName, toppingHide, toppingShow, stepHide, stepShow, linkHide, linkShow) => {
+    stepName.addEventListener('click', () => {
+      createYourOwnNavLinks[linkShow].classList.add('active-create-your-own-nav');
+      createYourOwnNavLinks[linkHide].classList.remove('active-create-your-own-nav');
 
-    toppingHide.style.display = 'none';
-    toppingShow.style.display = 'block';
+      toppingHide.style.display = 'none';
+      toppingShow.style.display = 'block';
 
-    stepHide.style.display = 'none';
-    stepShow.style.display = 'flex';
-  });
-}
+      stepHide.style.display = 'none';
+      stepShow.style.display = 'flex';
+    });
+  }
 
-nextStep(cheeseNextBtn, sizeAndCrust, cheeses, cheeseNext, meatNext, 0, 1);
-nextStep(meatNextBtn, cheeses, meats, meatNext, veggieNext, 1, 2);
-nextStep(veggieNextBtn, meats, veggies, veggieNext, finished, 2, 3)
+  nextStep(cheeseNextBtn, sizeAndCrust, cheeses, cheeseNext, meatNext, 0, 1);
+  nextStep(meatNextBtn, cheeses, meats, meatNext, veggieNext, 1, 2);
+  nextStep(veggieNextBtn, meats, veggies, veggieNext, finished, 2, 3)
 
-const previousStep = (stepName, toppingHide, toppingShow, stepHide, stepShow, linkHide, linkShow) => {
-  stepName.addEventListener('click', () => {
-    createYourOwnNavLinks[linkHide].classList.remove('active-create-your-own-nav');
-    createYourOwnNavLinks[linkShow].classList.add('active-create-your-own-nav');
+  const previousStep = (stepName, toppingHide, toppingShow, stepHide, stepShow, linkHide, linkShow) => {
+    stepName.addEventListener('click', () => {
+      createYourOwnNavLinks[linkHide].classList.remove('active-create-your-own-nav');
+      createYourOwnNavLinks[linkShow].classList.add('active-create-your-own-nav');
 
-    toppingShow.style.display = 'block';
-    toppingHide.style.display = 'none';
+      toppingShow.style.display = 'block';
+      toppingHide.style.display = 'none';
 
-    stepShow.style.display = 'flex';
-    stepHide.style.display = 'none';
-  });
-}
+      stepShow.style.display = 'flex';
+      stepHide.style.display = 'none';
+    });
+  }
 
-previousStep(meatPrevious, cheeses, sizeAndCrust, meatNext, cheeseNext, 1, 0);
-previousStep(veggiePrevious, meats, cheeses, veggieNext, meatNext, 2, 1)
-previousStep(finishedPrevious, veggies, meats, finished, veggieNext, 3, 2)
+  previousStep(meatPrevious, cheeses, sizeAndCrust, meatNext, cheeseNext, 1, 0);
+  previousStep(veggiePrevious, meats, cheeses, veggieNext, meatNext, 2, 1)
+  previousStep(finishedPrevious, veggies, meats, finished, veggieNext, 3, 2)
 
-const sizeNav = document.querySelector('#size-nav');
-const cheeseNav = document.querySelector('#cheese-nav');
-const meatNav = document.querySelector('#meat-nav');
-const veggieNav = document.querySelector('#veggie-nav');
+  const sizeNav = document.querySelector('#size-nav');
+  const cheeseNav = document.querySelector('#cheese-nav');
+  const meatNav = document.querySelector('#meat-nav');
+  const veggieNav = document.querySelector('#veggie-nav');
 
-const automaticStepChange = (navLink, showStep, hideStep1, hideStep2, hideStep3) => {
-  navLink.addEventListener('click', () => {
-    if (navLink.classList.contains('active-create-your-own-nav')) {
-      showStep.style.display = 'flex';
-      hideStep1.style.display = 'none';
-      hideStep2.style.display = 'none';
-      hideStep3.style.display = 'none';
-    }
-  });
-}
+  const automaticStepChange = (navLink, showStep, hideStep1, hideStep2, hideStep3) => {
+    navLink.addEventListener('click', () => {
+      if (navLink.classList.contains('active-create-your-own-nav')) {
+        showStep.style.display = 'flex';
+        hideStep1.style.display = 'none';
+        hideStep2.style.display = 'none';
+        hideStep3.style.display = 'none';
+      }
+    });
+  }
 
-automaticStepChange(sizeNav, cheeseNext, meatNext, veggieNext, finished);
-automaticStepChange(cheeseNav, meatNext, cheeseNext, veggieNext, finished);
-automaticStepChange(meatNav, veggieNext, cheeseNext, meatNext, finished);
-automaticStepChange(veggieNav, finished, cheeseNext, meatNext, veggieNext);
+  automaticStepChange(sizeNav, cheeseNext, meatNext, veggieNext, finished);
+  automaticStepChange(cheeseNav, meatNext, cheeseNext, veggieNext, finished);
+  automaticStepChange(meatNav, veggieNext, cheeseNext, meatNext, finished);
+  automaticStepChange(veggieNav, finished, cheeseNext, meatNext, veggieNext);
 
-const toppingList = document.querySelector('#topping-list');
+  const toppingList = document.querySelector('#topping-list');
 
-toppings.forEach((topping, index) => {
-  topping.addEventListener('click', () => {
-    if (topping.classList.contains('topping-active')) {
-      const individualToppings = document.createElement('div');
-      individualToppings.className = 'indvTopping';
-      individualToppings.id = index;
-      individualToppings.innerHTML = `<p>${topping.children[1].children[0].textContent}</p>`;
-      const X = document.createElement('span');
-      X.textContent = '';
-      X.className = 'fas fa-plus-circle'
-      individualToppings.append(X);
-      toppingList.append(individualToppings);
+  toppings.forEach((topping, index) => {
+    topping.addEventListener('click', () => {
+      if (topping.classList.contains('topping-active')) {
+        const individualToppings = document.createElement('div');
+        individualToppings.className = 'indvTopping';
+        individualToppings.id = index;
+        individualToppings.innerHTML = `<p>${topping.children[1].children[0].textContent}</p>`;
+        const X = document.createElement('span');
+        X.textContent = '';
+        X.className = 'fas fa-plus-circle'
+        individualToppings.append(X);
+        toppingList.append(individualToppings);
 
-      const allToppings = document.querySelectorAll('.indvTopping');
-      X.addEventListener('click', () => {
-        if (X.parentElement.id == index) {
-          topping.classList.remove('topping-active');
-          X.parentElement.remove();
-          count--;
-          if (allToppings.length == 1) {
-            title.innerHTML = `(${allToppings.length - 1}) Topping`
-          } else {
-            title.innerHTML = `(${allToppings.length - 1}) Toppings`
+        const allToppings = document.querySelectorAll('.indvTopping');
+        X.addEventListener('click', () => {
+          if (X.parentElement.id == index) {
+            topping.classList.remove('topping-active');
+            X.parentElement.remove();
+            count--;
+            if (allToppings.length == 1) {
+              title.innerHTML = `(${allToppings.length - 1}) Topping`
+            } else {
+              title.innerHTML = `(${allToppings.length - 1}) Toppings`
+            }
+          }
+        })
+
+        if (allToppings.length > 0) {
+          toppingList.style.display = 'grid';
+        } else if (allToppings.length <= 0) {
+          toppingList.style.display = 'none';
+        }
+      } else {
+        const individualToppings2 = document.querySelectorAll('#topping-list div');
+        for (let i = 0; i < individualToppings2.length; i++) {
+          if (index == individualToppings2[i].id) {
+            individualToppings2[i].remove();
           }
         }
-      })
-
-      if (allToppings.length > 0) {
-        toppingList.style.display = 'grid';
-      } else if (allToppings.length <= 0) {
-        toppingList.style.display = 'none';
       }
-    } else {
-      const individualToppings2 = document.querySelectorAll('#topping-list div');
-      for (let i = 0; i < individualToppings2.length; i++) {
-        if (index == individualToppings2[i].id) {
-          individualToppings2[i].remove();
-        }
-      }
-    }
+    });
   });
-});
+}
 
 
