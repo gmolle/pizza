@@ -1616,22 +1616,75 @@ html {
   h1 {
     font-weight: normal;
   }
+
+  #topping-list {
+    width: 100%;
+    display: none;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 50px;
+    grid-auto-rows: 50px;
+    grid-gap: 5px 10px;
+    margin-bottom: 0.5rem;
+    
+    .indvTopping {
+      border: solid 1px #cfcecc;
+      border-radius: 0.2rem;
+      width: 100%;
+      margin-right: 0.32rem;
+      animation: 0.5s fadeIn;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      p {
+        margin-bottom: 0;
+        width: 75%;
+      }
+
+      span {
+        transform: rotate(45deg);
+        font-size: 1.5rem;
+        transition: 0.15s all;
+        justify-self: flex-end;
+
+        &:hover {
+          color: #e44c15;
+          cursor: pointer;
+        }
+      }
+
+      &:nth-of-type(5) {
+        margin-right: 0;
+      }
+    }
+  }
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
 
 #create-your-own {
   width: 75%;
-  min-height: 75vh;
+  min-height: 60vh;
   margin: 0 auto;
   display: flex;
   margin-top: 1rem;
 
   #create-img {
     width: 40%;
-    // background: green;
     margin-right: 3rem;
 
     #img-preview {
-      height: 50%;
+      height: 366px;
       background-image: url(../img/cheese-pizza.jpg);
       background-repeat: no-repeat;
       background-size: cover;
@@ -1658,11 +1711,13 @@ html {
           padding: 0.5rem 0 0.5rem 0;
           text-transform: uppercase;
           border: solid 1px #cfcecc;
-          border-radius: 0.5rem;
+          border-radius: 0.2rem;
           display: flex;
           justify-content: center;
           align-items: center;
+          position: relative;
           margin-right: 0.5rem;
+          transition: 0.15s all;
 
           &:last-of-type {
             margin-right: 0;
@@ -1670,12 +1725,18 @@ html {
 
           &:hover {
             cursor: pointer;
+            border-color: #888888;
           }
         }
 
         .active-create-your-own-nav {
           background: #e44c15;
+          border-color: #e44c15;
           color: white;
+
+          &:hover {
+            border-color: #e44c15;
+          }
         }
       }
     }
@@ -1695,27 +1756,58 @@ html {
           clip: rect(0 0 0 0);
           overflow: hidden;
         }
-      }
 
-      button {
-        border-radius: 0.5rem;
-        border: 0.1rem solid #e44c15;
-        padding: 0.5rem;
-        font-size: 1.25rem;
-        font-weight: 500;
-        background: white;
-        transition: 0.15s all;
-        font-weight: 400;
-        width: 100%;
-        margin-bottom: 1rem;
+        .toppings {
+          display: grid;
+          grid-template-rows: 1fr 1fr;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          grid-gap: 10px;
+          list-style: none;
+          flex-wrap: wrap;
+          width: 100%;
+          height: 100%;
+          margin-bottom: 5rem;
 
-        &:hover {
-         cursor: pointer;
-         background: #e44c15;
-         color: white;
+          .topping {
+            width: 100%;
+            height: 100%;
+            border: solid 1px #cfcecc;
+            border-radius: 0.2rem;
+            transition: 0.15s all;
+
+            &:hover {
+              cursor: pointer;
+              border-color: #888888;
+            }
+
+            img {
+              height: 60%;
+              width: 100%;
+              border-radius: 0.2rem 0.2rem 0 0;
+            }
+
+            .topping-name {
+              height: 40%;
+              width: 100%;
+              margin-left: 0.25rem;
+
+              p {
+                font-weight: bold;
+                font-size: 0.9rem;
+              }
+            }
+          }
+
+          .topping-active {
+            border-color: #e44c15;
+            border-width: 3px;
+
+            &:hover {
+              border-color: #e44c15;
+            }
+          }
         }
       }
-
 
       fieldset {
 
@@ -1737,7 +1829,6 @@ html {
             border: solid 1px #cfcecc;
             border-radius: 0.5rem;
             width: 20%;
-            min-width: 120px;
             font-size: 1rem;
             padding: 0 0.25rem 0 0.25rem;
             height: 100%;
@@ -1754,13 +1845,18 @@ html {
 
           .size-active, .crust-active, 
           .cut-active, .bake-active,
-          .sauce-active, .sauce-amount-active {
+          .sauce-active, .sauce-amount-active,
+          .cheese-active {
             border-color: #e44c15;
 
             &:hover {
               border-color: #e44c15;
             }
           }
+        }
+
+        &:last-of-type {
+          margin-bottom: 5rem;
         }
       }
       
@@ -1770,18 +1866,81 @@ html {
 
       #meats {
         display: none;
-        background: green;
+
+        #pepperoni {
+          border-bottom: solid 1px #cfcecc;
+        }
       }
 
       #cheese {
-        background: orange;
         display: none;
+        height: 50%;
+
+        fieldset {
+          margin-bottom: 1rem;
+        }
+
+        #cheese-toppings {
+          grid-template-rows: 1fr;
+        }
       }
 
       #veggie {
         display: none;
-        background: pink;
+
+        #pineapple {
+          border-bottom: solid 1px #cfcecc;
+        }
       }
+    }
+  }
+}
+
+#next-step {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  box-shadow: 0 0 5px 0 rgba(0,0,0,.40);
+  height: 7.5%;
+  z-index: 40;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+
+  div {
+    display: none;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      color: black;
+      font-size: 1.25rem;
+    }
+  }
+
+  #cheese-next {
+    display: flex;
+  }
+
+
+  button {
+    border-radius: 0.5rem;
+    border: 0.1rem solid #e44c15;
+    padding: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    background: white;
+    transition: 0.15s all;
+    font-weight: 400;
+    width: 35%;
+    margin-left: 1rem;
+
+    &:hover {
+     cursor: pointer;
+     background: #e44c15;
+     color: white;
     }
   }
 }
@@ -2029,6 +2188,24 @@ html {
       }
     }
   }
+
+  #create-your-own {
+    min-height: 110vh;
+    #toppings {
+
+      #topping-types {
+    
+        .topping-type {
+    
+          .toppings {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            margin-bottom: 5rem;
+          }
+        }
+      }
+    }
+  }
 }
 
 
@@ -2213,6 +2390,38 @@ html {
           font-size: 1rem;
         }
       }
+    }
+  }
+
+  #create-your-own {
+    min-height: 110vh;
+    #toppings {
+
+      #topping-types {
+        height: 90%;
+        margin-top: 1rem;
+    
+        .topping-type {
+    
+          .toppings {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+          }
+        }
+      }
+    }
+  }
+
+  #next-step {
+  
+    div {
+      width: 100%;
+    }
+  }
+
+  #title {
+    #topping-list {
+      grid-template-columns: repeat(4, 1fr);   
     }
   }
 }
@@ -2434,7 +2643,7 @@ html {
   }
 
   #create-your-own {
-    height: 100vh;
+    height: 125vh;
     flex-direction: column;
   
     #create-img {
@@ -2463,6 +2672,16 @@ html {
       #topping-types {
         height: 90%;
         margin-top: 1rem;
+
+        .topping-type {
+
+          .toppings {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            grid-auto-rows: 1fr;
+            margin-bottom: 10rem;
+          }
+        }
   
         fieldset {
 
@@ -2498,6 +2717,19 @@ html {
           }
         }
       }
+    }
+  }
+
+  #next-step {
+  
+    button {
+     width: 50%;
+    }
+  }
+
+  #title {
+    #topping-list {
+      grid-template-columns: repeat(2, 1fr);   
     }
   }
 }

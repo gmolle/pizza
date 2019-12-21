@@ -18,7 +18,7 @@
 
   <header id="home-header">
     <div id="topHeader">
-      <a href="../index.html" class="logo"></a>
+      <a href="../" class="logo"></a>
       <div id="sign-up">
         <a href="">Log In</a>
         <a href="">Sign Up</a>
@@ -77,6 +77,7 @@
   <div id="title">
     <h1>Create Your Own Pizza</h1>
     <p>(0) Toppings</p>
+    <div id="topping-list"></div>
   </div>
 
   <div id="create-your-own">
@@ -88,10 +89,10 @@
     <div id="toppings">
       <div id="topping-header">
         <ul id="steps">
-          <li class="active-create-your-own-nav">Size & Crust</li>
-          <li>Cheeses</li>
-          <li>Meats</li>
-          <li>Veggies</li>
+          <li class="active-create-your-own-nav" id="size-nav">Size & Crust</li>
+          <li id="cheese-nav">Cheeses</li>
+          <li id="meat-nav">Meats</li>
+          <li id="veggie-nav">Veggies</li>
         </ul>
       </div>
 
@@ -189,18 +190,150 @@
           </fieldset>
         </div>
 
-        <div id="meats" class="topping-type">
-
-        </div>
 
         <div id="cheese" class="topping-type">
+          <fieldset id="cheese-amount">
+            <legend>How Much Cheese?</legend>
+            <div class="pizza-options">
+              <input type="radio" name="cheese" id="cheese-1" checked>
+              <label for="cheese-1" class="cheese-active">Normal</label>
 
+              <input type="radio" name="cheese" id="cheese-2">
+              <label for="cheese-2">Light</label>
+
+              <input type="radio" name="cheese" id="cheese-3">
+              <label for="cheese-3">None</label>
+            </div>
+          </fieldset>
+
+          <div>
+            <h5>Additional Cheese Toppings</h5>
+          </div>
+
+          <ul id="cheese-toppings" class="toppings">
+            <li class="cheese-topping topping">
+              <img src="../img/parmesan.jpg" alt="Parmesan">
+              <div class="topping-name">
+                <p>Extra Cheese</p>
+              </div>
+            </li>
+            <li class="cheese-topping topping">
+              <img src="../img/3-cheese-blend.jpg" alt="Three Cheese Blend">
+              <div class="topping-name">
+                <p>3-Cheese Blend</p>
+              </div>
+            </li>
+        </div>
+
+        <div id="meats" class="topping-type">
+          <ul id="meat-toppings" class="toppings">
+            <li class="meat-topping topping">
+              <img src="../img/pepperoni.jpg" alt="Pepperoni" id="pepperoni">
+              <div class="topping-name">
+                <p>Pepperoni</p>
+              </div>
+            </li>
+            <li class="meat-topping topping">
+              <img src="../img/sausage.jpg" alt="Sausage">
+              <div class="topping-name">
+                <p>Sausage</p>
+              </div>
+            </li>
+            <li class="meat-topping topping">
+              <img src="../img/grilled-chicken.jpg" alt="Grilled Chicken">
+              <div class="topping-name">
+                <p>Grilled Chicken</p>
+              </div>
+            </li>
+            <li class="meat-topping topping">
+              <img src="../img/bacon.jpg" alt="Bacon">
+              <div class="topping-name">
+                <p>Bacon</p>
+              </div>
+            </li>
+            <li class="meat-topping topping">
+              <img src="../img/ham.jpg" alt="Ham">
+              <div class="topping-name">
+                <p>Ham</p>
+              </div>
+            </li>
+            <li class="meat-topping topping">
+              <img src="../img/meatball.jpg" alt="Meatballs">
+              <div class="topping-name">
+                <p>Meatball</p>
+              </div>
+            </li>
+            <li class="meat-topping topping">
+              <img src="../img/salami.jpg" alt="Salami">
+              <div class="topping-name">
+                <p>Salami</p>
+              </div>
+            </li>
+          </ul>
         </div>
 
         <div id="veggie" class="topping-type">
+          <ul id="veggie-toppings" class="toppings">
+            <li class="veggie-topping topping">
+              <img src="../img/mushroom.jpg" alt="Mushrooms">
+              <div class="topping-name">
+                <p>Mushrooms</p>
+              </div>
+            </li>
+            <li class="veggie-topping topping">
+              <img src="../img/onion.jpg" alt="Onion">
+              <div class="topping-name">
+                <p>Onions</p>
+              </div>
+            </li>
+            <li class="veggie-topping topping">
+              <img src="../img/black-olives.jpg" alt="Black Olives">
+              <div class="topping-name">
+                <p>Black Olives</p>
+              </div>
+            </li>
+            <li class="veggie-topping topping">
+              <img src="../img/green-peppers.jpg" alt="Green Peppers">
+              <div class="topping-name">
+                <p>Green Peppers</p>
+              </div>
+            </li>
+            <li class="veggie-topping topping">
+              <img src="../img/pineapple.jpg" alt="Pineapple" id="pineapple">
+              <div class="topping-name">
+                <p>Pineapple</p>
+              </div>
+            </li>
+            <li class="veggie-topping topping">
+              <img src="../img/jalapeno.jpg" alt="Jalapeño">
+              <div class="topping-name">
+                <p>Jalapeño Peppers</p>
+              </div>
+            </li>
+          </ul>
         </div>
-        <button id="create-your-own-btn">Order Now</button>
       </div>
+    </div>
+  </div>
+
+  <div id="next-step">
+    <div id="cheese-next">
+      <button>Next: Cheeses</button>
+    </div>
+
+    <div id="meat-next">
+      <a href="#">Previous</a>
+      <button>Next: Meats</button>
+    </div>
+
+    <div id="veggie-next">
+      <a href="#">Previous</a>
+      <button>Next: Veggies</button>
+    </div>
+
+    <div id="finished">
+      <a href="#">Previous</a>
+      <button id="create-your-own-btn">Order Now</button>
     </div>
   </div>
 

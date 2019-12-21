@@ -1845,9 +1845,87 @@ html {
   font-weight: normal;
 }
 
+#title #topping-list {
+  width: 100%;
+  display: none;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+  -ms-grid-rows: 50px;
+      grid-template-rows: 50px;
+  grid-auto-rows: 50px;
+  grid-gap: 5px 10px;
+  margin-bottom: 0.5rem;
+}
+
+#title #topping-list .indvTopping {
+  border: solid 1px #cfcecc;
+  border-radius: 0.2rem;
+  width: 100%;
+  margin-right: 0.32rem;
+  -webkit-animation: 0.5s fadeIn;
+          animation: 0.5s fadeIn;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#title #topping-list .indvTopping p {
+  margin-bottom: 0;
+  width: 75%;
+}
+
+#title #topping-list .indvTopping span {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  font-size: 1.5rem;
+  -webkit-transition: 0.15s all;
+  transition: 0.15s all;
+  justify-self: flex-end;
+}
+
+#title #topping-list .indvTopping span:hover {
+  color: #e44c15;
+  cursor: pointer;
+}
+
+#title #topping-list .indvTopping:nth-of-type(5) {
+  margin-right: 0;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-60px);
+            transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-60px);
+            transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
 #create-your-own {
   width: 75%;
-  min-height: 75vh;
+  min-height: 60vh;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1861,7 +1939,7 @@ html {
 }
 
 #create-your-own #create-img #img-preview {
-  height: 50%;
+  height: 366px;
   background-image: url(../img/cheese-pizza.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -1892,7 +1970,7 @@ html {
   padding: 0.5rem 0 0.5rem 0;
   text-transform: uppercase;
   border: solid 1px #cfcecc;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1902,7 +1980,10 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
   margin-right: 0.5rem;
+  -webkit-transition: 0.15s all;
+  transition: 0.15s all;
 }
 
 #create-your-own #toppings #topping-header #steps li:last-of-type {
@@ -1911,11 +1992,17 @@ html {
 
 #create-your-own #toppings #topping-header #steps li:hover {
   cursor: pointer;
+  border-color: #888888;
 }
 
 #create-your-own #toppings #topping-header #steps .active-create-your-own-nav {
   background: #e44c15;
+  border-color: #e44c15;
   color: white;
+}
+
+#create-your-own #toppings #topping-header #steps .active-create-your-own-nav:hover {
+  border-color: #e44c15;
 }
 
 #create-your-own #toppings #topping-types {
@@ -1941,24 +2028,60 @@ html {
   overflow: hidden;
 }
 
-#create-your-own #toppings #topping-types button {
-  border-radius: 0.5rem;
-  border: 0.1rem solid #e44c15;
-  padding: 0.5rem;
-  font-size: 1.25rem;
-  font-weight: 500;
-  background: white;
-  -webkit-transition: 0.15s all;
-  transition: 0.15s all;
-  font-weight: 400;
+#create-your-own #toppings #topping-types .topping-type .toppings {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  list-style: none;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   width: 100%;
-  margin-bottom: 1rem;
+  height: 100%;
+  margin-bottom: 5rem;
 }
 
-#create-your-own #toppings #topping-types button:hover {
+#create-your-own #toppings #topping-types .topping-type .toppings .topping {
+  width: 100%;
+  height: 100%;
+  border: solid 1px #cfcecc;
+  border-radius: 0.2rem;
+  -webkit-transition: 0.15s all;
+  transition: 0.15s all;
+}
+
+#create-your-own #toppings #topping-types .topping-type .toppings .topping:hover {
   cursor: pointer;
-  background: #e44c15;
-  color: white;
+  border-color: #888888;
+}
+
+#create-your-own #toppings #topping-types .topping-type .toppings .topping img {
+  height: 60%;
+  width: 100%;
+  border-radius: 0.2rem 0.2rem 0 0;
+}
+
+#create-your-own #toppings #topping-types .topping-type .toppings .topping .topping-name {
+  height: 40%;
+  width: 100%;
+  margin-left: 0.25rem;
+}
+
+#create-your-own #toppings #topping-types .topping-type .toppings .topping .topping-name p {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+#create-your-own #toppings #topping-types .topping-type .toppings .topping-active {
+  border-color: #e44c15;
+  border-width: 3px;
+}
+
+#create-your-own #toppings #topping-types .topping-type .toppings .topping-active:hover {
+  border-color: #e44c15;
 }
 
 #create-your-own #toppings #topping-types fieldset legend {
@@ -1988,7 +2111,6 @@ html {
   border: solid 1px #cfcecc;
   border-radius: 0.5rem;
   width: 20%;
-  min-width: 120px;
   font-size: 1rem;
   padding: 0 0.25rem 0 0.25rem;
   height: 100%;
@@ -2012,14 +2134,20 @@ html {
 
 #create-your-own #toppings #topping-types fieldset .pizza-options .size-active, #create-your-own #toppings #topping-types fieldset .pizza-options .crust-active,
 #create-your-own #toppings #topping-types fieldset .pizza-options .cut-active, #create-your-own #toppings #topping-types fieldset .pizza-options .bake-active,
-#create-your-own #toppings #topping-types fieldset .pizza-options .sauce-active, #create-your-own #toppings #topping-types fieldset .pizza-options .sauce-amount-active {
+#create-your-own #toppings #topping-types fieldset .pizza-options .sauce-active, #create-your-own #toppings #topping-types fieldset .pizza-options .sauce-amount-active,
+#create-your-own #toppings #topping-types fieldset .pizza-options .cheese-active {
   border-color: #e44c15;
 }
 
 #create-your-own #toppings #topping-types fieldset .pizza-options .size-active:hover, #create-your-own #toppings #topping-types fieldset .pizza-options .crust-active:hover,
 #create-your-own #toppings #topping-types fieldset .pizza-options .cut-active:hover, #create-your-own #toppings #topping-types fieldset .pizza-options .bake-active:hover,
-#create-your-own #toppings #topping-types fieldset .pizza-options .sauce-active:hover, #create-your-own #toppings #topping-types fieldset .pizza-options .sauce-amount-active:hover {
+#create-your-own #toppings #topping-types fieldset .pizza-options .sauce-active:hover, #create-your-own #toppings #topping-types fieldset .pizza-options .sauce-amount-active:hover,
+#create-your-own #toppings #topping-types fieldset .pizza-options .cheese-active:hover {
   border-color: #e44c15;
+}
+
+#create-your-own #toppings #topping-types fieldset:last-of-type {
+  margin-bottom: 5rem;
 }
 
 #create-your-own #toppings #topping-types #crust-and-size {
@@ -2028,17 +2156,94 @@ html {
 
 #create-your-own #toppings #topping-types #meats {
   display: none;
-  background: green;
+}
+
+#create-your-own #toppings #topping-types #meats #pepperoni {
+  border-bottom: solid 1px #cfcecc;
 }
 
 #create-your-own #toppings #topping-types #cheese {
-  background: orange;
   display: none;
+  height: 50%;
+}
+
+#create-your-own #toppings #topping-types #cheese fieldset {
+  margin-bottom: 1rem;
+}
+
+#create-your-own #toppings #topping-types #cheese #cheese-toppings {
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
 }
 
 #create-your-own #toppings #topping-types #veggie {
   display: none;
-  background: pink;
+}
+
+#create-your-own #toppings #topping-types #veggie #pineapple {
+  border-bottom: solid 1px #cfcecc;
+}
+
+#next-step {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
+  height: 7.5%;
+  z-index: 40;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: white;
+}
+
+#next-step div {
+  display: none;
+  width: 50%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#next-step div a {
+  color: black;
+  font-size: 1.25rem;
+}
+
+#next-step #cheese-next {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#next-step button {
+  border-radius: 0.5rem;
+  border: 0.1rem solid #e44c15;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  background: white;
+  -webkit-transition: 0.15s all;
+  transition: 0.15s all;
+  font-weight: 400;
+  width: 35%;
+  margin-left: 1rem;
+}
+
+#next-step button:hover {
+  cursor: pointer;
+  background: #e44c15;
+  color: white;
 }
 
 @media screen and (max-width: 1200px) {
@@ -2203,6 +2408,16 @@ html {
         -ms-flex-pack: start;
             justify-content: flex-start;
   }
+  #create-your-own {
+    min-height: 110vh;
+  }
+  #create-your-own #toppings #topping-types .topping-type .toppings {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    margin-bottom: 5rem;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -2357,6 +2572,26 @@ html {
     width: 50%;
     font-size: 1rem;
   }
+  #create-your-own {
+    min-height: 110vh;
+  }
+  #create-your-own #toppings #topping-types {
+    height: 90%;
+    margin-top: 1rem;
+  }
+  #create-your-own #toppings #topping-types .topping-type .toppings {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+  #next-step div {
+    width: 100%;
+  }
+  #title #topping-list {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -2507,7 +2742,7 @@ html {
     font-size: 1.8rem;
   }
   #create-your-own {
-    height: 100vh;
+    height: 125vh;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -2531,6 +2766,14 @@ html {
   #create-your-own #toppings #topping-types {
     height: 90%;
     margin-top: 1rem;
+  }
+  #create-your-own #toppings #topping-types .topping-type .toppings {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: 1fr;
+    margin-bottom: 10rem;
   }
   #create-your-own #toppings #topping-types fieldset legend {
     font-size: 1.2rem;
@@ -2560,6 +2803,13 @@ html {
   }
   #create-your-own #toppings #topping-types fieldset .pizza-options label[for="bake-2"] {
     font-size: 0.6rem;
+  }
+  #next-step button {
+    width: 50%;
+  }
+  #title #topping-list {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
   }
 }
 
