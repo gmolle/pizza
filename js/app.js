@@ -131,6 +131,7 @@ function showTotals() {
     total.push(parseFloat(item.textContent))
   })
 
+
   const totalMoney = total.reduce(function (total, item) {
     total += item
     return total
@@ -170,8 +171,9 @@ goToCheckout.addEventListener('click', () => {
     const order = document.querySelector('#order-items')
     order.classList.add('text-capitalize')
     order.innerHTML += `<div class="item-text checkout-item" data-id='${item.uuid}'>
-            <p id="cart-item-title" class="mb-0">${item.option} ${item.name}</p>
-            <span>$<span id="cart-item-price" class="mb-0">${item.price}</span></span>
+            <p id="cart-item-title" class="mb-0">${item.option || item.size} ${item.name}</p>
+            <p id="checkout-toppings">${item.toppings || ''}</p>
+            <span id="checkout-price">$<span id="cart-item-price" class="mb-0">${item.price}</span></span>
           </div>`;
 
     document.querySelector('.total-checkout-price').innerHTML = `Total: $${itemTotal.textContent}`;
@@ -188,7 +190,10 @@ function removeItem(e) {
   // console.log(items.length);
   // console.log(_uuid)
 
-  items = storageList.filter((item, idx) => item.uuid != _uuid)
+  console.log(storageList)
+  if (storageList !== null) {
+    items = storageList.filter((item, idx) => item.uuid != _uuid)
+  }
 
   localStorage.setItem('cart', JSON.stringify(items))
 }
@@ -238,7 +243,8 @@ window.onload = function () {
       for (let i = 0; i < cartStorage.length; i++) {
         const cartStorageName = cartStorage[i].name;
         const cartStoragePrice = cartStorage[i].price;
-        const cartStorageOption = cartStorage[i].option || '';
+        const cartStorageOption = cartStorage[i].option || cartStorage[i].size || '';
+        const cartStorageToppings = cartStorage[i].toppings || '';
         const cartStorageID = cartStorage[i].uuid;
 
         const cartItem = document.createElement('div')
@@ -246,6 +252,7 @@ window.onload = function () {
         cartItem.innerHTML =
           `<div class="item-text">
               <p id="cart-item-title" class="font-weight-bold mb-0">${cartStorageOption} ${cartStorageName}</p>
+              <p>${cartStorageToppings}</p>
               <span>$</span>
               <span id="cart-item-price" class="cart-item-price" class="mb-0">${cartStoragePrice}</span>
             </div>
@@ -422,7 +429,7 @@ couponForm.addEventListener('submit', e => {
     cartTotal.textContent = (cartTotal.textContent * 0.75).toFixed(2)
     itemTotal.textContent = cartTotal.textContent
 
-    // Inserts ann adjacent HTML span element
+    // Inserts an adjacent HTML span element
     // How much money you saved from which coupon code
     cartTotalContainer.insertAdjacentHTML('beforebegin', `<span id="dicountAmt">You saved $ ${(cartTotal.textContent * 0.25).toFixed(2)} from coupon code "${coupon.value}"</span>`
     )
@@ -466,20 +473,6 @@ for (let i = 0; i < menuType.length; i++) {
 
 const menuNavigation = document.querySelector('#menu-nav')
 const menuNavigationLinks = document.querySelectorAll('#menu-nav a')
-
-// for (let i = 0; i < menuNavigationLinks.length; i++) {
-//   menuNavigationLinks[i].addEventListener('click', e => {
-//     // Removes 'active' classes on click from previous active nav link
-//     const activeMenuNav = document.querySelectorAll('.active-menu-nav')
-//     if (activeMenuNav.length > 0) {
-//       for (let i = 0; i < activeMenuNav.length; i++) {
-//         activeMenuNav[i].classList.remove('active-menu-nav')
-//       }
-//     }
-//     // Adds 'active' class to the target in the nav that is clicked
-//     e.target.classList.toggle('active-menu-nav')
-//   })
-// }
 
 // Functionality for the menu navigation to stay fixed to top of screen
 // after a certain scroll position
@@ -853,7 +846,8 @@ let checkedOptions = {
   sauce: '',
   sauceAmt: '',
   cheeseAmt: '',
-  toppings: []
+  toppings: [],
+  name: 'Create Your Own Pizza',
 };
 
 let toppingArr = [];
@@ -928,49 +922,85 @@ if (pathname.indexOf('create-your-own') > -1) {
   const finished = document.querySelector('#finished');
   const finishedPrevious = document.querySelector('#finished a');
 
-  createYourOwnBtn.addEventListener('click', () => {
+  createYourOwnBtn.addEventListener('click', (e) => {
     const createYourOwnTotal = document.querySelector('#create-your-own-total');
     if (checkedOptions.size == 'Small') {
       if (checkedOptions.toppings.length == 0) {
-        createYourOwnTotal.textContent = '$10.99';
+        createYourOwnTotal.textContent = '10.99';
       } else if (checkedOptions.toppings.length == 1) {
-        createYourOwnTotal.textContent = '$11.99';
+        createYourOwnTotal.textContent = '11.99';
       } else if (checkedOptions.toppings.length >= 2 && checkedOptions.toppings.length <= 3) {
-        createYourOwnTotal.textContent = '$12.99'
+        createYourOwnTotal.textContent = '12.99'
       } else {
-        createYourOwnTotal.textContent = '$13.99';
+        createYourOwnTotal.textContent = '13.99';
       }
     } else if (checkedOptions.size == 'Medium') {
       if (checkedOptions.toppings.length == 0) {
-        createYourOwnTotal.textContent = '$12.99';
+        createYourOwnTotal.textContent = '12.99';
       } else if (checkedOptions.toppings.length == 1) {
-        createYourOwnTotal.textContent = '$13.99';
+        createYourOwnTotal.textContent = '13.99';
       } else if (checkedOptions.toppings.length >= 2 && checkedOptions.toppings.length <= 3) {
-        createYourOwnTotal.textContent = '$14.99'
+        createYourOwnTotal.textContent = '14.99'
       } else {
-        createYourOwnTotal.textContent = '$15.99';
+        createYourOwnTotal.textContent = '15.99';
       }
     } else if (checkedOptions.size == 'Large') {
       if (checkedOptions.toppings.length == 0) {
-        createYourOwnTotal.textContent = '$14.99';
+        createYourOwnTotal.textContent = '14.99';
       } else if (checkedOptions.toppings.length == 1) {
-        createYourOwnTotal.textContent = '$15.99';
+        createYourOwnTotal.textContent = '15.99';
       } else if (checkedOptions.toppings.length >= 2 && checkedOptions.toppings.length <= 3) {
-        createYourOwnTotal.textContent = '$16.99'
+        createYourOwnTotal.textContent = '16.99'
       } else {
-        createYourOwnTotal.textContent = '$17.99';
+        createYourOwnTotal.textContent = '17.99';
       }
     } else if (checkedOptions.size == 'XL') {
       if (checkedOptions.toppings.length == 0) {
-        createYourOwnTotal.textContent = '$16.99';
+        createYourOwnTotal.textContent = '16.99';
       } else if (checkedOptions.toppings.length == 1) {
-        createYourOwnTotal.textContent = '$17.99';
+        createYourOwnTotal.textContent = '17.99';
       } else if (checkedOptions.toppings.length >= 2 && checkedOptions.toppings.length <= 3) {
-        createYourOwnTotal.textContent = '$18.99'
+        createYourOwnTotal.textContent = '18.99'
       } else {
-        createYourOwnTotal.textContent = '$19.99';
+        createYourOwnTotal.textContent = '19.99';
       }
     }
+
+    checkedOptions.price = e.target.nextElementSibling.textContent;
+    checkedOptions.uuid = uuid();
+
+
+
+    const cartItem = document.createElement('div')
+    cartItem.classList.add('cart-item', 'd-flex', 'justify-content-between', 'text-capitalize', 'my-3')
+    cartItem.innerHTML =
+      `<div class="item-text">
+            <p id="cart-item-title" class="font-weight-bold mb-0">${checkedOptions.size} ${checkedOptions.name}</p>
+            <p id="cart-toppings">${checkedOptions.toppings}</p>
+            <span>$</span>
+            <span id="cart-item-price" class="cart-item-price" class="mb-0">${checkedOptions.price}</span>
+          </div>
+          <a href="#" id='cart-item-remove' class="cart-item-remove">
+            <i class="fas fa-trash" data-id='${checkedOptions.uuid}'></i>
+          </a>
+        </div>`
+
+    cartItem.getElementsByClassName('fa-trash')[0].addEventListener('click', removeItem)
+
+    // select cart
+    const cart = document.querySelector('#cart')
+    const total = document.querySelector('.cart-total-container')
+
+    cart.insertBefore(cartItem, total)
+
+    items.push(checkedOptions);
+    localStorage.setItem('cart', JSON.stringify(items))
+
+    e.stopPropagation()
+    e.preventDefault()
+
+    showTotals()
+    window.location.href = '/menu';
   });
 
   const nextStep = (stepName, toppingHide, toppingShow, stepHide, stepShow, linkHide, linkShow) => {
@@ -1053,8 +1083,9 @@ if (pathname.indexOf('create-your-own') > -1) {
             } else {
               title.innerHTML = `(${count}) Toppings`
             }
+
           }
-          if (allToppings.length == 1) {
+          if (count == 0) {
             toppingList.style.display = 'none';
           }
         })

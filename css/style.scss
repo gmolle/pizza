@@ -255,14 +255,13 @@ html {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      position: relative;
+      margin-bottom: 0.5rem;
 
-      a {
-        align-self: flex-end;
+      #checkout-toppings {
         position: absolute;
-  
-        &:hover {
-          color: red;
-        }
+        top: 15px;
+        font-size: 0.75rem;
       }
     }
 
@@ -575,9 +574,23 @@ html {
   padding: 2rem 1.5rem;
 }
 
-.cart-item-title {
-  text-transform: capitalize;
+
+.cart-item {
+
+  .item-text {
+
+
+    .cart-item-title {
+      text-transform: capitalize;
+    }
+
+    #cart-toppings {
+      margin-bottom: 0;
+      font-size: 0.85rem;
+    }
+  }
 }
+
 
 
 /////////////////////////////////
