@@ -119,6 +119,29 @@ html {
   font-size: 1.25rem;
   -webkit-transition: 0.15s all;
   transition: 0.15s all;
+  padding-bottom: 0;
+}
+
+#nav .navbar .navbar-nav .nav-item:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #e44c15;
+  -webkit-transition: width .3s;
+  transition: width .3s;
+}
+
+#nav .navbar .navbar-nav .nav-item:hover:after {
+  width: 100%;
+}
+
+#nav .navbar .navbar-nav .nav-item:nth-of-type(1) {
+  margin-right: 1rem;
+}
+
+#nav .navbar .navbar-nav .active:after {
+  width: 100%;
 }
 
 #nav .navbar form {
@@ -157,10 +180,6 @@ html {
   font-size: 1.5rem;
 }
 
-.active {
-  border-bottom: 2px solid black;
-}
-
 #menu-nav {
   margin-top: 0.5rem;
   text-align: center;
@@ -171,12 +190,11 @@ html {
 
 #menu-nav a {
   margin-right: 1rem;
-  border-right: 1px solid #7c7c7c;
-  padding-right: 1rem;
   color: #7c7c7c;
   -webkit-transition: .15s all;
   transition: .15s all;
-  margin-bottom: 2rem;
+  display: inline-block;
+  height: 100% !important;
 }
 
 #menu-nav a:hover {
@@ -184,13 +202,26 @@ html {
   text-decoration: none;
 }
 
-#menu-nav a:first-of-type {
-  border-left: 1px solid #7c7c7c;
-  padding-left: 1rem;
+#menu-nav a:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #e44c15;
+  -webkit-transition: width .3s;
+  transition: width .3s;
+}
+
+#menu-nav a:hover:after {
+  width: 100%;
 }
 
 #menu-nav .active-menu-nav {
   color: black;
+}
+
+#menu-nav .active-menu-nav:after {
+  width: 100%;
 }
 
 #menu-nav #nav-cart {
@@ -1320,10 +1351,6 @@ html {
   width: 75%;
 }
 
-#menu .item-info .price-div .store-item-value {
-  visibility: hidden;
-}
-
 #menu .item-name {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1880,12 +1907,12 @@ html {
 }
 
 #title #topping-list .indvTopping span {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
   font-size: 1.5rem;
   -webkit-transition: 0.15s all;
   transition: 0.15s all;
-  justify-self: flex-end;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  text-align: center;
 }
 
 #title #topping-list .indvTopping span:hover {
@@ -2224,6 +2251,11 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+#next-step #finished #create-your-own-total {
+  font-size: 1.5rem;
+  margin-left: 1rem;
 }
 
 #next-step button {

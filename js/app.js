@@ -1,17 +1,5 @@
-
-
-const item = document.querySelectorAll('.nav-item')
-const link = document.querySelectorAll('.nav-link')
-
 const cartIcon = document.querySelector('.fa-shopping-cart')
 const cartInfo = document.querySelector('.cart-info')
-
-for (let i = 0; i < item.length; i++) {
-  if (item[i].classList.contains('active')) {
-    link[i].style.pointerEvents = 'none'
-    link[i].style.cursor = 'pointer'
-  }
-}
 
 cartInfo.addEventListener('mouseover', () => {
   cartIcon.style.color = 'white'
@@ -75,49 +63,6 @@ function cartAction() {
       // Select the selection for certain menu items
       const selection = e.target.parentElement.previousElementSibling.lastElementChild
 
-      // If the value of the selection is 0
-      if (selection.value == '0') {
-        // Create a span element that tells the user there is an error
-        const menu = document.querySelector('#menu-title')
-        const error = document.createElement('span')
-        const close = document.createElement('span')
-        error.id = 'error'
-        close.id = 'close'
-
-        // Sets error html text and appends it to the menu
-        error.innerHTML = `Please select a size before adding an item to your cart`
-        menu.append(error)
-
-        // Sets close button text to an X and appends it to the error message
-        close.innerHTML = 'X'
-        error.append(close)
-
-        // Removes error message on click of the X
-        close.addEventListener('click', () => {
-          const error = document.querySelectorAll('#error')
-          for (let i = 0; i < error.length; i++) {
-            error[i].remove()
-          }
-        })
-        // When clicking Order Now button, if the selection value is anything other than 0
-        // and there is an error message, remove the error message
-      } else {
-        const error = document.querySelectorAll('#error')
-        for (let i = 0; i < error.length; i++) {
-          error[i].remove()
-        }
-      }
-
-      const error = document.querySelectorAll('#error')
-
-      if (error.length > 1) {
-        for (let i = 0; i < error.length; i++) {
-          if (i > 0) {
-            error[i].remove()
-          }
-        }
-      }
-
       // Check if select value is not 0 or if there is no select element
       // then add to cart
       if (selection.value != '0' || selection.nodeName != 'SELECT') {
@@ -132,18 +77,9 @@ function cartAction() {
 
           // Adds item options to the cart
           let option = e.target.parentElement.previousElementSibling.children[2] || ''
-          // console.log(option.value);
           item.option = option.value || '';
 
           item.uuid = uuid()
-
-          function options() {
-            if (option.value === undefined) {
-              return ''
-            } else {
-              return item.option + ' - '
-            }
-          }
 
           items.push(item)
 
@@ -189,6 +125,7 @@ cartAction()
 function showTotals() {
   const total = []
   const items = document.querySelectorAll('.cart-item-price')
+  const cartInfoP = document.querySelector('#cart-info p');
 
   items.forEach(function (item) {
     total.push(parseFloat(item.textContent))
@@ -202,9 +139,9 @@ function showTotals() {
 
   // If statement to change "items" to "item" if there is only 1 item in the cart
   if (total.length == 1) {
-    document.querySelector('#cart-info p').innerHTML = `<p class="mb-0 text-capitalize" > <span id="item-count">1 </span> item - $ <span class="item-total" > 0</span > `
+    cartInfoP.innerHTML = `<p class="mb-0 text-capitalize" > <span id="item-count">1 </span> item - $ <span class="item-total" > 0</span > `
   } else {
-    document.querySelector('#cart-info p').innerHTML = `<p class="mb-0 text-capitalize" > <span id="item-count">0 </span> items - $ <span class="item-total" > 0</span > `
+    cartInfoP.innerHTML = `<p class="mb-0 text-capitalize" > <span id="item-count">0 </span> items - $ <span class="item-total" > 0</span > `
   }
 
   document.querySelector('#cart-total').textContent = finalMoney
@@ -293,19 +230,6 @@ $(document).ready(function () {
 
 // Add items to cart on refresh or change of page from local storage
 window.onload = function () {
-  // Hides prices of items that have a selection to be made/shows item prices with no selection
-  const price = document.querySelectorAll('.store-item-value')
-  const description = document.querySelectorAll('.item-desc')
-
-  if (pathname.indexOf('menu') > -1) {
-    for (let i = 0; i < price.length; i++) {
-      if (description[i].children.length > 2) {
-        price[i].style.visibility = 'hidden'
-      } else {
-        price[i].style.visibility = 'visible'
-      }
-    }
-  }
 
   if (localStorage.length > 0) {
     function cartStorageRetrieve() {
@@ -386,15 +310,7 @@ for (let i = 0; i < pizzaSize.length; i++) {
     const price = e.target.parentElement.nextElementSibling.children[1].children[0]
     const name = e.target.parentElement.children[0].textContent
 
-    // Remove the "select size:" option after changing sizes once
-    if (e.target.length >= 5) {
-      e.target.remove(e.target.children[0])
-    }
-    price.style.visibility = 'visible'
-
-    if (size === '0') {
-      // price.style.visibility = 'hidden';
-    } else if (size == 'small') {
+    if (size == 'small') {
       if (name == 'Pepperoni Pizza' || name == 'Sausage Pizza') {
         price.textContent = '11.99'
       } else if (name == 'Supreme Pizza') {
@@ -548,23 +464,22 @@ for (let i = 0; i < menuType.length; i++) {
   })
 }
 
-// Add 'active' class functionality for the menu page navigation bar
 const menuNavigation = document.querySelector('#menu-nav')
 const menuNavigationLinks = document.querySelectorAll('#menu-nav a')
 
-for (let i = 0; i < menuNavigationLinks.length; i++) {
-  menuNavigationLinks[i].addEventListener('click', e => {
-    // Removes 'active' classes on click from previous active nav link
-    const activeMenuNav = document.querySelectorAll('.active-menu-nav')
-    if (activeMenuNav.length > 0) {
-      for (let i = 0; i < activeMenuNav.length; i++) {
-        activeMenuNav[i].classList.remove('active-menu-nav')
-      }
-    }
-    // Adds 'active' class to the target in the nav that is clicked
-    e.target.classList.toggle('active-menu-nav')
-  })
-}
+// for (let i = 0; i < menuNavigationLinks.length; i++) {
+//   menuNavigationLinks[i].addEventListener('click', e => {
+//     // Removes 'active' classes on click from previous active nav link
+//     const activeMenuNav = document.querySelectorAll('.active-menu-nav')
+//     if (activeMenuNav.length > 0) {
+//       for (let i = 0; i < activeMenuNav.length; i++) {
+//         activeMenuNav[i].classList.remove('active-menu-nav')
+//       }
+//     }
+//     // Adds 'active' class to the target in the nav that is clicked
+//     e.target.classList.toggle('active-menu-nav')
+//   })
+// }
 
 // Functionality for the menu navigation to stay fixed to top of screen
 // after a certain scroll position
@@ -948,61 +863,39 @@ const createYourOwnTitleP = document.querySelector('#title p');
 const toppings = document.querySelectorAll('.topping');
 const title = document.querySelector('#title p');
 
-if (pathname.indexOf('create-your-own') > -1) {
-  createYourOwnBtn.addEventListener('click', () => {
-    crustLabels.forEach(label => {
-      if (label.classList.contains('crust-active')) {
-        checkedOptions.crust = label.textContent;
-      }
-    });
-
-    sizeLabels.forEach(label => {
-      if (label.classList.contains('size-active')) {
-        checkedOptions.size = label.textContent;
-      }
-    });
-
-    cutLabels.forEach(label => {
-      if (label.classList.contains('cut-active')) {
-        checkedOptions.cut = label.textContent;
-      }
-    });
-
-    bakeLabels.forEach(label => {
-      if (label.classList.contains('bake-active')) {
-        checkedOptions.bake = label.textContent;
-      }
-    });
-
-    sauceLabels.forEach(label => {
-      if (label.classList.contains('sauce-active')) {
-        checkedOptions.sauce = label.textContent;
-      }
-    });
-
-    sauceAmountLabels.forEach(label => {
-      if (label.classList.contains('sauce-amount-active')) {
-        checkedOptions.sauceAmt = label.textContent;
-      }
-    });
-
-    cheeseLabels.forEach(label => {
-      if (label.classList.contains('cheese-active')) {
-        checkedOptions.cheeseAmt = label.textContent;
-      }
-    });
-
+const setToppings = () => {
+  if (pathname.indexOf('create-your-own') > -1) {
     toppingArr.splice(0, toppingArr.length);
     toppings.forEach(topping => {
       if (topping.classList.contains('topping-active')) {
         toppingArr.push(topping.children[1].children[0].textContent);
       }
     })
-
     checkedOptions.toppings = toppingArr;
-    console.log(checkedOptions);
-  });
+  }
 }
+
+
+const setOptions = (labelType, className, optionProperty) => {
+  if (pathname.indexOf('create-your-own') > -1) {
+    createYourOwnBtn.addEventListener('click', () => {
+      labelType.forEach(label => {
+        if (label.classList.contains(className)) {
+          checkedOptions[optionProperty] = label.textContent;
+        }
+      });
+      setToppings();
+    });
+  }
+}
+
+setOptions(crustLabels, 'crust-active', 'crust');
+setOptions(sizeLabels, 'size-active', 'size');
+setOptions(cutLabels, 'cut-active', 'cut');
+setOptions(bakeLabels, 'bake-active', 'bake');
+setOptions(sauceLabels, 'sauce-active', 'sauce');
+setOptions(sauceAmountLabels, 'sauce-amount-active', 'sauceAmt');
+setOptions(cheeseLabels, 'cheese-active', 'cheeseAmt');
 
 let count = 0;
 toppings.forEach((topping, index) => {
@@ -1032,9 +925,53 @@ if (pathname.indexOf('create-your-own') > -1) {
   const veggieNextBtn = document.querySelector('#veggie-next button');
   const veggieNext = document.querySelector('#veggie-next');
   const veggiePrevious = document.querySelector('#veggie-next a');
-  const finishedBtn = document.querySelector('#finished button');
   const finished = document.querySelector('#finished');
   const finishedPrevious = document.querySelector('#finished a');
+
+  createYourOwnBtn.addEventListener('click', () => {
+    const createYourOwnTotal = document.querySelector('#create-your-own-total');
+    if (checkedOptions.size == 'Small') {
+      if (checkedOptions.toppings.length == 0) {
+        createYourOwnTotal.textContent = '$10.99';
+      } else if (checkedOptions.toppings.length == 1) {
+        createYourOwnTotal.textContent = '$11.99';
+      } else if (checkedOptions.toppings.length >= 2 && checkedOptions.toppings.length <= 3) {
+        createYourOwnTotal.textContent = '$12.99'
+      } else {
+        createYourOwnTotal.textContent = '$13.99';
+      }
+    } else if (checkedOptions.size == 'Medium') {
+      if (checkedOptions.toppings.length == 0) {
+        createYourOwnTotal.textContent = '$12.99';
+      } else if (checkedOptions.toppings.length == 1) {
+        createYourOwnTotal.textContent = '$13.99';
+      } else if (checkedOptions.toppings.length >= 2 && checkedOptions.toppings.length <= 3) {
+        createYourOwnTotal.textContent = '$14.99'
+      } else {
+        createYourOwnTotal.textContent = '$15.99';
+      }
+    } else if (checkedOptions.size == 'Large') {
+      if (checkedOptions.toppings.length == 0) {
+        createYourOwnTotal.textContent = '$14.99';
+      } else if (checkedOptions.toppings.length == 1) {
+        createYourOwnTotal.textContent = '$15.99';
+      } else if (checkedOptions.toppings.length >= 2 && checkedOptions.toppings.length <= 3) {
+        createYourOwnTotal.textContent = '$16.99'
+      } else {
+        createYourOwnTotal.textContent = '$17.99';
+      }
+    } else if (checkedOptions.size == 'XL') {
+      if (checkedOptions.toppings.length == 0) {
+        createYourOwnTotal.textContent = '$16.99';
+      } else if (checkedOptions.toppings.length == 1) {
+        createYourOwnTotal.textContent = '$17.99';
+      } else if (checkedOptions.toppings.length >= 2 && checkedOptions.toppings.length <= 3) {
+        createYourOwnTotal.textContent = '$18.99'
+      } else {
+        createYourOwnTotal.textContent = '$19.99';
+      }
+    }
+  });
 
   const nextStep = (stepName, toppingHide, toppingShow, stepHide, stepShow, linkHide, linkShow) => {
     stepName.addEventListener('click', () => {
@@ -1101,8 +1038,7 @@ if (pathname.indexOf('create-your-own') > -1) {
         individualToppings.id = index;
         individualToppings.innerHTML = `<p>${topping.children[1].children[0].textContent}</p>`;
         const X = document.createElement('span');
-        X.textContent = '';
-        X.className = 'fas fa-plus-circle'
+        X.innerHTML = `<ion-icon name="close"></ion-icon>`;
         individualToppings.append(X);
         toppingList.append(individualToppings);
 
@@ -1113,23 +1049,28 @@ if (pathname.indexOf('create-your-own') > -1) {
             X.parentElement.remove();
             count--;
             if (allToppings.length == 1) {
-              title.innerHTML = `(${allToppings.length - 1}) Topping`
+              title.innerHTML = `(${count}) Topping`
             } else {
-              title.innerHTML = `(${allToppings.length - 1}) Toppings`
+              title.innerHTML = `(${count}) Toppings`
             }
+          }
+          if (allToppings.length == 1) {
+            toppingList.style.display = 'none';
           }
         })
 
         if (allToppings.length > 0) {
           toppingList.style.display = 'grid';
-        } else if (allToppings.length <= 0) {
-          toppingList.style.display = 'none';
         }
+
       } else {
         const individualToppings2 = document.querySelectorAll('#topping-list div');
         for (let i = 0; i < individualToppings2.length; i++) {
           if (index == individualToppings2[i].id) {
             individualToppings2[i].remove();
+          }
+          if (individualToppings2.length <= 1) {
+            toppingList.style.display = 'none';
           }
         }
       }
@@ -1137,4 +1078,16 @@ if (pathname.indexOf('create-your-own') > -1) {
   });
 }
 
-
+$(window).scroll(function () {
+  let scrollDistance = $(window).scrollTop() + 10;
+  // Assign active class to nav links while scolling
+  $('.section').each(function (i) {
+    if ($(this).position().top <= scrollDistance) {
+      $('#menu-nav a.active-menu-nav').removeClass('active-menu-nav');
+      $('#menu-nav a').eq(i).addClass('active-menu-nav');
+    }
+  });
+  if (scrollDistance <= 150) {
+    $('#menu-nav-1').removeClass('active-menu-nav');
+  }
+}).scroll();

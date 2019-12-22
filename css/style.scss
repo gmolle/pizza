@@ -100,6 +100,31 @@ html {
         a {
           font-size: 1.25rem;
           transition: 0.15s all;
+          padding-bottom: 0;
+        }
+
+        &:after {
+          content: '';
+          display: block;
+          width: 0;
+          height: 3px;
+          background: #e44c15;
+          transition: width .3s;
+        }
+
+        &:hover:after {
+          width: 100%;
+        }
+
+        &:nth-of-type(1) {
+          margin-right: 1rem;
+        }
+      }
+
+      .active {
+
+        &:after {
+          width: 100%;
         }
       }
     }
@@ -140,11 +165,6 @@ html {
   }
 }
 
-.active {
-  border-bottom: 2px solid black;
-}
-
-
 /////////////////////////////////
 ////// MENU PAGE NAVIGATION /////
 /////////////////////////////////
@@ -158,29 +178,36 @@ html {
   
   a {
     margin-right: 1rem;
-    border-right: 1px solid rgb(124, 124, 124);
-    padding-right: 1rem;
     color: rgb(124, 124, 124);
     transition: .15s all;
-    margin-bottom: 2rem;
+    display: inline-block;
+    height: 100% !important;
 
     &:hover {
       color: black;
       text-decoration: none;
     }
 
-    &:first-of-type {
-      border-left: 1px solid rgb(124, 124, 124);
-      padding-left: 1rem;
+    &:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 3px;
+      background: #e44c15;
+      transition: width .3s;
     }
 
-    &:last-of-type {
-      // margin-right: 2rem;
+    &:hover:after {
+      width: 100%;
     }
   }
 
   .active-menu-nav {
     color: black;
+
+    &:after {
+      width: 100%;
+    }
   }
 
   #nav-cart {
@@ -1103,10 +1130,6 @@ html {
         order: 2;
         width: 75%;
       }
-
-      .store-item-value {
-        visibility: hidden;
-      }
     }
   }
   
@@ -1642,10 +1665,10 @@ html {
       }
 
       span {
-        transform: rotate(45deg);
         font-size: 1.5rem;
         transition: 0.15s all;
-        justify-self: flex-end;
+        transform: rotate(90deg);
+        text-align: center;
 
         &:hover {
           color: #e44c15;
@@ -1922,6 +1945,14 @@ html {
 
   #cheese-next {
     display: flex;
+  }
+
+  #finished {
+
+    #create-your-own-total {
+      font-size: 1.5rem;
+      margin-left: 1rem;
+    }
   }
 
 
