@@ -99,8 +99,7 @@ function cartAction() {
           </div>
           <a href="#" id='cart-item-remove' class="cart-item-remove">
             <i class="fas fa-trash" data-id='${item.uuid}'></i>
-          </a>
-        </div>`
+          </a>`
 
           cartItem.getElementsByClassName('fa-trash')[0].addEventListener('click', removeItem)
 
@@ -1122,3 +1121,33 @@ $(window).scroll(function () {
     $('#menu-nav-1').removeClass('active-menu-nav');
   }
 }).scroll();
+
+
+
+const info = document.querySelectorAll('.fa-info-circle');
+const extraInfo = document.querySelectorAll('.extra-info-desc');
+const extraInfoP = document.querySelectorAll('.extra-info-desc p');
+const itemImage = document.querySelectorAll('.item-img');
+const extraInfoClose = document.querySelectorAll('.extra-info-desc .close');
+
+info.forEach((icon, index) => {
+  icon.addEventListener('click', () => {
+    extraInfo.forEach((info, idx) => {
+      if (index == idx) {
+        info.style.height = '50%';
+        info.style.opacity = '1';
+        extraInfoP[idx].style.opacity = '1'
+        extraInfoClose[idx].style.visibility = 'visible';
+      }
+    })
+  });
+});
+
+extraInfoClose.forEach((close, idx) => {
+  close.addEventListener('click', (e) => {
+    e.target.parentElement.parentElement.style.height = '0';
+    e.target.parentElement.parentElement.style.opacity = '0';
+    extraInfoP[idx].style.opacity = '0';
+    extraInfoClose[idx].style.visibility = 'hidden';
+  });
+});

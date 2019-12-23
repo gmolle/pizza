@@ -188,65 +188,40 @@
             <div id="total-checkout"></div>
           </div>
 
-
-          <div id="order-errors">
-            <div id="name-error" class="validation-error">
-              <span>Please enter a valid name</span>
-            </div>
-            <div id="email-error" class="validation-error">
-              <span>Email field must contain a valid email address</span>
-            </div>
-            <div id="street-error" class="validation-error">
-              <span>Please enter a valid street address</span>
-            </div>
-            <div id="city-error" class="validation-error">
-              <span>Please enter a valid city name</span>
-            </div>
-            <div id="state-error" class="validation-error">
-              <span>Please select a state</span>
-            </div>
-            <div id="zip-error" class="validation-error">
-              <span>Pleae enter a valid 5 digit ZIP code</span>
-            </div>
-            <div id="cc-name-error" class="validation-error">
-              <span>Please enter a valid name for your credit card</span>
-            </div>
-            <div id="cc-number-error" class="validation-error">
-              <span>Please enter a valid credit card number that is 13-16 digits long</span>
-            </div>
-            <div id="cc-month-error" class="validation-error">
-              <span>Please select an expiration month</span>
-            </div>
-            <div id="cc-year-error" class="validation-error">
-              <span>Please select an expiration year</span>
-            </div>
-            <div id="cc-cvv-error" class="validation-error">
-              <span>Please enter a valid 3 digit CVV number</span>
-            </div>
-          </div>
-
           <div id="personal-info">
             <div id="address">
-              <h3>Billing Address</h3>
+              <h3>Address</h3>
 
               <div id="full-name">
                 <label for="fullName">Full Name</label>
                 <input type="text" name="fullname" id="fullName" placeholder="John Doe">
+                <div id="name-error" class="validation-error">
+                  <span>Please enter a valid name</span>
+                </div>
               </div>
 
               <div id="email-container">
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" placeholder="name@example.com">
+                <div id="email-error" class="validation-error">
+                  <span>Email field must contain a valid email address</span>
+                </div>
               </div>
 
               <div id="street-container">
                 <label for="street">Street</label>
                 <input type="text" name="street" id="street" placeholder="123 1st Street">
+                <div id="street-error" class="validation-error">
+                  <span>Please enter a valid street address</span>
+                </div>
               </div>
 
               <div id="city-container">
                 <label for="city">City</label>
                 <input type="text" name="city" id="city" placeholder="Boston">
+                <div id="city-error" class="validation-error">
+                  <span>Please enter a valid city name</span>
+                </div>
               </div>
 
               <div id="state">
@@ -305,11 +280,17 @@
                   <option value="WI">Wisconsin</option>
                   <option value="WY">Wyoming</option>
                 </select>
+                <div id="state-error" class="validation-error">
+                  <span>Please select a state</span>
+                </div>
               </div>
 
               <div id="zip-container">
                 <label for="zip">ZIP Code</label>
                 <input type="text" name="zip" id="zip" placeholder="10011">
+                <div id="zip-error" class="validation-error">
+                  <span>Pleae enter a valid 5 digit ZIP code</span>
+                </div>
               </div>
             </div>
 
@@ -329,11 +310,17 @@
               <div id="name-on-card-container">
                 <label for="name-on-card">Name on Card</label>
                 <input type="text" name="name-on-card" id="name-on-card" placeholder="John Doe">
+                <div id="cc-name-error" class="validation-error">
+                  <span>Please enter a valid name for your credit card</span>
+                </div>
               </div>
 
               <div id="card-number-container">
                 <label for="card-number">Credit Card Number</label>
                 <input type="text" name="card-number" id="card-number" placeholder="1111-2222-3333-4444">
+                <div id="cc-number-error" class="validation-error">
+                  <span>Please enter a valid credit card number that is 13-16 digits long</span>
+                </div>
               </div>
 
               <div id="months">
@@ -353,6 +340,9 @@
                   <option value="November">November</option>
                   <option value="December">December</option>
                 </select>
+                <div id="cc-month-error" class="validation-error">
+                  <span>Please select an expiration month</span>
+                </div>
               </div>
 
               <div id="years">
@@ -371,20 +361,21 @@
                   <option value="2029">2029</option>
                   <option value="2030">2030</option>
                 </select>
+                <div id="cc-year-error" class="validation-error">
+                  <span>Please select an expiration year</span>
+                </div>
               </div>
 
 
               <div id="cvv-container">
                 <label for="cvv">CVV</label>
                 <input type="text" name="cvv" id="cvv" placeholder="999">
+                <div id="cc-cvv-error" class="validation-error">
+                  <span>Please enter a valid 3 digit CVV number</span>
+                </div>
               </div>
 
             </div>
-          </div>
-          <div id="same-address-check">
-            <label for="same-address">Shipping address same as billing
-            </label>
-            <input type="checkbox" name="same-address" id="same-address">
           </div>
         </div>
         <div class="modal-footer">

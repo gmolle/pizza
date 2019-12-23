@@ -509,40 +509,14 @@ html {
           flex-direction: column;
 }
 
-.modal-body #same-address-check {
-  padding-left: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 49%;
-  padding-bottom: 1rem;
-  border-right: 1px solid #e9ecef;
-}
-
-.modal-body #same-address-check label {
-  margin-bottom: 0;
-}
-
-.modal-body #same-address-check input {
-  margin: 0;
-  margin-left: 0.25rem;
-}
-
 .modal-body .error {
   border: 1px solid red;
 }
 
 .modal-body .validation-error {
   display: none;
-}
-
-.modal-body #order-errors {
-  padding-left: 1rem;
-  margin-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  font-size: 0.65rem;
+  color: red;
 }
 
 .modal-footer .checkoutBtn {
@@ -1315,6 +1289,54 @@ html {
   background-position: center;
   height: 50%;
   border-radius: 0.5rem 0.5rem 0 0;
+  position: relative;
+}
+
+#menu .item-img .fa-info-circle {
+  color: white;
+  float: right;
+  margin-right: 0.25rem;
+  margin-top: 0.25rem;
+  -webkit-transition: 0.15s all;
+  transition: 0.15s all;
+}
+
+#menu .item-img .fa-info-circle:hover {
+  color: #e5e2e2;
+  cursor: pointer;
+}
+
+#menu .item-img .extra-info-desc {
+  background: white;
+  position: absolute;
+  border-radius: 0.5rem 0.5rem 0 0;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  height: 0;
+  opacity: 0;
+  width: 100%;
+}
+
+#menu .item-img .extra-info-desc .close {
+  float: right;
+  visibility: hidden;
+}
+
+#menu .item-img .extra-info-desc p {
+  margin: 0 1rem 0 1rem;
+  opacity: 0;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
 }
 
 #menu .item-info {
@@ -2453,6 +2475,9 @@ html {
         grid-template-rows: 1fr 1fr 1fr 1fr;
     margin-bottom: 5rem;
   }
+  .modal-dialog {
+    max-width: 800px;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -2626,6 +2651,23 @@ html {
   #title #topping-list {
     -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
+  }
+  .modal-dialog {
+    max-width: 600px;
+  }
+  .modal-body #payment-info {
+        grid-template-areas: "header header header" "name  name name" "number number number" "month year cvv" "accepted accepted accepted";
+  }
+  .modal-body .error {
+    border: 1px solid red;
+  }
+  .modal-body #cc-cvv-error {
+    font-size: 0.6rem;
+  }
+  .modal-body .validation-error {
+    display: none;
+    font-size: 0.65rem;
+    color: red;
   }
 }
 
@@ -2846,6 +2888,28 @@ html {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
   }
+  .modal-dialog {
+    max-width: 400px;
+  }
+  .modal-dialog .modal-content {
+    height: 700px;
+  }
+  .modal-body #personal-info {
+    height: 75%;
+  }
+  .modal-body #personal-info #payment-info {
+    width: 50%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: (1fr)[4];
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: "header header header" "name number number" "month month year" "cvv accepted accepted";
+    grid-gap: 10px;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -3017,6 +3081,37 @@ html {
   }
   #create-your-own #toppings #topping-types fieldset .pizza-options label[for="crust-3"] {
     font-size: 0.6rem;
+  }
+  .modal-dialog {
+    max-width: 400px;
+  }
+  .modal-dialog .modal-content {
+    height: 800px;
+  }
+  .modal-body #personal-info {
+    height: 75%;
+  }
+  .modal-body #personal-info #payment-info {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: (1fr)[auto];
+        grid-template-rows: repeat(auto, 1fr);
+        grid-template-areas: "header header" "name name" "number number" "month month" "cvv year" "accepted accepted";
+  }
+  .modal-body #personal-info #address {
+    width: 50%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: (1fr)[auto];
+        grid-template-rows: repeat(auto, 1fr);
+        grid-template-areas: "header" "fullname" "email"  "street" "city" "state" "zip";
+    grid-gap: 10px;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    border-right: 1px solid #e9ecef;
+    padding-bottom: 1rem;
   }
 }
 
