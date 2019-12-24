@@ -106,6 +106,9 @@ function cartAction() {
           // select cart
           const cart = document.querySelector('#cart')
           const total = document.querySelector('.cart-total-container')
+          const totalPrice = document.querySelector('#cart-total')
+
+
 
           cart.insertBefore(cartItem, total)
 
@@ -123,13 +126,12 @@ cartAction()
 // Show totals
 function showTotals() {
   const total = []
-  const items = document.querySelectorAll('.cart-item-price')
+  const itemsPrice = document.querySelectorAll('.cart-item-price')
   const cartInfoP = document.querySelector('#cart-info p');
 
-  items.forEach(function (item) {
+  itemsPrice.forEach(function (item) {
     total.push(parseFloat(item.textContent))
   })
-
 
   const totalMoney = total.reduce(function (total, item) {
     total += item
@@ -170,7 +172,7 @@ goToCheckout.addEventListener('click', () => {
     const order = document.querySelector('#order-items')
     order.classList.add('text-capitalize')
     order.innerHTML += `<div class="item-text checkout-item" data-id='${item.uuid}'>
-            <p id="cart-item-title" class="mb-0">${item.option || item.size} ${item.name}</p>
+            <p id="cart-item-title" class="mb-0">${item.option || item.size || ''} ${item.name}</p>
             <p id="checkout-toppings">${item.toppings || ''}</p>
             <span id="checkout-price">$<span id="cart-item-price" class="mb-0">${item.price}</span></span>
           </div>`;
@@ -189,7 +191,6 @@ function removeItem(e) {
   // console.log(items.length);
   // console.log(_uuid)
 
-  console.log(storageList)
   if (storageList !== null) {
     items = storageList.filter((item, idx) => item.uuid != _uuid)
   }
@@ -208,8 +209,8 @@ function removeAllItems() {
     if (cartItem.length > 0) {
       cartItem[i].remove()
     }
-    if (checkoutItem.length > 0) {
-      checkoutItem[i].remove()
+    for (let i = 0; i < checkoutItem.length; i++) {
+      checkoutItem[i].remove();
     }
   }
 
@@ -217,6 +218,7 @@ function removeAllItems() {
   localStorage.removeItem('cart')
   localStorage.removeItem('total')
   showTotals()
+  items = [];
 }
 
 $(document).ready(function () {
@@ -251,7 +253,7 @@ window.onload = function () {
         cartItem.innerHTML =
           `<div class="item-text">
               <p id="cart-item-title" class="font-weight-bold mb-0">${cartStorageOption} ${cartStorageName}</p>
-              <p>${cartStorageToppings}</p>
+              <p class="mb-0">${cartStorageToppings}</p>
               <span>$</span>
               <span id="cart-item-price" class="cart-item-price" class="mb-0">${cartStoragePrice}</span>
             </div>
@@ -430,7 +432,7 @@ couponForm.addEventListener('submit', e => {
 
     // Inserts an adjacent HTML span element
     // How much money you saved from which coupon code
-    cartTotalContainer.insertAdjacentHTML('beforebegin', `<span id="dicountAmt">You saved $ ${(cartTotal.textContent * 0.25).toFixed(2)} from coupon code "${coupon.value}"</span>`
+    cartTotalContainer.insertAdjacentHTML('beforebegin', `<span class="discountAmt">You saved $ ${(cartTotal.textContent * 0.25).toFixed(2)} from coupon code "${coupon.value}"</span>`
     )
   }
   // Resets coupon insert value to being empty
@@ -1134,10 +1136,9 @@ info.forEach((icon, index) => {
   icon.addEventListener('click', () => {
     extraInfo.forEach((info, idx) => {
       if (index == idx) {
-        info.style.height = '50%';
-        info.style.opacity = '1';
-        extraInfoP[idx].style.opacity = '1'
-        extraInfoClose[idx].style.visibility = 'visible';
+        info.classList.add('extra-info-shown')
+        extraInfoP[idx].classList.add('extra-info-p-shown')
+        extraInfoClose[idx].classList.add('close-shown');
       }
     })
   });
@@ -1145,9 +1146,16 @@ info.forEach((icon, index) => {
 
 extraInfoClose.forEach((close, idx) => {
   close.addEventListener('click', (e) => {
-    e.target.parentElement.parentElement.style.height = '0';
-    e.target.parentElement.parentElement.style.opacity = '0';
-    extraInfoP[idx].style.opacity = '0';
-    extraInfoClose[idx].style.visibility = 'hidden';
+    e.target.parentElement.parentElement.classList.remove('extra-info-shown')
+    extraInfoP[idx].classList.remove('extra-info-p-shown')
+    extraInfoClose[idx].classList.remove('close-shown');
   });
 });
+
+const footer = document.querySelector('footer');
+const createYourOwnFooter = document.querySelector('#create-your-own-footer');
+const newDate = new Date();
+const year = newDate.getFullYear();
+
+footer.innerHTML = `<small>Copyright &copy; ${year}, Garrett's Pizza – All Rights Reserved</small>`;
+createYourOwnFooter.innerHTML = ``;

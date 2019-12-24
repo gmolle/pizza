@@ -9,6 +9,8 @@
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
   <link rel="stylesheet" href="../css/style.css">
   <title>Deals</title>
 </head>
@@ -100,7 +102,12 @@
       <div class="deal-info">
         <div class="deal-name">
           <h4>Free Dessert</h4>
-          <p>One free dessert on any order over $15 (excludes milkshakes and sundae)</p>
+          <p>One free dessert</p>
+          <select class="dessert-type">
+            <option value="cookie">Chocolate Chip Cookie</option>
+            <option value="brownie">Brownie</option>
+            <option value="cake">Chocolate Cake</option>
+          </select>
         </div>
         <div class="deal-btn">
           <button class="store-item-icon">Order Now</button>
@@ -130,44 +137,60 @@
       <div class="deal-img"></div>
       <div class="deal-info">
         <div class="deal-name">
-          <h4>Local Deals</h4>
-          <p>Delivery or Carryout</p>
+          <h4>Two for One Deal</h4>
+          <p>Two cokes for the price of one</p>
         </div>
         <div class="deal-btn">
           <button class="store-item-icon">Order Now</button>
-          <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+          <h5 class="store-item-value">$ <strong id="store-item-price">1.50</strong></h5>
         </div>
       </div>
     </div>
 
     <div id="deal5" class="deal-home">
-      <div class="deal-img"></div>
+      <div class="deal-img">
+        <div id="supreme"></div>
+        <div id="side"></div>
+      </div>
       <div class="deal-info">
         <div class="deal-name">
-          <h4>Local Deals</h4>
-          <p>Delivery or Carryout</p>
+          <h4>XL Supreme Pizza + Side</h4>
+          <p>XL supreme pizza plus your choice of one side</p>
+          <select class="dessert-type">
+            <option value="Garlic Bread">Garlic Bread</option>
+            <option value="Salad">Spinach Salad</option>
+            <option value="Breadsticks">Breadsticks</option>
+            <option value="Mac&Cheese">Macaroni & Cheese</option>
+            <option value="Jalapeño Poppers">Jalapeño Poppers</option>
+          </select>
         </div>
         <div class="deal-btn">
           <button class="store-item-icon">Order Now</button>
-          <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+          <h5 class="store-item-value">$ <strong id="store-item-price">21.99</strong></h5>
         </div>
       </div>
     </div>
 
     <div id="deal6" class="deal-home">
-      <div class="deal-img"></div>
+      <div class="deal-img">
+        <div id="pizza"></div>
+        <div id="pasta"></div>
+        <div id="salad"></div>
+      </div>
       <div class="deal-info">
         <div class="deal-name">
-          <h4>Local Deals</h4>
-          <p>Delivery or Carryout</p>
+          <h4>Pizza, Pasta, and Salad Combo</h4>
+          <p>Large cheese pizza, mac & cheese, and our spinach salad</p>
         </div>
         <div class="deal-btn">
           <button class="store-item-icon">Order Now</button>
-          <h5 class="store-item-value">$ <strong id="store-item-price">10.99</strong></h5>
+          <h5 class="store-item-value">$ <strong id="store-item-price">24.99</strong></h5>
         </div>
       </div>
     </div>
   </div>
+  <footer>
+  </footer>
 
 
 
