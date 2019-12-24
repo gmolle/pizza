@@ -675,8 +675,8 @@ footer {
   margin-bottom: 4rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: (1fr)[auto-fit];
-      grid-template-rows: repeat(auto-fit, 1fr);
+  -ms-grid-rows: (1fr)[6];
+      grid-template-rows: repeat(6, 1fr);
   grid-gap: 2rem;
       grid-template-areas: "menu1" "menu2" "menu3" "menu4" "menu5" "menu6";
 }
