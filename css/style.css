@@ -2656,6 +2656,7 @@ footer {
   }
   #drink-menu #drink-type {
         grid-template-areas: "drink1 drink2 drink3 drink4";
+    margin-bottom: 3rem;
   }
   .arrows {
     display: -webkit-box;
