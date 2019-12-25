@@ -1153,9 +1153,12 @@ extraInfoClose.forEach((close, idx) => {
 });
 
 const footer = document.querySelector('footer');
-const createYourOwnFooter = document.querySelector('#create-your-own-footer');
 const newDate = new Date();
 const year = newDate.getFullYear();
 
 footer.innerHTML = `<small>Copyright &copy; ${year}, Garrett's Pizza – All Rights Reserved</small>`;
-createYourOwnFooter.innerHTML = ``;
+
+if (pathname.indexOf('create-your-own') > -1) {
+  const createYourOwnFooter = document.querySelector('#create-your-own-footer');
+  createYourOwnFooter.innerHTML = ``;
+}
