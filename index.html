@@ -1,430 +1,519 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Garrett's Pizza</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <title>Garrett's Pizza</title>
-</head>
-
-<body>
-
-  <header id="home-header">
-    <div id="topHeader">
-      <a href="#" class="logo"></a>
-      <div id="sign-up">
-        <a href="">Log In</a>
-        <a href="">Sign Up</a>
-      </div>
-    </div>
-  </header>
-
-  <div id="nav">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
-        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="menu/">Menu</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="deals/">Deals</a>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0 coupon-form">
-          <input class="form-control mr-sm-2 coupon" type="search" placeholder="Coupon Code" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0 apply" type="submit">Apply</button>
-        </form>
-      </div>
-      <!-- <i class="fas fa-shopping-cart" title="Cart"></i> -->
-      <div id="cart-info" class="nav-info align-items-center cart-info d-flex justify-content-between mx-lg-5">
-        <span class="cart-info__icon mr-lg-3"><i class="fas fa-shopping-cart"></i></span>
-        <p class="mb-0 text-capitalize"><span id="item-count">0 </span> items - $<span class="item-total">0.00</span>
-        </p>
-      </div>
-    </nav>
-
-  </div>
-
-  <div id="cart" class="cart">
-    <!-- cart total -->
-    <div class="cart-total-container d-flex justify-content-around text-capitalize mt-5">
-      <h5>total</h5>
-      <h5> $ <strong id="cart-total" class="font-weight-bold">0.00</strong> </h5>
-    </div>
-    <!--end cart total -->
-    <!-- cart buttons -->
-    <div class="cart-buttons-container mt-3 d-flex justify-content-between">
-      <h3 class="cart-close">X</h3>
-      <a href="#" id="clear-cart" class="btn btn-outline-secondary btn-black text-uppercase">clear cart</a>
-      <a href="#" id="checkout" class="btn btn-outline-secondary text-uppercase" data-toggle="modal"
-        data-target="#exampleModalCenter">checkout</a>
-    </div>
-    <!--end of  cart buttons -->
-    <!--  -->
-  </div>
-
-
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <div>
-        <h4>Best Pizza</h4>
-      </div>
-
-      <div>
-        <h4>in</h4>
-      </div>
-
-      <div>
-        <h4>Columbus, Ohio</h4>
-      </div>
-    </div>
-  </div>
-
-  <div class="container-fluid" id="deals">
-    <div id="deal-labels">
-      <h1>Deals</h1>
-      <a href="deals/">View All Deals</a>
-    </div>
-  </div>
-
-  <div class="container-fluid" id="deals-preview">
-
-    <div id="deal1" class="deal-home">
-      <div class="deal-img"></div>
-      <div class="deal-info">
-        <div class="deal-name">
-          <h4>$11.99 Large Cheese Pizza</h4>
-          <p>Limited time offer! Only $11.99</p>
-        </div>
-        <div class="deal-btn">
-          <button><a href="/deals">View Offer</a></button>
+  <body>
+    <header id="home-header">
+      <div id="topHeader">
+        <a href="#" class="logo"></a>
+        <div id="sign-up">
+          <a href="">Log In</a>
+          <a href="">Sign Up</a>
         </div>
       </div>
+    </header>
+
+    <div id="nav">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarTogglerDemo03"
+          aria-controls="navbarTogglerDemo03"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="menu/">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="deals/">Deals</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0 coupon-form">
+            <input
+              class="form-control mr-sm-2 coupon"
+              type="search"
+              placeholder="Coupon Code"
+              aria-label="Search"
+            />
+            <button
+              class="btn btn-outline-success my-2 my-sm-0 apply"
+              type="submit"
+            >
+              Apply
+            </button>
+          </form>
+        </div>
+        <!-- <i class="fas fa-shopping-cart" title="Cart"></i> -->
+        <div
+          id="cart-info"
+          class="nav-info align-items-center cart-info d-flex justify-content-between mx-lg-5"
+        >
+          <span class="cart-info__icon mr-lg-3"
+            ><i class="fas fa-shopping-cart"></i
+          ></span>
+          <p class="mb-0 text-capitalize">
+            <span id="item-count">0 </span> items - $<span class="item-total"
+              >0.00</span
+            >
+          </p>
+        </div>
+      </nav>
     </div>
 
-    <div id="deal2" class="deal-home">
-      <div class="deal-img"></div>
-      <div class="deal-info">
-        <div class="deal-name">
-          <h4>Free Dessert</h4>
-          <p>One free dessert on any order over $15 (excludes milkshakes and sundae)</p>
-        </div>
-        <div class="deal-btn">
-          <button><a href="/deals">View Offer</a></button>
-        </div>
+    <div id="cart" class="cart">
+      <!-- cart total -->
+      <div
+        class="cart-total-container d-flex justify-content-around text-capitalize mt-5"
+      >
+        <h5>total</h5>
+        <h5>
+          $ <strong id="cart-total" class="font-weight-bold">0.00</strong>
+        </h5>
       </div>
+      <!--end cart total -->
+      <!-- cart buttons -->
+      <div class="cart-buttons-container mt-3 d-flex justify-content-between">
+        <h3 class="cart-close">X</h3>
+        <a
+          href="#"
+          id="clear-cart"
+          class="btn btn-outline-secondary btn-black text-uppercase"
+          >clear cart</a
+        >
+        <a
+          href="#"
+          id="checkout"
+          class="btn btn-outline-secondary text-uppercase"
+          data-toggle="modal"
+          data-target="#exampleModalCenter"
+          >checkout</a
+        >
+      </div>
+      <!--end of  cart buttons -->
+      <!--  -->
     </div>
 
-    <div id="deal3" class="deal-home">
-      <div class="deal-img">
-        <div id="salad"></div>
-        <div id="breadsticks"></div>
-      </div>
-      <div class="deal-info">
-        <div class="deal-name">
-          <h4>Salad and Breadsticks Deal</h4>
-          <p>Half off breadsticks with order of a spinach salad</p>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <div>
+          <h4>Best Pizza</h4>
         </div>
-        <div class="deal-btn">
-          <button><a href="/deals">View Offer</a></button>
+
+        <div>
+          <h4>in</h4>
+        </div>
+
+        <div>
+          <h4>Columbus, Ohio</h4>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="container-fluid" id="menus">
-    <div id="menu-labels">
-      <h1>Menu</h1>
-    </div>
-  </div>
-
-  <div class="container-fluid" id="menus-preview">
-
-    <div id="menu1" class="menu-hover menu-home-img">
-      <a href="menu/#pizza">
-        <h3 class="menu-type">Pizza</h3>
-      </a>
+    <div class="container-fluid" id="deals">
+      <div id="deal-labels">
+        <h1>Deals</h1>
+        <a href="deals/">View All Deals</a>
+      </div>
     </div>
 
-    <div id="menu2" class="menu-hover menu-home-img">
-      <a href="menu/#wings">
-        <h3 class="menu-type">Wings</h3>
-      </a>
-    </div>
-
-    <div id="menu3" class="menu-hover menu-home-img">
-      <a href="menu/#sandwiches">
-        <h3 class="menu-type">Burgers & <br />Sandwiches</h3>
-      </a>
-    </div>
-
-    <div id="menu4" class="menu-hover menu-home-img">
-      <a href="menu/#sides">
-        <h3 class="menu-type">Sides</h3>
-      </a>
-    </div>
-
-    <div id="menu5" class="menu-hover menu-home-img">
-      <a href="menu/#dessert">
-        <h3 class="menu-type">Dessert</h3>
-      </a>
-    </div>
-
-    <div id="menu6" class="menu-hover menu-home-img">
-      <a href="menu/#drinks">
-        <h3 class="menu-type">Drinks</h3>
-      </a>
-    </div>
-
-  </div>
-
-  <footer>
-  </footer>
-
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Checkout</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div id="order">
-            <div id="order-items"></div>
-            <div id="total-checkout"></div>
+    <div class="container-fluid" id="deals-preview">
+      <div id="deal1" class="deal-home">
+        <div class="deal-img"></div>
+        <div class="deal-info">
+          <div class="deal-name">
+            <h4>$11.99 Large Cheese Pizza</h4>
+            <p>Limited time offer! Only $11.99</p>
           </div>
+          <div class="deal-btn">
+            <button><a href="deals/">View Offer</a></button>
+          </div>
+        </div>
+      </div>
 
-          <div id="personal-info">
-            <div id="address">
-              <h3>Address</h3>
+      <div id="deal2" class="deal-home">
+        <div class="deal-img"></div>
+        <div class="deal-info">
+          <div class="deal-name">
+            <h4>Free Dessert</h4>
+            <p>
+              One free dessert on any order over $15 (excludes milkshakes and
+              sundae)
+            </p>
+          </div>
+          <div class="deal-btn">
+            <button><a href="deals/">View Offer</a></button>
+          </div>
+        </div>
+      </div>
 
-              <div id="full-name">
-                <label for="fullName">Full Name</label>
-                <input type="text" name="fullname" id="fullName" placeholder="John Doe">
-                <div id="name-error" class="validation-error">
-                  <span>Please enter a valid name</span>
+      <div id="deal3" class="deal-home">
+        <div class="deal-img">
+          <div id="salad"></div>
+          <div id="breadsticks"></div>
+        </div>
+        <div class="deal-info">
+          <div class="deal-name">
+            <h4>Salad and Breadsticks Deal</h4>
+            <p>Half off breadsticks with order of a spinach salad</p>
+          </div>
+          <div class="deal-btn">
+            <button><a href="deals/">View Offer</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid" id="menus">
+      <div id="menu-labels">
+        <h1>Menu</h1>
+      </div>
+    </div>
+
+    <div class="container-fluid" id="menus-preview">
+      <div id="menu1" class="menu-hover menu-home-img">
+        <a href="menu/#pizza">
+          <h3 class="menu-type">Pizza</h3>
+        </a>
+      </div>
+
+      <div id="menu2" class="menu-hover menu-home-img">
+        <a href="menu/#wings">
+          <h3 class="menu-type">Wings</h3>
+        </a>
+      </div>
+
+      <div id="menu3" class="menu-hover menu-home-img">
+        <a href="menu/#sandwiches">
+          <h3 class="menu-type">Burgers & <br />Sandwiches</h3>
+        </a>
+      </div>
+
+      <div id="menu4" class="menu-hover menu-home-img">
+        <a href="menu/#sides">
+          <h3 class="menu-type">Sides</h3>
+        </a>
+      </div>
+
+      <div id="menu5" class="menu-hover menu-home-img">
+        <a href="menu/#dessert">
+          <h3 class="menu-type">Dessert</h3>
+        </a>
+      </div>
+
+      <div id="menu6" class="menu-hover menu-home-img">
+        <a href="menu/#drinks">
+          <h3 class="menu-type">Drinks</h3>
+        </a>
+      </div>
+    </div>
+
+    <footer></footer>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModalCenter"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Checkout</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div id="order">
+              <div id="order-items"></div>
+              <div id="total-checkout"></div>
+            </div>
+
+            <div id="personal-info">
+              <div id="address">
+                <h3>Address</h3>
+
+                <div id="full-name">
+                  <label for="fullName">Full Name</label>
+                  <input
+                    type="text"
+                    name="fullname"
+                    id="fullName"
+                    placeholder="John Doe"
+                  />
+                  <div id="name-error" class="validation-error">
+                    <span>Please enter a valid name</span>
+                  </div>
+                </div>
+
+                <div id="email-container">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="name@example.com"
+                  />
+                  <div id="email-error" class="validation-error">
+                    <span>Email field must contain a valid email address</span>
+                  </div>
+                </div>
+
+                <div id="street-container">
+                  <label for="street">Street</label>
+                  <input
+                    type="text"
+                    name="street"
+                    id="street"
+                    placeholder="123 1st Street"
+                  />
+                  <div id="street-error" class="validation-error">
+                    <span>Please enter a valid street address</span>
+                  </div>
+                </div>
+
+                <div id="city-container">
+                  <label for="city">City</label>
+                  <input
+                    type="text"
+                    name="city"
+                    id="city"
+                    placeholder="Boston"
+                  />
+                  <div id="city-error" class="validation-error">
+                    <span>Please enter a valid city name</span>
+                  </div>
+                </div>
+
+                <div id="state">
+                  <label for="states">State</label>
+                  <select id="states">
+                    <option value="0">State:</option>
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="DC">District Of Columbia</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+                  </select>
+                  <div id="state-error" class="validation-error">
+                    <span>Please select a state</span>
+                  </div>
+                </div>
+
+                <div id="zip-container">
+                  <label for="zip">ZIP Code</label>
+                  <input type="text" name="zip" id="zip" placeholder="10011" />
+                  <div id="zip-error" class="validation-error">
+                    <span>Pleae enter a valid 5 digit ZIP code</span>
+                  </div>
                 </div>
               </div>
 
-              <div id="email-container">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="name@example.com">
-                <div id="email-error" class="validation-error">
-                  <span>Email field must contain a valid email address</span>
-                </div>
-              </div>
+              <div id="payment-info">
+                <h3>Payment</h3>
 
-              <div id="street-container">
-                <label for="street">Street</label>
-                <input type="text" name="street" id="street" placeholder="123 1st Street">
-                <div id="street-error" class="validation-error">
-                  <span>Please enter a valid street address</span>
+                <div id="accepted-cards">
+                  <label for="">Accepted Cards</label>
+                  <div id="card-imgs">
+                    <i class="fab fa-cc-visa" title="Visa"></i>
+                    <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                    <i class="fab fa-cc-discover" title="Discover"></i>
+                    <i class="fab fa-cc-amex" title="American Express"></i>
+                  </div>
                 </div>
-              </div>
 
-              <div id="city-container">
-                <label for="city">City</label>
-                <input type="text" name="city" id="city" placeholder="Boston">
-                <div id="city-error" class="validation-error">
-                  <span>Please enter a valid city name</span>
+                <div id="name-on-card-container">
+                  <label for="name-on-card">Name on Card</label>
+                  <input
+                    type="text"
+                    name="name-on-card"
+                    id="name-on-card"
+                    placeholder="John Doe"
+                  />
+                  <div id="cc-name-error" class="validation-error">
+                    <span>Please enter a valid name for your credit card</span>
+                  </div>
                 </div>
-              </div>
 
-              <div id="state">
-                <label for="states">State</label>
-                <select id="states">
-                  <option value="0">State:</option>
-                  <option value="AL">Alabama</option>
-                  <option value="AK">Alaska</option>
-                  <option value="AZ">Arizona</option>
-                  <option value="AR">Arkansas</option>
-                  <option value="CA">California</option>
-                  <option value="CO">Colorado</option>
-                  <option value="CT">Connecticut</option>
-                  <option value="DE">Delaware</option>
-                  <option value="DC">District Of Columbia</option>
-                  <option value="FL">Florida</option>
-                  <option value="GA">Georgia</option>
-                  <option value="HI">Hawaii</option>
-                  <option value="ID">Idaho</option>
-                  <option value="IL">Illinois</option>
-                  <option value="IN">Indiana</option>
-                  <option value="IA">Iowa</option>
-                  <option value="KS">Kansas</option>
-                  <option value="KY">Kentucky</option>
-                  <option value="LA">Louisiana</option>
-                  <option value="ME">Maine</option>
-                  <option value="MD">Maryland</option>
-                  <option value="MA">Massachusetts</option>
-                  <option value="MI">Michigan</option>
-                  <option value="MN">Minnesota</option>
-                  <option value="MS">Mississippi</option>
-                  <option value="MO">Missouri</option>
-                  <option value="MT">Montana</option>
-                  <option value="NE">Nebraska</option>
-                  <option value="NV">Nevada</option>
-                  <option value="NH">New Hampshire</option>
-                  <option value="NJ">New Jersey</option>
-                  <option value="NM">New Mexico</option>
-                  <option value="NY">New York</option>
-                  <option value="NC">North Carolina</option>
-                  <option value="ND">North Dakota</option>
-                  <option value="OH">Ohio</option>
-                  <option value="OK">Oklahoma</option>
-                  <option value="OR">Oregon</option>
-                  <option value="PA">Pennsylvania</option>
-                  <option value="RI">Rhode Island</option>
-                  <option value="SC">South Carolina</option>
-                  <option value="SD">South Dakota</option>
-                  <option value="TN">Tennessee</option>
-                  <option value="TX">Texas</option>
-                  <option value="UT">Utah</option>
-                  <option value="VT">Vermont</option>
-                  <option value="VA">Virginia</option>
-                  <option value="WA">Washington</option>
-                  <option value="WV">West Virginia</option>
-                  <option value="WI">Wisconsin</option>
-                  <option value="WY">Wyoming</option>
-                </select>
-                <div id="state-error" class="validation-error">
-                  <span>Please select a state</span>
+                <div id="card-number-container">
+                  <label for="card-number">Credit Card Number</label>
+                  <input
+                    type="text"
+                    name="card-number"
+                    id="card-number"
+                    placeholder="1111-2222-3333-4444"
+                  />
+                  <div id="cc-number-error" class="validation-error">
+                    <span
+                      >Please enter a valid credit card number that is 13-16
+                      digits long</span
+                    >
+                  </div>
                 </div>
-              </div>
 
-              <div id="zip-container">
-                <label for="zip">ZIP Code</label>
-                <input type="text" name="zip" id="zip" placeholder="10011">
-                <div id="zip-error" class="validation-error">
-                  <span>Pleae enter a valid 5 digit ZIP code</span>
+                <div id="months">
+                  <label for="month">Exp Month</label>
+                  <select id="month">
+                    <option value="0">Month</option>
+                    <option value="January">January</option>
+                    <option value="Febuary">Febuary</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                  </select>
+                  <div id="cc-month-error" class="validation-error">
+                    <span>Please select an expiration month</span>
+                  </div>
+                </div>
+
+                <div id="years">
+                  <label for="year"> Exp Year</label>
+                  <select id="year">
+                    <option value="0">Year</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                    <option value="2030">2030</option>
+                  </select>
+                  <div id="cc-year-error" class="validation-error">
+                    <span>Please select an expiration year</span>
+                  </div>
+                </div>
+
+                <div id="cvv-container">
+                  <label for="cvv">CVV</label>
+                  <input type="text" name="cvv" id="cvv" placeholder="999" />
+                  <div id="cc-cvv-error" class="validation-error">
+                    <span>Please enter a valid 3 digit CVV number</span>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <div id="payment-info">
-              <h3>Payment</h3>
-
-              <div id="accepted-cards">
-                <label for="">Accepted Cards</label>
-                <div id="card-imgs">
-                  <i class="fab fa-cc-visa" title="Visa"></i>
-                  <i class="fab fa-cc-mastercard" title="Mastercard"></i>
-                  <i class="fab fa-cc-discover" title="Discover"></i>
-                  <i class="fab fa-cc-amex" title="American Express"></i>
-                </div>
-              </div>
-
-              <div id="name-on-card-container">
-                <label for="name-on-card">Name on Card</label>
-                <input type="text" name="name-on-card" id="name-on-card" placeholder="John Doe">
-                <div id="cc-name-error" class="validation-error">
-                  <span>Please enter a valid name for your credit card</span>
-                </div>
-              </div>
-
-              <div id="card-number-container">
-                <label for="card-number">Credit Card Number</label>
-                <input type="text" name="card-number" id="card-number" placeholder="1111-2222-3333-4444">
-                <div id="cc-number-error" class="validation-error">
-                  <span>Please enter a valid credit card number that is 13-16 digits long</span>
-                </div>
-              </div>
-
-              <div id="months">
-                <label for="month">Exp Month</label>
-                <select id="month">
-                  <option value="0">Month</option>
-                  <option value="January">January</option>
-                  <option value="Febuary">Febuary</option>
-                  <option value="March">March</option>
-                  <option value="April">April</option>
-                  <option value="May">May</option>
-                  <option value="June">June</option>
-                  <option value="July">July</option>
-                  <option value="August">August</option>
-                  <option value="September">September</option>
-                  <option value="October">October</option>
-                  <option value="November">November</option>
-                  <option value="December">December</option>
-                </select>
-                <div id="cc-month-error" class="validation-error">
-                  <span>Please select an expiration month</span>
-                </div>
-              </div>
-
-              <div id="years">
-                <label for="year"> Exp Year</label>
-                <select id="year">
-                  <option value="0">Year</option>
-                  <option value="2020">2020</option>
-                  <option value="2021">2021</option>
-                  <option value="2022">2022</option>
-                  <option value="2023">2023</option>
-                  <option value="2024">2024</option>
-                  <option value="2025">2025</option>
-                  <option value="2026">2026</option>
-                  <option value="2027">2027</option>
-                  <option value="2028">2028</option>
-                  <option value="2029">2029</option>
-                  <option value="2030">2030</option>
-                </select>
-                <div id="cc-year-error" class="validation-error">
-                  <span>Please select an expiration year</span>
-                </div>
-              </div>
-
-
-              <div id="cvv-container">
-                <label for="cvv">CVV</label>
-                <input type="text" name="cvv" id="cvv" placeholder="999">
-                <div id="cc-cvv-error" class="validation-error">
-                  <span>Please enter a valid 3 digit CVV number</span>
-                </div>
-              </div>
-
-            </div>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn closeBtn" data-dismiss="modal">Close</button>
-          <button type="button" class="btn checkoutBtn">Submit Order</button>
+          <div class="modal-footer">
+            <button type="button" class="btn closeBtn" data-dismiss="modal">
+              Close
+            </button>
+            <button type="button" class="btn checkoutBtn">Submit Order</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-
-
-
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-  <script src="js/homepage.js"></script>
-  <script src="js/app.js"></script>
-</body>
-
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="js/homepage.js"></script>
+    <script src="js/app.js"></script>
+  </body>
 </html>
