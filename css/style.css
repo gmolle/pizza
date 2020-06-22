@@ -619,6 +619,7 @@ footer {
   -webkit-transition: 0.15s all ease-in-out;
   transition: 0.15s all ease-in-out;
   width: 50%;
+  height: 50px;
 }
 
 #deals-preview .deal-info .deal-btn button:hover {
@@ -634,6 +635,7 @@ footer {
   text-decoration: none;
   color: black;
   width: 100%;
+  display: block;
   height: 100%;
   -webkit-transition: 0.15s all ease-in-out;
   transition: 0.15s all ease-in-out;

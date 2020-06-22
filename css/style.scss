@@ -520,6 +520,7 @@ $secondary-color: rgb(124, 124, 124);
       button {
         @include button(1.25rem);
         width: 50%;
+        height: 50px;
 
         &:hover {
           cursor: pointer;
@@ -534,6 +535,7 @@ $secondary-color: rgb(124, 124, 124);
           text-decoration: none;
           color: black;
           width: 100%;
+          display: block;
           height: 100%;
           transition: 0.15s all ease-in-out;
           text-align: center;
